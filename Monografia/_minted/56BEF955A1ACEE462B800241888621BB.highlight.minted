@@ -1,0 +1,109 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+	\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{matplotlib.pyplot}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{plt}
+	\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{matplotlib.animation}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{FuncAnimation}
+	\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{numpy}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{np}
+	\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{random}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{rd}
+	\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{math}
+	
+	\PYG{n}{TAM} \PYG{o}{=} \PYG{l+m+mi}{50}
+	\PYG{n}{Tempo}\PYG{p}{:} \PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{0}
+	
+	
+	\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+	
+	\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Configuracao}\PYG{p}{:}
+	\PYG{n}{icouple} \PYG{o}{=} \PYG{n+nb}{set}\PYG{p}{()}
+	\PYG{n}{disponiveis} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{TAM}\PYG{p}{)]}
+	
+	\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{spin}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,} \PYG{n}{pos}\PYG{p}{,} \PYG{n}{neg}\PYG{p}{):}
+	\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{conf} \PYG{o}{=} \PYG{p}{[}\PYG{n}{spin} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{TAM}\PYG{p}{)]}
+	\PYG{k}{if} \PYG{n}{spin} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{):}
+	\PYG{n}{pos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{):}
+	\PYG{n}{neg}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{)}
+	
+	\PYG{n+nd}{@classmethod}
+	\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{visuaizar}\PYG{p}{(}\PYG{n+nb+bp}{cls}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{):}
+	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{):}
+	\PYG{k}{if} \PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:}
+	\PYG{k}{if} \PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+	\PYG{n}{bolinhas1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{)}
+	\PYG{n}{bolinhas2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{n}{bolinhas1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{)}
+	\PYG{n}{bolinhas2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{k}{if} \PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+	\PYG{n}{bolinhas1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{n}{bolinhas1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{if} \PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+	\PYG{n}{bolinhas2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+	\PYG{k}{else}\PYG{p}{:}
+	\PYG{n}{bolinhas2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}facecolor}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{)}
+	
+	\PYG{n+nd}{@classmethod}
+	\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{andar}\PYG{p}{(}\PYG{n+nb+bp}{cls}\PYG{p}{,} \PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{):}
+	\PYG{n}{i1} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{(}\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{disponiveis}\PYG{p}{)}
+	\PYG{n}{i2} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{(}\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{disponiveis}\PYG{p}{)}
+	
+	\PYG{k}{if} \PYG{n}{i1} \PYG{o+ow}{in} \PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple}\PYG{p}{:}
+	\PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+	\PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i1}\PYG{p}{]}
+	\PYG{k}{elif} \PYG{n}{i1} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple}\PYG{p}{:}
+	\PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+	
+	\PYG{k}{if} \PYG{n}{i2} \PYG{o+ow}{in} \PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple} \PYG{o+ow}{and} \PYG{n}{i2} \PYG{o}{!=} \PYG{n}{i1}\PYG{p}{:}
+	\PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i2}\PYG{p}{]} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+	\PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i2}\PYG{p}{]} \PYG{o}{=} \PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i2}\PYG{p}{]}
+	\PYG{k}{elif} \PYG{n}{i2} \PYG{o+ow}{not} \PYG{o+ow}{in} \PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple}\PYG{p}{:}
+	\PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i2}\PYG{p}{]} \PYG{o}{=} \PYG{n}{rd}\PYG{o}{.}\PYG{n}{choice}\PYG{p}{([}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])}
+	
+	\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{):}
+	\PYG{k}{if} \PYG{n}{p1}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{p2}\PYG{o}{.}\PYG{n}{conf}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]:}
+	\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple}\PYG{o}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+	
+	\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{visuaizar}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{)}
+	
+	
+	\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{))}
+	
+	
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{hlines}\PYG{p}{(}\PYG{n}{y}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{xmin}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{n}{TAM} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,} \PYG{n}{zorder}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Eixo (\PYGZhy{})\PYGZdq{}}\PYG{p}{)}
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{hlines}\PYG{p}{(}\PYG{n}{y}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{xmin}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{n}{TAM} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{,} \PYG{n}{zorder}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Eixo (+)\PYGZdq{}}\PYG{p}{)}
+	
+	\PYG{n}{bolinhas2} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ax}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{facecolors}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{,} \PYG{n}{edgecolors}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,} \PYG{n}{s}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{zorder}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{k}{for} \PYG{n}{xi} \PYG{o+ow}{in} \PYG{n}{x}\PYG{p}{]}
+	\PYG{n}{bolinhas1} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ax}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{facecolors}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{,} \PYG{n}{edgecolors}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{,} \PYG{n}{s}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{zorder}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{k}{for} \PYG{n}{xi} \PYG{o+ow}{in} \PYG{n}{x}\PYG{p}{]}
+	
+	
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlim}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{TAM}\PYG{p}{)}
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylim}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{)}
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}aspect}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}equal\PYGZdq{}}\PYG{p}{,} \PYG{n}{adjustable}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}box\PYGZdq{}}\PYG{p}{)}
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{axis}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}off\PYGZdq{}}\PYG{p}{)}
+	\PYG{n}{ax}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{loc}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}upper left\PYGZsq{}}\PYG{p}{,} \PYG{n}{frameon}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{fancybox}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{shadow}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+	
+	
+	\PYG{n}{p1} \PYG{o}{=} \PYG{n}{Configuracao}\PYG{p}{(}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{)}
+	\PYG{n}{p2} \PYG{o}{=} \PYG{n}{Configuracao}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{)}
+	
+	\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{update}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{):}
+	\PYG{k}{global} \PYG{n}{Tempo}
+	\PYG{n}{Tempo} \PYG{o}{+=} \PYG{l+m+mi}{1}
+	\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{andar}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,} \PYG{n}{p2}\PYG{p}{,} \PYG{n}{bolinhas1}\PYG{p}{,} \PYG{n}{bolinhas2}\PYG{p}{)}
+	\PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{Configuracao}\PYG{o}{.}\PYG{n}{icouple}\PYG{p}{)} \PYG{o}{==} \PYG{n}{TAM}\PYG{p}{:}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}=\PYGZdq{}}\PYG{o}{*}\PYG{l+m+mi}{50}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}TODAS AS BOLINHAS ESTAO VERDES!\PYGZdq{}}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}=\PYGZdq{}}\PYG{o}{*}\PYG{l+m+mi}{50}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Tempo total: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{Tempo}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ segundos\PYGZdq{}}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Tempo esperado: }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{format}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{TAM}\PYG{p}{)}\PYG{o}{*}\PYG{n}{TAM}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}.2f\PYGZsq{}}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ segundos\PYGZdq{}}\PYG{p}{)}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}=\PYGZdq{}}\PYG{o}{*}\PYG{l+m+mi}{50}\PYG{p}{)}
+	\PYG{n}{anim}\PYG{o}{.}\PYG{n}{event\PYGZus{}source}\PYG{o}{.}\PYG{n}{stop}\PYG{p}{()}
+	\PYG{k}{return} \PYG{n}{bolinhas1} \PYG{o}{+} \PYG{n}{bolinhas2}
+	
+	
+	\PYG{n}{anim} \PYG{o}{=} \PYG{n}{FuncAnimation}\PYG{p}{(}\PYG{n}{fig}\PYG{p}{,} \PYG{n}{update}\PYG{p}{,} \PYG{n}{frames}\PYG{o}{=}\PYG{l+m+mi}{200}\PYG{p}{,} \PYG{n}{interval}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{blit}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{,} \PYG{n}{repeat}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+	
+	\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{MintedVerbatim}

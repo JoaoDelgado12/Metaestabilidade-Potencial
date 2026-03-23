@@ -133,10 +133,10 @@
 \newcommand{\NT}{\notag}
 \newcommand{\maior}{\geqslant}
 \newcommand{\menor}{\leqslant}
-\newcommand{\grau}[1]{\operatorname{grau}(#1) }
 \newcommand{\medpi}[1]{\pi_{N}(#1) }
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\oper}{\operatorname}
+\newcommand{\var}{\operatorname{Var}}
 
 
 \pagestyle{myheadings}
@@ -514,9 +514,8 @@
 
 
 
-\chapter{Noções básica de medida e probabilidade}
-Antes de entrar na ideia de probabilidade, precisamos entender como ocorre a construção dessa ideia na visão da matemática. Aprendemos que na escola, em termos mais simples, que a ideia de probabilidade é a tendência de um evento acontecer. Se não contarmos o peso de cada evento, o calculo de probabilidade é simples, dividimos por 1 o tamanho do conjunto de todos os eventos possíveis. Então, antes de calcularmos, a probabilidade de um eventos, precismos saber o quem é o conjuntos de todos os eventos. E aqui, entre a definição seguinte.
-%Existem objetos na matemática que são sempre utilizados em nosso dia a dia, às vezes nem mesmo percebe-se o uso por causa da naturalidade. Esse objetos constumam ter muita relevância na contrução da teoria, apesar de não serem o foco de estudo, pois são eles que dão estrutura e existencia à teoria. Assim, começaremos a nomear e entender esses objetos.
+\chapter{Noções básicas de medida e probabilidade}
+Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir nesse objeto uma medida, assim seguindo para a construção de medida de probabilidade. Em sequência, falamos um sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade
 {\Def Uma álgebra de um conjunto $\Omega$ é uma classe $\mathcal{F}$ de subconjuntos de $\Omega$ tal que:
 \begin{enumerate}[i.]
 	\item $\Omega \in \mathcal{F}$,
@@ -530,10 +529,10 @@ Uma álgebra é uma classe que se pode realizar operações elementares de conjuntos
 \end{enumerate}}
 {
 	\Exem
-	Um exemplo básico de uma $\sigma$-álgebra é o que corresponde ao lançamento de um dado de 6 lados honesto. O nosso conjunto de estudo seria os lados do dado, $D = \{1,2,3,4,5,6\} \text{ e nossa }\sigma \text{-álgebra é } \\ \mathcal{F} = \mathcal{P}(D)$, as partes de D.
+	Um exemplo básico de uma $\sigma$-álgebra é o que corresponde ao lançamento de um dado de 6 lados honesto. O nosso conjunto de estudo seria os lados do dado, $D = \{1,2,3,4,5,6\} \text{ e nossa }\sigma \text{-álgebra é } \\ \mathcal{F} = \mathcal{P}(D)$, as partes de $D$.
 }
 {
-	\Def ($\sigma$-álgebra gerada por uma classe de subconjuntos) Seja  um conjunto e $\mathcal{E}$ um classe de subconjuntos de $\Omega$. Então definamos $\sigma (\mathcal{E})$ uma $\sigma$-álgebra gerada por $\mathcal{E}$ que satisfaz:
+	\Def ($\sigma$-álgebra gerada por uma classe de subconjuntos) Seja  um conjunto e $\mathcal{E}$ um classe de subconjuntos de $\Omega$. Então definamos $\sigma (\mathcal{E})$ como a única $\sigma$-álgebra gerada por $\mathcal{E}$ que satisfaz:
 	\begin{enumerate}[i.]
 		\item $\sigma(\mathcal{E}) \text{ é } \sigma$-álgebra,
 		\item $\mathcal{E} \subseteq \sigma (\mathcal{E})$,
@@ -568,17 +567,17 @@ Observe que isso inclui somas finitas, pois podemos considerar os $A_{n}$ tal qu
 Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, mas que precisamos formular.
 {
 	\Teo Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de medida e $A,B, A_{1}, A_{2}, ... \in \mathcal{F}$.
-	\begin{enumerate}[(i)]
+	\begin{enumerate}[1.]
 		\item $\mu(A^{c}) = \mu(\Omega) - \mu(A)$, \label{eq:teo1.I}
 		\item Se $A \subseteq B,\text{ então vale que }\mu(A) \leqslant \mu(B)\text{ e }\mu(B \setminus A) = \mu(B) - \mu(A)$,
 		\item $\mu(A \cup B) = \mu(A) + \mu(B) - \mu(A \cap B)$,
 		\item $\displaystyle \mu \left(\bigcup^{\infty}_{n=1}(A_{n}) \right) \leqslant \sum_{n=1}^{\infty}\mu(A_{n})$,
-		\item Se $A_{n}\uparrow A\text{ ou }A_{n}\downarrow A\text{, então }\mu(A_{n})\rightarrow \mu(A)$.
+		\item Se $\mu(A_{n}) < \infty$, $A_{n}\uparrow A$ ou $A_{n}\downarrow A$, então $\mu(A_{n})\rightarrow \mu(A)$.
 	\end{enumerate}
 }
 
 \begin{proof}
-	\begin{enumerate}[(i)]
+	\begin{enumerate}[1.]
 		\item Como $\Omega = A \cup A^{c}$, temos que $\mu(\Omega) = \mu(A \cup A^{c}) = \mu(A) + \mu(A^{c})$.
 		\item Como $A \subseteq B$, então  $B = A \cup B \setminus A \Rightarrow \mu(B) = \mu(A \cup B \setminus A) = \mu(A) + \mu(B \setminus A) \Rightarrow \mu(B \setminus A) = \mu(B) - \mu(A)$.
 		\item Usando o item (ii) temos que $\mu(A \cup B) = \mu(A) + \mu(B \setminus A)$. Como $\mu(B) = \mu(B \setminus A) + \mu(A \cap B)$, então $\mu(A \cup B) = \mu(A) + \mu(B) - \mu(A \cap B)$.
@@ -598,7 +597,7 @@ Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, m
 		Para provar $A_{n} \downarrow A$, podemos utilizar o que acabamos de provar. Tome a sequência $A^{c}_{n} \uparrow A^{c}$ e lembrando que $P(A_{n}) = 1 - P(A^{c}_{n})$, então se $n \to \infty$ temos que $\displaystyle \lim_{n \to \infty} P(A_{n}) = 1 - P(A^c{})$.
 	\end{enumerate}
 \end{proof}
-Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade ? É intuitivo pensar que uma função \textit{probabilidade} satisfaça as definição das funções \textit{medida}, já que uma probabilidade mede algo. Existe também uma característica bem simples que sempre deve está em probabilidade, o conjunto todo $\Omega$ sempre tem probabilidade 1. Ou seja,
+Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade ? É intuitivo pensar que uma função \textit{probabilidade} satisfaça as definição das funções \textit{medida}, já que uma probabilidade mede algo. Existe também uma característica bem simples que sempre deve está em probabilidade, o conjunto todo $\Omega$ sempre tem probabilidade um. Ou seja,
 {
 	\Def \hypertarget{Definição 5} Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de medida. Se $\mu: \mathcal{F} \rightarrow \mathbb{R}$  é uma função  que satisfaz:
 	\begin{enumerate}[i.]
@@ -608,8 +607,9 @@ Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar
 	Então $\mu$ é uma medida de probabilidade ou probabilidade.
 	A tripla $(\Omega, \mathcal{F}, \mu)$ denomina-se espaço de probabilidade.
 }
-\par Obs: Perceba que pela afirmação ~\eqref{eq:teo1.I}, temos que $\mu(\Omega) = 1 - \mu(\varnothing) = 1$. Logo, essa definição para probabilidade $\mu$, nos diz que também é medida, assim tudo que vimos para medida vale para probabilidade.
-\par Diferente da função medida, a função de probabilidade existe noções importantes, principalmente para quem faz uso de jogos de azar, são elas a condicional e independência de eventos (Elementos da $\sigma$-álgebra em um espaço de probabilidade).  Vamos falar um pouco dessas duas noções. Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \mathcal{F}$ tais que $\mu(A) = a$ e $\mu(B) = b$. Agora pare e pense, qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece ?
+Obs: Perceba que pela afirmação \ref{eq:teo1.I}, temos que $\mu(\Omega) = 1 - \mu(\varnothing) = 1$. Logo, essa definição para probabilidade $\mu$, nos diz que também é medida, assim tudo que vimos para medida vale para probabilidade.
+
+Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \mathcal{F}$ tais que $\mu(A) = a$ e $\mu(B) = b$. Qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece ?
 
 %FIGURA DE CONJUNTOS EM FORMA DE CÍCULO. O A VAI ESTÁ CONTIDO NO B.
 %ACHO QUE A PARCIALMENTE CONTIDO É MAIS LEGAL.IMAGINA AS BOLOS COM BORDA TRAÇADA. E CADA UM COM UMA COR SENDO A INTERSECÇÃO TAMBÉM COM UMA COR IDEPENDENTE.
@@ -627,7 +627,7 @@ Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar
 	Quando $\mu(B)=0$, então definimos $\mathbb{P}(A|B) = \mathbb{P}(A)$.
 }
 
-Obs: Comparando a probabilidade condicional com a probabilidade "normal", percebe-se que quando $\mathbb{P}(B)>0$, a primeira nada mais é do que relativização da probabilidade do evento $A$ para o evento $B$. Veja que estamos falando de eventos, elementos da $\sigma$-álgebra e não subconjuntos de $\Omega$, contudo não é difícil fazer algo semelhante para subconjuntos.
+Obs: Comparando a probabilidade condicional com a probabilidade "usual", percebe-se que quando $\mathbb{P}(B)>0$, a primeira nada mais é do que relativização da probabilidade do evento $A$ para o evento $B$. Veja que estamos falando de eventos, elementos da $\sigma$-álgebra e não subconjuntos de $\Omega$, contudo não é difícil fazer algo semelhante para subconjuntos.
 
 {\Teo[Regra do produto] Em $(\Omega, \mathcal{F}, \mu)$. Dados os eventos $A_{1}, A_{2}, \cdots , A_{n} \in \mathcal{F}$,
 	$$\mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \mathbb{P}(A_{1})\mathbb{P}(A_{2}|A_{1})\mathbb{P}(A_{3}|A_{1} \cap A_{2}) \text{{ \large . . . }} \mathbb{P}\left(A_{n}| \bigcap^{n-1}_{i=1} A_{i}\right). $$
@@ -635,32 +635,30 @@ Obs: Comparando a probabilidade condicional com a probabilidade "normal", perceb
 
 {\Def[Eventos independentes] Seja $A,B \in \mathcal{F}$ são independentes se $$\mathbb{P}(A \cap B)= \mathbb{P}(A)\mathbb{P}(B). $$
 }
-Logo se a sequência de eventos $A_{i}$ são independentes dois-a-dois, então $\displaystyle \mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \prod_{i=1}^{n}\mathbb{P}(A_{i})$, pois $\mathbb{P}(A_{j} | A_{i}) = A_{j}$.
+Logo se a sequência de eventos $A_{i}$ são independentes, então $\displaystyle \mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \prod_{i=1}^{n}\mathbb{P}(A_{i})$, pois $\mathbb{P}(A_{j} | A_{i}) = A_{j}$.
 
 %Quero colocar sobre distribuição uniforme; bernolie e geometrica, variavel aleatoria, esperaça, variância e Desigualdades importantes.
 
 \section{Cadeia de Markov}
-{\Def (Cadeia de Markov finita)
-	\par Seja $\left (\Omega, \sigma \{ \Omega \}, \mathbb{P} \right)$ um espaço de probabilidade. Seja $\left( X_{1}, X_{2}, X_{3}, ... \right)$ uma sequência aleatória de variáveis que satisfaz, juntamente com uma matriz de transição $\mathbb{P}$, a propriedade de Markov, definida da seguinte forma: Se para $\forall x,y \in \Omega$, para todo $t\geq 1$, e para todo evento $H_{t-1} = \displaystyle \bigcap^{t-1}_{s=0} \left\{ X_{s} = x_{s}\right\}$ satisfaz $\mathbb{H}_{t-1} \bigcap \left\{ X_{t} = x \right\} \neq 0$, nos temos que
+{\Def (Cadeia de Markov finita) Seja $\left (\Omega, \sigma \{ \Omega \}, \mathbb{P} \right)$ um espaço de probabilidade. Seja $\left( X_{1}, X_{2}, X_{3}, ... \right)$ uma sequência aleatória de variáveis que satisfaz, juntamente com uma matriz de transição $\mathbb{P}$, a propriedade de Markov, definida da seguinte forma: Se para $\forall x,y \in \Omega$, para todo $t\geq 1$, e para todo evento $H_{t-1} = \displaystyle \bigcap^{t-1}_{s=0} \left\{ X_{s} = x_{s}\right\}$ satisfaz $\mathbb{H}_{t-1} \bigcap \left\{ X_{t} = x \right\} \neq 0$, nos temos que
 	$$\mathbb{P} \left\{ X_{t+1} = y | H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right\} =  \mathbb{P} \left\{ X_{t+1} = y | \left\{ X_{t} = x \right\} \right\}.$$}
-Em termos mais amigáveis, a probabilidade de a sequência chegar a um determinado estado depende apenas do estado anterior, podemos pensar nisso como uma sequência que apresenta 'perda de memória'. Como estamos trabalhando com probabilidade, a soma das chances de transição de um estado para todos os outros deve ser igual a 1. Por isso, a nossa matriz de transição precisa ser estocástica.
+Em termos mais amigáveis, a probabilidade de a sequência chegar a um determinado estado depende apenas do estado anterior, podemos pensar nisso como uma sequência que apresenta perda de memória. Como estamos trabalhando com probabilidade, a soma das chances de transição de um estado para todos os outros deve ser igual a 1. Por isso, a nossa matriz de transição precisa ser estocástica.
 {
-	\Def (Matriz estocástica)
-	\par Seja $P$ uma matriz. Se as entradas de $P$ são não-negativas e a soma de elementos de cada coluna da matriz é um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 \ \forall x \in \Omega$, então chamamos $P$ de matriz de transição ou estocástica.
+	\Def (Matriz estocástica) Seja $P$ uma matriz. Se as entradas de $P$ são não-negativas e a soma de elementos de cada coluna da matriz é um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 \ \forall x \in \Omega$, então chamamos $P$ de matriz de transição ou estocástica.
 }
-\par Em muitos casos gostaríamos de trabalhar com distribuições de pontos diferentes do espaço, $\mathbb{P}(x, \cdot), \mathbb{P}(y, \cdot)$, então para facilitar a compreensão, vamos utilizar a notação $\mathbb{E}_{x}, \mathbb{P}_{x}$.
+Em muitos casos gostaríamos de trabalhar com distribuições de pontos diferentes do espaço, $\mathbb{P}(x, \cdot), \mathbb{P}(y, \cdot)$, então para facilitar a compreensão, vamos utilizar a notação $\mathbb{E}_{x}, \mathbb{P}_{x}$.
 $$\mathbb{E}_{x}(f(X_{1})) = \sum_{y}f(y)\mathbb{P}_{x} \left( X_{1} = y \right) = \sum_{y} f(y)\mathbb{P}(x,y) = \mathbb{P}f(X). $$
 tal que $f$ é uma função. Notação: $\mathbb{P}_{x}(X_{t} = y) = (\delta_{x} \mathbb{P}^{t})(y) = \mathbb{P}^{t}(x,y)$.
 \section{Função de representação aleatória}
 {
 	\Def (Função de representação aleatória de uma matriz $P$ em um espaço de estados $\Omega$)
-	\par A função $f$ é uma representação aleatória se $f: \Omega \times \Lambda \rightarrow \Lambda$, onde $\Lambda$ são os valores da variável aleatória $Z$ definida em $\Omega$, satisfaz
+	A função $f$ é uma representação aleatória se $f: \Omega \times \Lambda \rightarrow \Lambda$, onde $\Lambda$ são os valores da variável aleatória $Z$ definida em $\Omega$, satisfaz
 $$\mathbb{P}(f(x, Z(x)) = Y) = \mathbb{P}(x, y).$$
-Se definimos uma sequência de variáveis aleatórias $(X_{n})_{n}$ como
+}
+A função de representação é uma ótima ferramenta para substituirmos a matriz de transição quando temos uma quantidade extensa de estados tornando as operações laboriosas. Definindo uma sequência de variáveis aleatórias $(X_{n})_{n}$ como
 $$X_{n} = f(X_{n-1}, Z_{n}).$$
-tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente distribuído (iid) com cada $Z_{i}$  tentando a mesma distribuição de $Z$.}
-{\Prop
-	\par Toda matriz de transição em um espaço de Markov finito tem uma função de representação aleatória.}
+tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente distribuído (iid) com cada $Z_{i}$  tentando a mesma distribuição de $Z$.
+{\Prop Toda matriz de transição em um espaço de Markov finito tem uma função de representação aleatória.
 \begin{proof}
 	Seja $P$ uma matriz de transição de um espaço de Markov com o espaço de estados $\Omega = \{x_{1}, x_{2}, \cdots, x_{n} \}$ e seja $\Lambda = [0,1]$, onde as variáveis aleatórias auxiliares $Z, Z_{1}, Z_{2}, \cdots$ são iid's nesse intervalo. Definamos $F_{ij} = \Sum^{j}_{k=1} \mathbb{P}(x_{i}, x(k))$, então podemos definir $f$ como $f(x_{i}, Z) := x_{j}$ quando $F_{i, j-1} < Z < F_{i, j}$. Portanto,
 	$$\mathbb{P}\{f(x_{i}, Z) = x_{j}\} = \mathbb{P}\{F_{i, j-1} < Z < F_{i, j}\} = \mathbb{P}(x_{i}, x_{j}).$$
@@ -695,7 +693,7 @@ tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente dis
 	Se em um cadeia o $\operatorname{mmc} T(x) \ \forall x \in \Omega$ é 1, então denominamos aperiódico. Se a cadeia não é aperiódico, então é periódico.
 }
 
-{\Prop
+{\Prop \label{prop:1.3}
 	Se $P$ é irredutível, então existe um inteiro $r$ tal que $\mathbb{P}^{r}(x,y) > 0$ para $\forall x,y \in \Omega$.
 }
 \begin{proof}
@@ -715,9 +713,7 @@ tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente dis
 			Como $a > r$, então $q > (-x)a$.
 		\end{proof}
 	}
-	\noindent Agora, podemos provar a proprosição 3.
-	\\Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$.
-	\\Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \geqslant t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
+	Agora, podemos provar a proprosição ~\ref{prop:1.3}.Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$. Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \geqslant t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
 	$$\mathbb{P}^{t}(x,y) \geqslant \mathbb{P}^{t_{x}}(x,x)\mathbb{P}^{r(x,y)}(x,y) > 0.$$
 \end{proof}
 
@@ -791,49 +787,6 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 	$$ 
 	é uma distribuição estacionária.
 \end{Exem}
-\subsection{Hitting time e primeiro retorno}
-
-{\Def
-	Para $x \in \Omega$, definimos o tempo de chagada em $x$ como $\tau(x) = \min \{t \geqslant 0: X_{t} = x\}$. Se o tempo é positivo, então $\tau^{+}_{x} = \min \{t \geqslant 1: X_{t} = x\}$ e $X_{0} = x$, $\tau^{+}_{x}$ é chamado de primeiro retorno.
-}
-
-\subsection{Em redes}
-Cadeia de Markov em uma malha de grafo pode ser vista similarmente como uma rede elétrica. Porém, com uma adição de que colocarem alguns pesos positivos para cada aresta. Então, Seja $G$ um grafo, $V$ o conjunto dos vértices e $E$, o conjuntos das areatas, denominamos $c(e) > 0 \ \forall e \in E$, a condutância da aresta $e$. Assim, podemos de forma dual, definir a resistência, $r(e) = \dfrac{1}{c(e)}$. Logo, o network é definido com um par $\{G, \{c(e)\}$. 
-
-Considere uma cadeia de Markov em $G$ com uma matriz de transição
-$$
-P(x,y) = \dfrac{c(x,y)}{c(x)}
-$$
-onde $c(x) = \Sum_{x \sim y \in V} c(x,y)$. Denominados esse processo de \textit{weighted random walk}, que é irreversível com respeito como a probabilidade $\pi$ definido como
-$$
-\pi(x) \coloneqq \dfrac{c(x)}{c_{G}}
-$$
-onde $c_{G} = \Sum_{x \in V} c(x)$. Perceba que essa medida satisfaz a propriedade \textit{detailed balance} em relação a $P$, logo é sua estacionária.
-\begin{align}
-	\pi(x)P(x,y) &= \dfrac{c(x)}{c_{G}} \cdot \dfrac{c(x,y)}{c(x)}, \NT \\
-	&= \dfrac{c(x,y)}{c_{G}} = \dfrac{c(y)c(x,y)}{c(y)c_{G}}, \label{aling: 1.1}
-\end{align}
-Como $c(x,y) = c(y,x)$, então
-\begin{align}
-	(\ref{aling: 1.1})  &=  \dfrac{c(y)}{c_{G}} \cdot \dfrac{c(y,x)}{c(y)}, \NT \\
-	&= \dfrac{c(x,y)}{c(y)}\cdot \dfrac{c(y)}{c_{G}} = P(y,x)\pi(y). \NT
-\end{align}
-A partir desse contexto, definimos um grafo $\Omega$ tal que dizemos que $\{x,y\} \subset \Omega$ é uma aresta se $P(x,y) > 0$. Lembrando que a reversibilidade implica que se $p(x,y) > 0$, então $p(y,x) > 0$. Definindo a condutância como $c(x,y) = \pi(x)P(x,y)$, então por reversibilidade ganhamos a simetria $c(x,y) = c(y,x)$. Como consequência, $c(x) = \pi(x)$ e portanto a matriz de transição associada ao nosso grafo é $P$. Portanto, os estudados dos casos de reversibilidades podem ser estudado como um grafo de rede. 
-\subsection{Funções harmônicas}
-
-
-\begin{Prop}\label{prop:1}
-	Considere a caminhada aleatória simples no toro $\mathbb{Z}_{N}^{d}$.
-	Existem constantes $0 < c_{d} \leq C_{d} < \infty$ tais que, se $x$ e $y$ estão a uma
-	distância $k \maior 1$, então
-	\begin{align*}
-		c_{d} n^{d} \menor \mathbb{E}_{x}(\tau_{y}) \menor C_{d} n^{d} 
-		&& \text{uniformemente em $k$ se } d \maior 3, \\
-		c_2 n^2 \log(k) \menor \mathbb{E}_x(\tau_y) \menor C_2 n^2 \log(k+1) 
-		&& \text{se } d = 2.
-	\end{align*}
-\end{Prop}
-
 
 
 \chapter{Metaestabilidade para o passeio aleatório no  hipercubo}
@@ -926,7 +879,7 @@ p_{k}\mathbb{E}(\lambda_{k}) &= p_{k}(1 + (1 - p_{k}) + (1 - p_{k})^{2} + \dotsc
 \end{align*}
 Agora vamos observar a variância:
 
-$$\mathbb{VAR} (\lambda_{k}) = \mathbb{E}(\lambda_{k} - \mathbb{E}(\lambda_{k}))^{2} = \mathbb{E}(\lambda_{k}^{2}) - \mathbb{E}(\lambda_{k})^{2}.$$
+$$\var (\lambda_{k}) = \mathbb{E}(\lambda_{k} - \mathbb{E}(\lambda_{k}))^{2} = \mathbb{E}(\lambda_{k}^{2}) - \mathbb{E}(\lambda_{k})^{2}.$$
 
 \noindent Vamos obter $\mathbb{E}(\lambda^{2})$:
 \begin{align*}
@@ -940,22 +893,22 @@ Sendo $q_{k} = (1 - p_{k})$.
 &= p_{k} \left( \frac{1 + q_{k}}{(1 - q_{k})^{2}}\right) = \frac{2 - p_{k}}{p_{k}^{2}}.
 \end{align*}
 Assim,
-$\mathbb{VAR}(\lambda_{k}) = \tfrac{2 - p_{k}}{p_{k}^{2}} - \tfrac{1}{p_{k}^{2}} = \tfrac{1 - p_{k}}{p_{k}^{2}}$. Substituindo $p_{k} = 1 - \tfrac{k - 1}{N}$, temos
-$\mathbb{VAR} = \tfrac{N(k - 1)}{(N + 1 - k)}$.
+$\var(\lambda_{k}) = \tfrac{2 - p_{k}}{p_{k}^{2}} - \tfrac{1}{p_{k}^{2}} = \tfrac{1 - p_{k}}{p_{k}^{2}}$. Substituindo $p_{k} = 1 - \tfrac{k - 1}{N}$, temos
+$\var = \tfrac{N(k - 1)}{(N + 1 - k)}$.
 
 Logo,
 \begin{align*}
 \mathbb{E}(t^{-}_{N}) &= \mathbb{E}\left( \sum^{N}_{k = 0} \lambda_{k} \right) = \sum^{N}_{k = 0} \dfrac{N}{N + 1 - k}, \\
 &= N\sum^{N}_{k = 0} \dfrac{1}{N + 1 - k} = N \sum^{N}_{k = 1} \dfrac{1}{k}.
 \end{align*}
-Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \ln N$, então $\displaystyle N \ln (N - 1) \leq \mathbb{E}(\lambda_{k}) = N \sum^{N}_{k = 1} \dfrac{1}{k} \leq N \ln(N)$.
+Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \log N$, então $\displaystyle N \log (N - 1) \leq \mathbb{E}(\lambda_{k}) = N \sum^{N}_{k = 1} \dfrac{1}{k} \leq N \log(N)$.
 
-\noindent Quando $n \to \infty$, $\mathbb{E}(t^{-}_{N}) \sim N \ln (N)$. Logo, pela desigualdade de Tchebyshev:
+\noindent Quando $n \to \infty$, $\mathbb{E}(t^{-}_{N}) \sim N \log (N)$. Logo, pela desigualdade de Tchebyshev:
 \begin{align}
-\mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \leq \dfrac{\mathbb{VAR}(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
+\mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \leq \dfrac{\var(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
 &= \dfrac{N}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N}_{k=1} \dfrac{(k - 1)}{(N - k + 1)^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1}\right)^{2}}. \label{eq:eq1}
 \end{align}
-Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então (~\ref{eq:eq1}) é menor ou igual a
+Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então $\left( \ref{eq:eq1} \right)$ é menor ou igual a
 \begin{align}
 \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N - 1}_{k=1} \dfrac{1}{k^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1} \right)^{2}} 
 &\leq \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \sum^{N - 1}_{k=2} \dfrac{1}{k^{2} - 1}}{\left( \log N \right)^{2}}, \notag \\
@@ -983,11 +936,11 @@ $$\lim_{N \to \infty} \mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) =
 \begin{Cor}\label{thm:corolário_{2}}
 Seja $t(N)$ com $\displaystyle \lim_{N \to \infty} \dfrac{t(N)}{N \log N} = \infty$. Então,
 $$\lim_{N \to \infty} \left|\mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \dfrac{1}{2^{N}} \right| = 0, $$
-onde $\zeta \in H_{N}$.
+para todo $\zeta \in H_{N}$.
 \end{Cor}
 
 \begin{proof}[Demonstração do corolário~\ref{thm:corolário_{2}}]
-	Vamos primeiro mostrar que $\mu$ é uma medida invariantes com respeito à evolução do paseio homogêneo.
+	Vamos primeiro mostrar que $\mu$ é uma medida invariantes com respeito à evolução do passeio homogêneo.
 	\begin{align*}
 		\mathbb{P}(x_{1} = \zeta) &= \sum_{\nu \in H_{N}} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \nu) \cdot \dfrac{1}{2^{N}}, \\
 		&= \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \zeta) \cdot \dfrac{1}{2^{N}} + \sum^{N}_{i=1} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \zeta^{i}) \cdot \dfrac{1}{2^{N}}, \\
@@ -1000,22 +953,21 @@ onde $\zeta \in H_{N}$.
 		&\leq \sum_{\nu \in H_{N}} \mu(\nu) \left| \mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \mathbb{P}(\sigma^{\nu}(t(N)) = \zeta) \right|, \\
 		&\leq \sum_{\nu \in H_{N}} \sup(\mathbb{P}(\sigma^{+}(t(N)) \neq \sigma^{\nu}(t(N)))) = 0.
 	\end{align*}
-	A ultima igualdade é pelo corolário anterior.
+	A última igualdade é análoga ao corolário anterior.
 \end{proof}
-	Obs: Para um movimento não preguiçoso, $\xi (t)$, talvez não seja possivel ocorrer um acoplamento. Se duas configurações iniciais, $\nu$ e $\zeta$, diferem em um número impar de coordenadas e tem esse tipo de movimentação, nunca poderá haver um acoplamento, pois a distância mínima é, $D_{N} (t) \geq \dfrac{1}{N}$.
+	Obs: Para um movimento não preguiçoso, $\xi (t)$, talvez não seja possível ocorrer um acoplamento. Se duas configurações iniciais, $\nu$ e $\zeta$, diferem em um número ímpar de coordenadas e tem esse tipo de movimentação, nunca poderá haver um acoplamento, pois a distância mínima é, $D_{N} (t) \geq \dfrac{1}{N}$.
 
 
 \begin{proof}
 	
-	Seja $\nu$, $\phi \in H_{N}$ tal que $D^{\nu , \phi}_{N}(0) = n$ sendo $n$ um número impa.
-	\\ Vamos observar 3 situações possíveis no caminhar:
+	Seja $\nu$, $\phi \in H_{N}$ tal que $D^{\nu , \phi}_{N}(0) = n$ sendo $n$ um número ímpar. Vamos observar 3 situações possíveis no passeio:
 	\begin{enumerate}
 		\item[1)] Se $(\nu^{i}) = (\phi^{i})$, então $(n^{i})_{i} = (\phi^{i})_{i}$;
 		\item[2)] Se $(\nu^{i}) \neq (\phi^{i})$, então $(n^{i})_{i} \neq (\phi^{i})_{i}$;
 		\item[3)] Se $(\nu^{i}) = (\phi^{i})$, então $(n^{i})_{i} \neq (\phi^{i})_{j}$ sendo $i \neq j$.
 	\end{enumerate}
 	
-	Se ocorrer alguns desses casos, a distância das nossas cadeias, ou mantém a mesma distância ou se afastam, mas nunca se aproximam. Logo, supondo que por ventura só alteramos as entradas que são distintas ao longo do tempo.
+	Se ocorrer alguns desses casos, a distância das nossas cadeias, ou se mantém a mesma ou afastam-se, mas nunca se aproximam. Logo, supondo que por ventura só alteramos as entradas que são distintas ao longo do tempo.
 	Como a cada passo, $I_{\nu}(1) = i$ e $I_{\phi}(1) = j$ tal que $i \neq j$, então $D_{N}^{\nu , \phi}(1) = n - 2$ já que estamos considerando sempre o melhor dos casos, que seria mudar duas entradas diferentes. Repetindo isso várias vezes, temos que existe um $t'$ tal que $D_{N}^{\nu , \phi}(t') = 1$, pois $n$ é ímpar e a cada tempo diminuímos duas posições. Assim, caímos no caso 3), ou seja, $D_{N}^{\nu, \phi}(t) \leq \tfrac{1}{N}$.
 \end{proof}
 	O Teorema ~\ref{thm:teorema_2} nos diz que é certo que $\xi(t)$ retorna a uma posição visitada quando $N \to \infty$, além de nos mostrar que essa posição de retorno é do tipo $\xi(i)$ e $\xi(j) \ \forall i, j \leq k + 1$, e $\xi(k + 2) = \xi(k)$ para algum $k$.
@@ -1026,13 +978,12 @@ Seja $S_{N} = \inf(k > 0: \xi(k) \in \{\xi(0), \xi(1), \dotsc, \xi(k-1)\})$ e $\
 
 Para a demonstração desse teorema vamos adotar algumas definição e notações:
 \begin{enumerate}
-\item[1)] Seja $I$ uma variável que escolhe uma coordenada $i$ de um $\nu \in H_{N}$. Vamos denotar $I_{k}$ igual a $I$ avaliado no tempo $k$.
+\item[1)] Seja $I$ uma variável que escolhe uma coordenada $i$ de um $\nu \in H_{N}$. Vamos denotar $I$ avaliado no tempo k como $I_{k}$.
 \item[2)] $J_{1} = \{(I_{1}, I_{2}) \in \{1, 2, \dotsc, N\}^{2} : I_{1} = I_{2} \}$.
 \item[3)] $\displaystyle J_{l} = \{(I_{1}, I_{2}, \dotsc, I_{2l}) \in \{1, 2, \dotsc, N\}^{2l} : \sum^{2l}_{k=1} 1_{ \{i=I_{k}\} } \in \{0, 2, 4, \dotsc, 2l\} \ \forall i \in \{1, 2, \dotsc, N\} \text{ e }  \\ (I_{1}, I_{2}, \dotsc , I_{2k}) \notin J_{k} \ \forall k \in \{1, 2, \dotsc , l - 1 \}  \}$.
-\item[4)] Definimos um Bloco de $i \in \{1, 2, \dotsc, N\}$ do vetor $(I_{1}, I_{2}, \dotsc, I_{2l}) \in J_{l}$ como $\{k \in \{1, 2, \dotsc, 2l-1, 2l\}: \displaystyle \sum^{2l}_{k=1} 1_{ \{i = I(k)\} } \}$.
-Uma foma de pensar nos vetores desses J's é ver eles como caminho na forma de laço.
-
+\item[4)] Definimos um grupo de $i \in \{1, 2, \dotsc, N\}$ do vetor $(I_{1}, I_{2}, \dotsc, I_{2l}) \in J_{l}$ como $\{k \in \{1, 2, \dotsc, 2l-1, 2l\}: i = I(k) \}$.
 \end{enumerate}
+Uma foma de pensar nos vetores desses J's é ver eles como caminho na forma de laço.
 \begin{Prop}\label{thm:lema_1_teo_2}
 Para $l \geq 3$
 $$\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l}) \leq \dfrac{8}{N^{3}}.$$
@@ -1040,17 +991,15 @@ $$\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l}) \leq \dfrac{8}{N^{3}}.$$
 
 \begin{proof}[Demonstração da Preposição~\ref{thm:lema_1_teo_2}]
 	Sabemos que $\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l} = \dfrac{\left| J_{l} \right|}{N^{2l}}$.
-	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \leq 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é impar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é impar.
+	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \leq 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
 	%
 	%
 	% DESENHAR A FIGURA
 	%
 	%
-	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2l - 1}, I_{2l}) \in J_{l}$, então $\displaystyle \sum^{2l}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2l}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos indíces são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{l} \right| \leq 2N^{2l - 2}$.
+	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2l - 1}, I_{2l}) \in J_{l}$, então $\displaystyle \sum^{2l}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2l}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos índices são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{l} \right| \leq 2N^{2l - 2}$.
 	Podemos dividir $J_{l}$ em dois conjuntos disjuntos, $J_{l}^{''}$ e $J_{l}^{'}$, onde $J^{''}_{l}$ é o conjunto onde
-	nas três últimas entradas existe duas iguais, e $J^{'}_{l}$ é o conjunto onde as três últimas entradas são distintas.
-	\\ Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{l}$ como a entrada $2l - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2l - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2l - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2l}_{k=1} 1_{ \{I_{2l - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2l - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{l} \right| \leq 3!N^{2l - 3}$.
-	\\ No conjunto $J^{''}_{l}$perceba que como $I_{2l - 1} \neq I_{2l}$, então existe somente dois casos $I_{2l - 2} = I_{2l}$ e $I_{2l - 1} = I_{2l - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2l - 1} \neq I_{2l}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2l$ entradas como se fosse de $2l - 2$ entradas. Assim, $\left| J_{l}^{''} \right| \leq N \cdot \left| J^{''}_{l - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
+	nas três últimas entradas existe duas iguais, e $J^{'}_{l}$ é o conjunto onde as três últimas entradas são distintas. Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{l}$ como a entrada $2l - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2l - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2l - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2l}_{k=1} 1_{ \{I_{2l - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2l - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{l} \right| \leq 3!N^{2l - 3}$. No conjunto $J^{''}_{l}$perceba que como $I_{2l - 1} \neq I_{2l}$, então existem somente dois casos $I_{2l - 2} = I_{2l}$ e $I_{2l - 1} = I_{2l - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2l - 1} \neq I_{2l}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2l$ entradas como se fosse de $2l - 2$ entradas. Assim, $\left| J_{l}^{''} \right| \leq N \cdot \left| J^{''}_{l - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
 	$$\frac{|J_{l}|}{N^{2l}} = \frac{|J_{l}^{'}|}{N^{2l}} + \frac{|J_{l}^{''}|}{N^{2l}} \leq \frac{3!N^{2l-3}}{N^{2l}} + \dfrac{N \cdot 2N^{2l-4}}{N^{2l}} = \frac{8}{N^{3}}. $$
 \end{proof}
 
@@ -1082,7 +1031,7 @@ Vamos denotar $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de l
 	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
 	\label{fig:malhaEN}
 \end{figure}
-Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequencia de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura à abaixo.
+Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequencia de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura a abaixo.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -1118,19 +1067,16 @@ Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, 
 		
 	\end{tikzpicture}
 	
-	\caption{Duas configurações}
+	\caption{Um caminhar aleatório com dois estados}
 	\label{fig:malhaEtN}
 \end{figure}
-Assim podemos definir $\E$ como a união dos $\Est{t}{N}$, ou seja, podemos pensar $\E$ como os estados de uma partícula de $0 \menor t \menor p$ sendo $p$ um inteiro. Vamos denotar $\eta_{N}(t)$ uma cadeia de Markov de tempo contínuo em $\E$ tal que o pulo de $\eta \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado (configurações) espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível.
+Assim podemos definir $\E$ como a união dos $\Est{t}{N}$, ou seja, podemos pensar $\E$ como os estados de uma partícula de $0 \menor t \menor p$ sendo $p$ um inteiro. Vamos denotar $\eta_{N}(t)$ uma cadeia de Markov de tempo contínuo em $\E$ tal que o pulo de $\eta \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível.
 
-Dizemos que o grau de $\eta \in E_{N}$, $\grau{\eta}$, é quantidade de vizinhos. Assim conseguimos definir uma medida de probabilidade 
+Dizemos que o grau de $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. Assim conseguimos definir uma medida de probabilidade 
 $$
-\medpi{\eta} = \dfrac{\grau{\eta}}{Z_{N}} 
+\medpi{\eta} = \dfrac{\deg(\eta)}{Z_{N}} 
 $$
-onde $Z_{N} = \Sum_{\xi \in \E} \grau{\xi}$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, então a distribuição é estacionaria e única.	
-
-\par Vamos estudar o exemplo \textit{Coarse-grained-model}.
-Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo,
+onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, então a distribuição é estacionária e única.	Vamos estudar o exemplo \textit{Coarse-grained-model}. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo,
 $$ 
 \Gamma_{N}(\eta) = \Sum_{k=0}^{3} k\chi_{\Est{k}{N}}(\eta). 
 $$
@@ -1139,26 +1085,23 @@ Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado 
 $$
 \textbf{Y}_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo continuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionaria em $\Lambda_{N}$. Pela proposição ~\ref{prop:1}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é dá ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pela proposição ~\ref{prop:1}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
 Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$. Definamos também $B$ como o conjunto dos pontos de intersecção, $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Logo, seja 
 $$ 
 H^{N}_{B} = \inf \{ t \maior 0 :\eta_{N}(t) \in B \}.
 $$
-Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa "partícula" esquece do caminho que veio, { \color{red} como consequência a probabilidade da partícula mudar de estado se a próxima de $\tfrac{1}{2}$}.
-\\Quando a partícula termaliza, ela passeia em $\Est{j}{N}$ em um tempo de ordem $\alpha_{N}$ até chegar em ponto de intersecção, que denominamos de $\xi$. {\color{red} Porém, se a partícula tende a estacionar antes de chegar nas quinas, então tomando um $N$ muito grande, ela não poderia sempre permanecer no seu estado de origem ?}
-\\ Para evitar essa pergunta, podemos definir uma sequência $(l_{N} : N \maior 1)$ de números reais tais que $(l_{N} \to \infty)$ e $\left( \dfrac{l_{N}}{N} \to 0 \right)$. Assim criamos $V_{N}$, o conjunto dos pontos que distam até $l_{N}$ de $\xi$. Após alcançar $\xi$, nosso caminho aleatório faz um pequeno percurso em $V_{N}$. Como escolhemos uma boa vizinhança, o que poderia acontecer, de a partícula voltar para $\xi$ antes de sair de $V_{N}$, certamente não acorrerá, pois a ordem da partícula escapar de $V_{N}$ é menor que a ordem de hitting time. 
-\\Para $d = 2$, 
+Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa "partícula" esquece do caminho que veio, como consequência a probabilidade da partícula mudar de estado se a próxima de $\tfrac{1}{2}$. Quando a partícula termaliza, ela passeia em $\Est{j}{N}$ em um tempo de ordem $\alpha_{N}$ até chegar em ponto de intersecção, que denominamos de $\xi$. Para evitar essa pergunta, podemos definir uma sequência $(l_{N} : N \maior 1)$ de números reais tais que $l_{N} \to \infty$ e $ \dfrac{l_{N}}{N} \to 0 $. Assim criamos $V_{N}$, o conjunto dos pontos que distam até $l_{N}$ de $\xi$. Após alcançar $\xi$, nosso caminho aleatório faz um pequeno percurso em $V_{N}$. Como escolhemos uma boa vizinhança, o que poderia acontecer, de a partícula voltar para $\xi$ antes de sair de $V_{N}$, certamente não acorrerá, pois a ordem da partícula escapar de $V_{N}$ é menor que a ordem do tempo de encontro.  Para $d = 2$, 
 \begin{align*}
-	\dfrac{l_{N}^{2}}{\alpha_{N}} = \dfrac{l_{N}^{2}}{N^{2}\log N} = 
+	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}\log N} = 
 	\left( \dfrac{t}{N} \right)^{2} \cdot \dfrac{1}{\log N} \to 0 \cdot 0 = 0.
 \end{align*}
 Para $d \maior 3$,
 \begin{align*}
-	\dfrac{l_{N}^{2}}{\alpha_{N}} = \dfrac{l_{N}^{2}}{N^{2}} = 
+	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}} = 
 	\left( \dfrac{t}{N} \right)^{2} \to 0.
 \end{align*}
-Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $l^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de hitting nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
+Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $l^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de encontro nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
 %PAREI NA PAGINA 147, INICIAR NA PARTE QUE FALAR DOS SALTOS, ESCALANDO O TEMPO DE HITTING TIME.
 
 \section{Apêndice A}\label{codigo}

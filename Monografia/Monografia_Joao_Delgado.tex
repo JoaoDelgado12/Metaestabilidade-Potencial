@@ -137,7 +137,8 @@
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\oper}{\operatorname}
 \newcommand{\var}{\operatorname{Var}}
-
+\newcommand{\sigAlgebra}{\mathcal{S}}
+\newcommand{\algebra}{\mathcal{F}}
 
 \pagestyle{myheadings}
 \bibliographystyle{plain}
@@ -264,14 +265,7 @@
 
 	\thispagestyle{empty}
 
-	%\begin{flushright}
-	%\begin{minipage}[b]{2.0in}
 
-	%\vspace{8.0in}
-
-	%{\it Dedico este trabalho\\ à toda minha família,\\ e a Helen.}
-	%\end{minipage}
-	%\end{flushright}
 	$\quad$
 	\vfill
 
@@ -315,20 +309,7 @@
 		\end{minipage}
 	\end{flushleft}
 
-	%\begin{flushright}
-	%\begin{minipage}[b]{3.1in}
 
-	%\vspace{0.7in}
-
-	%{\it ``Aquilo que é o melhor para nós nem sempre é o mais fácil. Mas, em última
-	%análise, é o que realmente compensa.''}
-
-	%\begin{flushright}
-	%José Couto Nogueira
-	%\end{flushright}
-
-	%\end{minipage}
-	%\end{flushright}
 	%
 	%%%%%%%%%% RESUMO %%%%%%%%%%
 	%
@@ -357,13 +338,6 @@
 
 	\noindent{\bf Keywords: random graphs, phase transition.}
 
-
-	%\noindent{\bf Keywords: KMP model; harmonic oscillators; Fourier's Law.}
-
-
-	%\n{\bf Keywords:} Axiom of Choice; Axiom of Countable Choice; (Pseudo)metric
-	%spaces;\linebreak Topological products.
-
 	%
 	%%%%%%%%%% SUMÁRIO %%%%%%%%%%
 	%
@@ -373,140 +347,16 @@
 	\listoffigures
 	\thispagestyle{empty}
 
-	%\newpage
-	%\thispagestyle{empty}
-	%\listoffigures
-	%\addcontentsline{toc}{chapter}{Lista de Figuras}
-	%\vfill
-
-	%%%%%%%%%%% CAPA %%%%%%%%%%
-	%\include{Capa}
-
 
 	%----------------------------------INDICE------------------------------
 	\renewcommand{\contentsname}{Índice}
 	%\tableofcontents \mainmatter
 	%---------------------------------------------------------------------
 
-	%\newpage
-	%\pagestyle{myheadings}
-
-	%
-	%\def\nonumchapter#1{%
-	%    \chapter*{#1}
-	%    \addcontentsline{toc}{chapter}{#1}}
-	%
-	%{\properpagestyle
-	%\begin{titlepage}\include{Introducao}\end{titlepage}}%introdução
-
-
-
-
-
-
-
-
-
-	%\documentclass[12pt,a4paper]{book}
-	%
-	%\usepackage{newcent}       % selects Times Roman as basic font
-	%\usepackage{helvet}         % selects Helvetica as sans-serif font
-	%\usepackage{courier}        % selects Courier as typewriter font
-
-	%\usepackage[hyperfigures, hyperindex,
-	%breaklinks,bookmarksnumbered, bookmarksopen,linktocpage]{hyperref}
-	%% Tamanhos do papel %%
-	%
-	% letterpaper (default), a4paper, a5paper, b5paper, executivepaper e legalpaper.
-	%
-	%% Classes do documento %%
-	%
-	% report: Para dissertações de mestrado contendo vários capítulos,
-	%         livros pequenos e teses de doutorado.
-	% article: Para artigos em jornais científicos, convites e apresentações.
-	% book: para livros verdadeiros.
-	% slides: para slides.
-	%
-	%% Margens do documento %%
-	%
-	%\topmargin = 1.5cm                      % Ajuste da posição da margem superior.
-	%\headheight = 0.5cm                     % Altura do cabeçalho.
-	%\headsep = 1.0cm                        % Distância entre as partes inferior do
-	%cabeçalho e superior do corpo do documento.
-	%\marginparsep = 7pt
-	%\marginparwidth = 106pt
-	%\marginparpush = 5pt
-	%\paperheight = 845pt                   % Altura do papel.
-	%\paperwidth = 597pt                    % Largura do papel.
-	%\footskip = 0.5cm                       % Distância entre as partes inferior do
-	%corpo do documento e inferior do roda-pé.
-	%\setlength{\parindent}{1.5cm}           % Distância entre o início do parágrafo
-	%e a margem esquerda.
-	%\linespread{1.5}                        % Espaço entre as linhas.
-	%\usepackage{setspace}
-	%\singlespacing
-	% \onehalfspacing
-	%\doublespacing
-	%\baselineskip = 55pt
-	%\textwidth = 16.0cm                     % Ajuste da largura do texto entre as
-	%margens esquerda e direita.
-	%\textheight = 24.7cm                    % Ajuste da altura do texto entre as
-	%margens superior e inferior.
-	%\hoffset = -2.54cm                      % Ajuste do tamanho da margem esquerda.
-	%\voffset = -2.54cm                      % Ajuste do tamanho da margem superior.
-	%\evensidemargin = 3.0cm                 % Ajuste da posição da margem direita.
-	%\oddsidemargin = 3.0cm                  % Ajuste da posição da margem esquerda.
-	%
-	%% Pacotes para Matemática %%
-	%
-	%\usepackage[portuges, brazil]{babel}		% Para a hifenização em português
-	%\usepackage[latin1]{inputenc}
-	%\usepackage{amscd}
-	%\usepackage{amsfonts}
-	%\usepackage{amsgen}
-	%\usepackage{amsmath}
-	%\usepackage{amssymb}
-	%\usepackage{amstext}
-	%\usepackage{amsthm}
-	%\usepackage{graphicx}
-	%\usepackage{latexsym}
-	%\usepackage{makeidx}																% Para usar Índice Remissivo
-	%\usepackage{index}
-	%\usepackage{pictexwd}
-	%\usepackage{bbold}
-	%\usepackage{epsfig}
-	%\usepackage{wrapfig}
-	%\usepackage[all,knot,arc,import,poly]{xy}
-	%\usepackage[usenames]{color}
-	%\usepackage[mathscr]{eucal}
-	%\usepackage{indentfirst}
-	%\usepackage[T1]{fontenc}
-	%\usepackage{setspace}
-	%\singlespacing
-	%   \onehalfspacing
-	%\doublespacing
-	%\usepackage[notcite,notref]{showkeys}
-	%\usepackage{float}
-	%\setcounter{secnumdepth}{3}
-
-	%define o numero de secoes no sumario
-	%\setcounter{tocdepth}{3}
-	%%
-
-	%\pagestyle{myheadings}
-	%\bibliographystyle{plain}
-
-	%\makeindex
-
-
-
 
 	\pagenumbering{arabic}
 	\addcontentsline{toc}{chapter}{Introdução}
 	\chapter*{Introdução}\label{Introdução}
-
-
-
 
 
 	\setcounter{page}{1}
@@ -515,47 +365,46 @@
 
 
 \chapter{Noções básicas de medida e probabilidade}
-Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir nesse objeto uma medida, assim seguindo para a construção de medida de probabilidade. Em sequência, falamos um sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade
-{\Def Uma álgebra de um conjunto $\Omega$ é uma classe $\mathcal{F}$ de subconjuntos de $\Omega$ tal que:
-\begin{enumerate}[i.]
-	\item $\Omega \in \mathcal{F}$,
-	\item $A \in \mathcal{F}$ $\text{ implica que } A^{c} \in \mathcal{F}$,
-	\item $A,B \in \mathcal{F} \text{ implica que } A\cup B \in \mathcal{F}$.
-\end{enumerate}}
+Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir esse objeto com uma medida, assim seguindo para a construção da medida de probabilidade. Em sequência, falamos um sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade.
+\begin{Def} Uma álgebra de um conjunto $\Omega$ é uma classe $\algebra$ de subconjuntos de $\Omega$ tal que:
+	\begin{enumerate}[i.]
+		\item $\Omega \in \algebra$,
+		\item $A \in \algebra$ implica que $A^{c} \in \algebra$,
+		\item $A,B \in \algebra$ implica que $A\cup B \in \algebra$.
+	\end{enumerate}
+\end{Def}
 Uma álgebra é uma classe que se pode realizar operações elementares de conjuntos, o que é característica muito boa, pois como funções trabalham com conjunto e, sem esses objetos, ficamos muito restritos ou até de mãos atadas ao desenvolver uma teoria. Contudo, a álgebra ainda não é uma estrutura adequada para trabalhar com probabilidade, pois, apesar das uniões de dois elementos da álgebra estarem na álgebra, a união infinitesimal desses elementos pode não estar no conjunto. Logo, precisamos de uma estrutura que seja fechada para uniões enumeráveis.
-{\Def Uma $\sigma$-álgebra é uma álgebra fechada por uniões enumeráveis, ou seja,
-\begin{enumerate}[iv.]
-	\item $A_{j} \in \mathcal{F}$ tal que $j = 1, 2, \cdots $  implica que $\displaystyle \bigcup^{\infty}_{j=1}A_{j} \in \mathcal{F}$.
-\end{enumerate}}
-{
-	\Exem
-	Um exemplo básico de uma $\sigma$-álgebra é o que corresponde ao lançamento de um dado de 6 lados honesto. O nosso conjunto de estudo seria os lados do dado, $D = \{1,2,3,4,5,6\} \text{ e nossa }\sigma \text{-álgebra é } \\ \mathcal{F} = \mathcal{P}(D)$, as partes de $D$.
-}
-{
-	\Def ($\sigma$-álgebra gerada por uma classe de subconjuntos) Seja  um conjunto e $\mathcal{E}$ um classe de subconjuntos de $\Omega$. Então definamos $\sigma (\mathcal{E})$ como a única $\sigma$-álgebra gerada por $\mathcal{E}$ que satisfaz:
+\begin{Def} Uma $\sigma$-álgebra é uma álgebra fechada por uniões enumeráveis, ou seja,
+	\begin{enumerate}[iv.]
+		\item $A_{j} \in \algebra$ tal que $j = 1, 2, \cdots $  implica que $\displaystyle \bigcup^{\infty}_{j=1}A_{j} \in \algebra$.
+	\end{enumerate}
+\end{Def}
+\begin{Exem}
+	Um exemplo básico de uma $\sigma$-álgebra é o que corresponde ao lançamento de um dado de 6 lados honesto. O nosso conjunto de estudo seria os lados do dado, $D = \{1,2,3,4,5,6\}$ e nossa $\sigma$-álgebra é $\sigAlgebra = \mathcal{P}(D)$, as partes de $D$.
+\end{Exem}
+\begin{Def}[$\sigma$-álgebra gerada por uma classe de subconjuntos] Seja $\mathcal{E}$ uma classe de subconjuntos de $\Omega$. Então definamos $\sigma (\mathcal{E})$ como a única $\sigma$-álgebra gerada por $\mathcal{E}$ que satisfaz:
 	\begin{enumerate}[i.]
 		\item $\sigma(\mathcal{E}) \text{ é } \sigma$-álgebra,
 		\item $\mathcal{E} \subseteq \sigma (\mathcal{E})$,
-		\item Se $\mathcal{F} \text{ é } \sigma \text{-álgebra e } \mathcal{E} \subseteq \mathcal{F},\text{ então implica que }\sigma(\mathcal{E}) \subseteq \mathcal{F}$.
+		\item Se $\sigAlgebra$ é $\sigma$-álgebra $\mathcal{E} \subseteq \sigAlgebra$, então implica que $\sigma(\mathcal{E}) \subseteq \sigAlgebra$.
 	\end{enumerate}
-}
-{
-	\Exem Ainda pensando no dado, tomemos uma classe de conjuntos $\mathcal{E} = \{\{1,2\}\}$. Podemos criar uma $\sigma\text{-álgebra }, \sigma(\mathcal{E})$, adicionando $(D, \{1,2\}, \varnothing, \{3,4,5,6\})$ em $\sigma(\mathcal{E})$, logo temos $\sigma(\mathcal{E}) = \{D, \varnothing, \{1,2\}, \{3,4,5,6\}\}$. Perceba que as uniões dois-a-dois são fechadas, então $\sigma(\mathcal{E})$ é $\sigma\text{-álgebra}$. Se ainda achar esse modelo simples, tente gerar uma $\sigma\text{-álgebra}$ com $\{\{1\},\{2\}\}$, cuidado com as uniões.
-}
-\par Criado o nosso espaço onde vamos estudar (espaços mensuráveis), podemos começar a elaborar à ideia de probabilidade.
-{
-	\Def Uma medida em um espaço mensurável, $(\Omega, \mathcal{F})$, é uma função $\mu : \mathcal{F} \rightarrow [0, + \infty]$ que satisfaz:
+\end{Def} 
+\begin{Exem}
+	Ainda pensando no dado, tomemos uma classe de conjuntos $\mathcal{E} = \{\{1,2\}\}$. Podemos criar uma $\sigma\text{-álgebra }, \sigma(\mathcal{E})$, adicionando ${D, \{1,2\}, \varnothing, \{3,4,5,6\}}$ em $\sigma(\mathcal{E})$, logo temos $\sigma(\mathcal{E}) = \{D, \varnothing, \{1,2\}, \{3,4,5,6\}\}$. Perceba que as uniões dois-a-dois são fechadas, então $\sigma(\mathcal{E})$ é $\sigma\text{-álgebra}$.
+\end{Exem}
+Criado o nosso espaço onde vamos estudar (espaços mensuráveis), podemos começar a elaborar à ideia de probabilidade.
+\begin{Def}
+	Uma medida em um espaço mensurável, $(\Omega, \sigAlgebra)$, é uma função $\mu : \sigAlgebra \rightarrow [0, + \infty]$ que satisfaz:
 	\begin{enumerate}[i.]
 		\item $\mu(\varnothing) = 0$,
-		\item $\displaystyle \mu \left(\bigcup^{\infty}_{i=1}A_{i} \right) = \sum^{\infty}_{i=1}\mu(A_{i})$ para todo $A_{i} \in \mathcal{F}$ dois a dois disjuntos.
+		\item $\displaystyle \mu \left(\bigcup^{\infty}_{i=1}A_{i} \right) = \sum^{\infty}_{i=1}\mu(A_{i})$ para todo $A_{i} \in \sigAlgebra$ dois a dois disjuntos.
 	\end{enumerate}
-	A tripla $(\Omega, \mathcal{F}, \mu)$ denomina-se espaço de medida.
-}
+	A tripla $(\Omega, \sigAlgebra, \mu)$ denomina-se espaço de medida.
+\end{Def}
 
-Observe que isso inclui somas finitas, pois podemos considerar os $A_{n}$ tal qual para todo $n > n_{0}$ é igual a $\varnothing$.
-\\Um exemplo importante de medida é a delta de Dirac:
-{
-	\Exem Seja $\Omega$ um conjunto e consideremos $\mathcal{P}(\Omega)$, as partes de $\Omega$, então dado um $p \in \Omega$, seja a função $\delta_{p}: \mathcal{P}(\Omega) \rightarrow [0, +\infty]$:
+Observe que isso inclui somas finitas, pois podemos considerar os $A_{n}$ tal qual para todo $n > n_{0}$ é igual a $\varnothing$. Um exemplo importante de medida é a delta de Dirac:
+\begin{Exem}
+	Seja $\Omega$ um conjunto e consideremos $\mathcal{P}(\Omega)$, as partes de $\Omega$, então dado um $p \in \Omega$, seja a função $\delta_{p}: \mathcal{P}(\Omega) \rightarrow [0, +\infty]$:
 	$$
 	\delta_{p}(A) =
 	\begin{cases}
@@ -563,26 +412,28 @@ Observe que isso inclui somas finitas, pois podemos considerar os $A_{n}$ tal qu
 		0, & c.c.
 	\end{cases}
 	$$
-}
+\end{Exem}
+
 Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, mas que precisamos formular.
-{
-	\Teo Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de medida e $A,B, A_{1}, A_{2}, ... \in \mathcal{F}$.
+\begin{Teo}
+	Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de medida e $A,B, A_{1}, A_{2}, ... \in \sigAlgebra$.
 	\begin{enumerate}[1.]
 		\item $\mu(A^{c}) = \mu(\Omega) - \mu(A)$, \label{eq:teo1.I}
-		\item Se $A \subseteq B,\text{ então vale que }\mu(A) \leqslant \mu(B)\text{ e }\mu(B \setminus A) = \mu(B) - \mu(A)$,
+		\item Se $A \subseteq B,\text{ então vale que }\mu(A) \menor \mu(B)\text{ e }\mu(B \setminus A) = \mu(B) - \mu(A)$,
 		\item $\mu(A \cup B) = \mu(A) + \mu(B) - \mu(A \cap B)$,
-		\item $\displaystyle \mu \left(\bigcup^{\infty}_{n=1}(A_{n}) \right) \leqslant \sum_{n=1}^{\infty}\mu(A_{n})$,
+		\item $\displaystyle \mu \left(\bigcup^{\infty}_{n=1}(A_{n}) \right) \menor \sum_{n=1}^{\infty}\mu(A_{n})$,
 		\item Se $\mu(A_{n}) < \infty$, $A_{n}\uparrow A$ ou $A_{n}\downarrow A$, então $\mu(A_{n})\rightarrow \mu(A)$.
 	\end{enumerate}
-}
+\end{Teo}
+
 
 \begin{proof}
 	\begin{enumerate}[1.]
 		\item Como $\Omega = A \cup A^{c}$, temos que $\mu(\Omega) = \mu(A \cup A^{c}) = \mu(A) + \mu(A^{c})$.
 		\item Como $A \subseteq B$, então  $B = A \cup B \setminus A \Rightarrow \mu(B) = \mu(A \cup B \setminus A) = \mu(A) + \mu(B \setminus A) \Rightarrow \mu(B \setminus A) = \mu(B) - \mu(A)$.
 		\item Usando o item (ii) temos que $\mu(A \cup B) = \mu(A) + \mu(B \setminus A)$. Como $\mu(B) = \mu(B \setminus A) + \mu(A \cap B)$, então $\mu(A \cup B) = \mu(A) + \mu(B) - \mu(A \cap B)$.
-		\item A partir de uma sequência de $A_{n}$ podemos criar uma sequência disjunta. Seja $B_{1} = A_{1}\text{, } B_{2} = A_{2} \setminus A_{1}\text{, } B_{3} = A_{3}\setminus(A_{2} \cup A_{1})$, etc. Ou seja, $B_{n} = A_{n}\setminus (\bigcup^{n-1}_{j=1}A_{j})$, perceba que $B_{n}$ é uma sequência de conjuntos disjunto. Assim $\displaystyle \mu \left(\bigcup^{\infty}_{n=1}A_{n} \right) = \mu \left(\bigcup^{\infty}_{n=1}B_{n} \right) = \sum^{\infty}_{n=1}\mu(B_{n}) \leqslant \sum^{\infty}_{n=1}\mu(A_{n})$.
-		\item Suponhamos que $A_{n}\uparrow A$, então $A_{n} \subset A_{n+1}$. Como é uma sequência de conjuntos arbitrário, a fim de obter melhor controle, podemos criar uma sequência $B_{n}$ de conjuntos disjunto tal que $\bigcup^{\infty}_{n} B_{n} = \bigcup^{\infty}_{n} A_{n}$, definindo $B_{n} = A_{n}/A_{n-1}$ sendo $A_{0}$. Fixe um  $k \in \mathbb{N}$ e  $i\geq 1$. Daí, $\displaystyle \bigcup^{k}_{i} B_{i} = \bigcup^{k}_{i}(A_{i}/A_{i-1})$ nos leva a 
+		\item A partir de uma sequência de $A_{n}$ podemos criar uma sequência disjunta. Seja $B_{1} = A_{1}\text{, } B_{2} = A_{2} \setminus A_{1}\text{, } B_{3} = A_{3}\setminus(A_{2} \cup A_{1})$, etc. Ou seja, $B_{n} = A_{n}\setminus (\bigcup^{n-1}_{j=1}A_{j})$, perceba que $B_{n}$ é uma sequência de conjuntos disjunto. Assim $\displaystyle \mu \left(\bigcup^{\infty}_{n=1}A_{n} \right) = \mu \left(\bigcup^{\infty}_{n=1}B_{n} \right) = \sum^{\infty}_{n=1}\mu(B_{n}) \menor \sum^{\infty}_{n=1}\mu(A_{n})$.
+		\item Suponhamos que $A_{n}\uparrow A$, então $A_{n} \subset A_{n+1}$. Como é uma sequência de conjuntos arbitrário, a fim de obter melhor controle, podemos criar uma sequência $B_{n}$ de conjuntos disjunto tal que $\bigcup^{\infty}_{n} B_{n} = \bigcup^{\infty}_{n} A_{n}$, definindo $B_{n} = A_{n}/A_{n-1}$ sendo $A_{0}$. Fixe um  $k \in \mathbb{N}$ e  $i \maior 1$. Daí, $\displaystyle \bigcup^{k}_{i} B_{i} = \bigcup^{k}_{i}(A_{i}/A_{i-1})$ nos leva a 
 		\begin{align*}
 			\mu \left(\bigcup^{k}_{i} B_{i}\right) &= \mu \left(\bigcup^{k}_{i} (A_{i} \setminus A_{i-1})\right), \\
 			& = \sum^{k}_{i}\mu(A_{i} \setminus A_{i-1}),\\
@@ -597,19 +448,17 @@ Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, m
 		Para provar $A_{n} \downarrow A$, podemos utilizar o que acabamos de provar. Tome a sequência $A^{c}_{n} \uparrow A^{c}$ e lembrando que $P(A_{n}) = 1 - P(A^{c}_{n})$, então se $n \to \infty$ temos que $\displaystyle \lim_{n \to \infty} P(A_{n}) = 1 - P(A^c{})$.
 	\end{enumerate}
 \end{proof}
-Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade ? É intuitivo pensar que uma função \textit{probabilidade} satisfaça as definição das funções \textit{medida}, já que uma probabilidade mede algo. Existe também uma característica bem simples que sempre deve está em probabilidade, o conjunto todo $\Omega$ sempre tem probabilidade um. Ou seja,
-{
-	\Def \hypertarget{Definição 5} Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de medida. Se $\mu: \mathcal{F} \rightarrow \mathbb{R}$  é uma função  que satisfaz:
+Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade ? É intuitivo pensar que probabilidade satisfaça as definição de medida, pois com esse objeto temos o intuito de medir quão provável um evento pode ocorrer.
+\begin{Def}\hypertarget{Definição 5} Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de medida. Se $\mu: \sigAlgebra \rightarrow \mathbb{R}$  é uma função  que satisfaz:
 	\begin{enumerate}[i.]
 		\item $\mu(\Omega) = 1$,
-		\item $\displaystyle \mu\left(\bigcup_{i=1}^{\infty} A_{i}\right) = \sum^{\infty}_{i=1}\mu(A_{i})$ para todo $A_{i} \in \mathcal{F}$ dois a dois disjuntos.
+		\item $\displaystyle \mu\left(\bigcup_{i=1}^{\infty} A_{i}\right) = \sum^{\infty}_{i=1}\mu(A_{i})$ para todo $A_{i} \in \sigAlgebra$ dois a dois disjuntos.
 	\end{enumerate}
-	Então $\mu$ é uma medida de probabilidade ou probabilidade.
-	A tripla $(\Omega, \mathcal{F}, \mu)$ denomina-se espaço de probabilidade.
-}
-Obs: Perceba que pela afirmação \ref{eq:teo1.I}, temos que $\mu(\Omega) = 1 - \mu(\varnothing) = 1$. Logo, essa definição para probabilidade $\mu$, nos diz que também é medida, assim tudo que vimos para medida vale para probabilidade.
+	Então $\mu$ é uma medida de probabilidade. A tripla $(\Omega, \sigAlgebra, \mu)$ denomina-se espaço de probabilidade.
+\end{Def}
+Perceba que pela afirmação\ref{eq:teo1.I}, temos que $\mu(\Omega) = 1 - \mu(\varnothing) = 1$. Logo, essa definição para probabilidade $\mu$, nos diz que também é medida, assim tudo que vimos para medida vale para probabilidade.
 
-Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \mathcal{F}$ tais que $\mu(A) = a$ e $\mu(B) = b$. Qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece ?
+Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \sigAlgebra$ tais que $\mu(A) = a$ e $\mu(B) = b$. Qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece ?
 
 %FIGURA DE CONJUNTOS EM FORMA DE CÍCULO. O A VAI ESTÁ CONTIDO NO B.
 %ACHO QUE A PARCIALMENTE CONTIDO É MAIS LEGAL.IMAGINA AS BOLOS COM BORDA TRAÇADA. E CADA UM COM UMA COR SENDO A INTERSECÇÃO TAMBÉM COM UMA COR IDEPENDENTE.
@@ -618,66 +467,59 @@ Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de probabilidade. Tome dois eventos 
 %
 
 
-
-{
-	\Def \label{def5} Seja $(\Omega, \mathcal{F}, \mu)$ um espaço de probabilidade e $A,B \in \mathcal{F}$ tal que $\mu(B)>0$. Uma probabilidade condicional de $A$ dado $B$ é $\mathbb{P}: \mathcal{F} \rightarrow \mathbb{R}$
+\begin{Def}\label{def5} Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de probabilidade e $A,B \in \sigAlgebra$ tal que $\mu(B)>0$. Uma probabilidade condicional de $A$ dado $B$ é $\mathbb{P}: \sigAlgebra \rightarrow \mathbb{R}$
 	
 	$$ \mathbb{P}(A|B) = \dfrac{\mu(A \cap B)}{\mu(B)}.$$
-	
-	Quando $\mu(B)=0$, então definimos $\mathbb{P}(A|B) = \mathbb{P}(A)$.
-}
+Quando $\mu(B)=0$, então definimos $\mathbb{P}(A|B) = \mathbb{P}(A)$.
+\end{Def}
+A probabilidade condicional diferente da noção usual de probabilidade, contextualiza as chances de um evento acontecer. Perceba que quando $\mathbb{P}(B)>0$, a primeira nada mais é do que relativização da probabilidade do evento $A$ para o evento $B$. Veja que estamos falando de eventos, elementos da $\sigma$-álgebra e não qualquer subconjunto de $\Omega$.
+\begin{Teo}[Regra do produto] Em $(\Omega, \sigAlgebra, \mu)$. Dados os eventos $A_{1}, A_{2}, \cdots , A_{n} \in \sigAlgebra$,
+	$$\mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \mathbb{P}(A_{1})\mathbb{P}(A_{2}|A_{1})\mathbb{P}(A_{3}|A_{1} \cap A_{2}) \text{{ \large . . . }} \mathbb{P}\left(A_{n} \left| \ \bigcap^{n-1}_{i=1} A_{i}\right. \right). $$
+\end{Teo}
 
-Obs: Comparando a probabilidade condicional com a probabilidade "usual", percebe-se que quando $\mathbb{P}(B)>0$, a primeira nada mais é do que relativização da probabilidade do evento $A$ para o evento $B$. Veja que estamos falando de eventos, elementos da $\sigma$-álgebra e não subconjuntos de $\Omega$, contudo não é difícil fazer algo semelhante para subconjuntos.
-
-{\Teo[Regra do produto] Em $(\Omega, \mathcal{F}, \mu)$. Dados os eventos $A_{1}, A_{2}, \cdots , A_{n} \in \mathcal{F}$,
-	$$\mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \mathbb{P}(A_{1})\mathbb{P}(A_{2}|A_{1})\mathbb{P}(A_{3}|A_{1} \cap A_{2}) \text{{ \large . . . }} \mathbb{P}\left(A_{n}| \bigcap^{n-1}_{i=1} A_{i}\right). $$
-}
-
-{\Def[Eventos independentes] Seja $A,B \in \mathcal{F}$ são independentes se $$\mathbb{P}(A \cap B)= \mathbb{P}(A)\mathbb{P}(B). $$
-}
-Logo se a sequência de eventos $A_{i}$ são independentes, então $\displaystyle \mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \prod_{i=1}^{n}\mathbb{P}(A_{i})$, pois $\mathbb{P}(A_{j} | A_{i}) = A_{j}$.
+\begin{Def}[Eventos independentes] Seja $A,B \in \sigAlgebra$ são independentes se 
+	$$\mathbb{P}(A \cap B)= \mathbb{P}(A)\mathbb{P}(B). $$
+\end{Def}
+Logo, se a sequência de eventos $A_{i}$ são independentes, então $\displaystyle \mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \prod_{i=1}^{n}\mathbb{P}(A_{i})$, pois $\mathbb{P}(A_{j} | A_{i}) = A_{j}$.
 
 %Quero colocar sobre distribuição uniforme; bernolie e geometrica, variavel aleatoria, esperaça, variância e Desigualdades importantes.
 
 \section{Cadeia de Markov}
-{\Def (Cadeia de Markov finita) Seja $\left (\Omega, \sigma \{ \Omega \}, \mathbb{P} \right)$ um espaço de probabilidade. Seja $\left( X_{1}, X_{2}, X_{3}, ... \right)$ uma sequência aleatória de variáveis que satisfaz, juntamente com uma matriz de transição $\mathbb{P}$, a propriedade de Markov, definida da seguinte forma: Se para $\forall x,y \in \Omega$, para todo $t\geq 1$, e para todo evento $H_{t-1} = \displaystyle \bigcap^{t-1}_{s=0} \left\{ X_{s} = x_{s}\right\}$ satisfaz $\mathbb{H}_{t-1} \bigcap \left\{ X_{t} = x \right\} \neq 0$, nos temos que
-	$$\mathbb{P} \left\{ X_{t+1} = y | H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right\} =  \mathbb{P} \left\{ X_{t+1} = y | \left\{ X_{t} = x \right\} \right\}.$$}
+\begin{Def}[Cadeia de Markov finita] Seja $\left (\Omega, \sigma \{ \Omega \}, \mathbb{P} \right)$ um espaço de probabilidade e $\left( X_{1}, X_{2}, X_{3}, ... \right)$ uma sequência aleatória de variáveis que satisfaz, juntamente com uma matriz de transição $\mathbb{P}$, a propriedade de Markov, definida da seguinte forma: Se para $\forall x,y \in \Omega$, para todo $t \maior 1$, e para todo evento $H_{t-1} = \displaystyle \bigcap^{t-1}_{s=0} \left\{ X_{s} = x_{s}\right\}$ satisfaz $\mathbb{P} \left(H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right) > 0$, nos temos que
+	$$\mathbb{P} \left\{ X_{t+1} = y | H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right\} =  \mathbb{P} \left\{ X_{t+1} = y | \left\{ X_{t} = x \right\} \right\}.$$
+\end{Def}
 Em termos mais amigáveis, a probabilidade de a sequência chegar a um determinado estado depende apenas do estado anterior, podemos pensar nisso como uma sequência que apresenta perda de memória. Como estamos trabalhando com probabilidade, a soma das chances de transição de um estado para todos os outros deve ser igual a 1. Por isso, a nossa matriz de transição precisa ser estocástica.
-{
-	\Def (Matriz estocástica) Seja $P$ uma matriz. Se as entradas de $P$ são não-negativas e a soma de elementos de cada coluna da matriz é um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 \ \forall x \in \Omega$, então chamamos $P$ de matriz de transição ou estocástica.
-}
+\begin{Def}[Matriz estocástica] Denominamos $P$ de matriz estocástica, se as suas entradas são não-negativas e a soma de elementos de cada coluna da matriz é igual a um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 \ \forall x \in \Omega$.
+\end{Def}
+
 Em muitos casos gostaríamos de trabalhar com distribuições de pontos diferentes do espaço, $\mathbb{P}(x, \cdot), \mathbb{P}(y, \cdot)$, então para facilitar a compreensão, vamos utilizar a notação $\mathbb{E}_{x}, \mathbb{P}_{x}$.
 $$\mathbb{E}_{x}(f(X_{1})) = \sum_{y}f(y)\mathbb{P}_{x} \left( X_{1} = y \right) = \sum_{y} f(y)\mathbb{P}(x,y) = \mathbb{P}f(X). $$
 tal que $f$ é uma função. Notação: $\mathbb{P}_{x}(X_{t} = y) = (\delta_{x} \mathbb{P}^{t})(y) = \mathbb{P}^{t}(x,y)$.
 \section{Função de representação aleatória}
-{
-	\Def (Função de representação aleatória de uma matriz $P$ em um espaço de estados $\Omega$)
-	A função $f$ é uma representação aleatória se $f: \Omega \times \Lambda \rightarrow \Lambda$, onde $\Lambda$ são os valores da variável aleatória $Z$ definida em $\Omega$, satisfaz
+\begin{Def}[Função de representação aleatória de uma matriz $P$ em um espaço de estados $\Omega$]
+A função $f$ é uma representação aleatória se $f: \Omega \times \Lambda \rightarrow \Lambda$, onde $\Lambda$ são os valores da variável aleatória $Z$ definida em $\Omega$, satisfaz
 $$\mathbb{P}(f(x, Z(x)) = Y) = \mathbb{P}(x, y).$$
-}
-A função de representação é uma ótima ferramenta para substituirmos a matriz de transição quando temos uma quantidade extensa de estados tornando as operações laboriosas. Definindo uma sequência de variáveis aleatórias $(X_{n})_{n}$ como
-$$X_{n} = f(X_{n-1}, Z_{n}).$$
-tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente distribuído (iid) com cada $Z_{i}$  tentando a mesma distribuição de $Z$.
-{\Prop Toda matriz de transição em um espaço de Markov finito tem uma função de representação aleatória.
+\end{Def}
+
+A função de representação é uma ótima ferramenta para substituirmos a matriz de transição quando temos uma quantidade extensa de estados tornando as operações laboriosas. Seja uma sequência de variáveis $(Z_{n})_{n}$ iid's com mesma distribuição de $Z$ e $X_{0}$ com distribuição $\mu$, podemos definir uma sequência de variáveis aleatórias $(X_{n})_{n}$ como
+$$X_{n} = f(X_{n-1}, Z_{n}) \ n \maior 1,$$
+tal que essa sequência é uma cadeia de Markov com uma matriz de transição $P$ com distribuição $\mu$.
+\begin{Prop}
+	Toda matriz de transição em um espaço de Markov finito tem uma função de representação aleatória.
+\end{Prop}
+
 \begin{proof}
 	Seja $P$ uma matriz de transição de um espaço de Markov com o espaço de estados $\Omega = \{x_{1}, x_{2}, \cdots, x_{n} \}$ e seja $\Lambda = [0,1]$, onde as variáveis aleatórias auxiliares $Z, Z_{1}, Z_{2}, \cdots$ são iid's nesse intervalo. Definamos $F_{ij} = \Sum^{j}_{k=1} \mathbb{P}(x_{i}, x(k))$, então podemos definir $f$ como $f(x_{i}, Z) := x_{j}$ quando $F_{i, j-1} < Z < F_{i, j}$. Portanto,
 	$$\mathbb{P}\{f(x_{i}, Z) = x_{j}\} = \mathbb{P}\{F_{i, j-1} < Z < F_{i, j}\} = \mathbb{P}(x_{i}, x_{j}).$$
 \end{proof}
+Veremos em seguidas algumas propriedades dessas cadeias de Markov que nos permite extrair algumas informações.  
+\begin{Def}[Irredutível] Seja $P$ uma cadeia, se para todo $x,y \in \Omega$, existe um inteiro $t$ tal que $\mathbb{P}^{t}(x,y) > 0$.
+\end{Def}
 
-{
-	\Def (Irredutível)
-	Seja $P$ uma cadeia, se para todo $x,y \in \Omega$, existe um inteiro $t$ tal que $\mathbb{P}^{t}(x,y) > 0$.
-}
-
-{
-	\Def (Período de x)
-	Definamos o conjunto $T(x) = \{t \geqslant 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de x é o maior divisor comum ($\operatorname{mdc}$ de $T(x)$).
-}
-
-{
-	\Prop
-	If $P$ é irredutível, então $\operatorname{\operatorname{mmc}}(T(x)) = \operatorname{mmc}(T(y))$ para $x,y \in \Omega$.
-}
+\begin{Def}[Período de x] Definamos o conjunto $T(x) = \{t \maior 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de x é o maior divisor comum ($\operatorname{mdc}$ de $T(x)$).
+\end{Def}
+\begin{Prop}Se $P$ é irredutível, então $\operatorname{mdc}(T(x)) = \operatorname{mdc}(T(y))$ para $x,y \in \Omega$.
+\end{Prop}
 \begin{proof}
 	Seja $k \in T(x)$. Sabemos que existe $r$ e $l$ tal que $\mathbb{P}^{r}(x,y)>0$ e $\mathbb{P}^{l}(x,y)>0$. Seja $m = r + l$, é direto ver que $m \in T(x) \cap T(y)$.
 	Provaremos que $k + m \in T(y)$,
@@ -686,46 +528,47 @@ tal que a sequência $(Z_{n})_{n}$ é independente dois-a-dois e identicamente dis
 		&= \mathbb{P}^{l}(y,x)\mathbb{P}^{k}(x,x)\mathbb{P}^{r}(x,y) \\
 		&= \mathbb{P}^{l + k + r}(y,y) = \mathbb{P}^{m + k}(y,y)
 	\end{align*}
-	Então $k+m \in T(y)$, então $k \in T(y)-m \ \Rightarrow T(x) \subset T(y) - m$. Portanto, $\dfrac{\operatorname{mmc}(T(y))}{T(x)}$, consequentemente $\operatorname{mmc}(T(y)) \leqslant \operatorname{mmc}(T(x))$. Para $\operatorname{mmc}(T(x)) \leqslant \operatorname{mmc}(T(y))$ é análogo. Portanto, $\operatorname{mmc}(T(y)) = \operatorname{mmc}(T(x))$.
+	Então $k+m \in T(y)$, então $k \in T(y)-m \ \Rightarrow T(x) \subset T(y) - m$. Portanto, $\dfrac{\operatorname{mdc}(T(y))}{T(x)}$, consequentemente $\operatorname{mdc}(T(y)) \menor \operatorname{mdc}(T(x))$. Para $\operatorname{mdc}(T(x)) \menor \operatorname{mdc}(T(y))$ é análogo. Portanto, $\operatorname{mdc}(T(y)) = \operatorname{mdc}(T(x))$.
 \end{proof}
+\begin{Def}[Aperiódico]
+Se em uma cadeia o $\operatorname{mdc}(T(x)) \ \forall x \in \Omega$ é 1, então denominamos aperiódico. Se a cadeia não é aperiódico, então é periódico.
+\end{Def}
+\begin{Prop}\label{prop:1.3}
+Se $P$ é irredutível, então existe um inteiro $r$ tal que $\mathbb{P}^{r}(x,y) > 0$ para $\forall x,y \in \Omega$.
+\end{Prop}
 
-{\Def (Aperiódico)
-	Se em um cadeia o $\operatorname{mmc} T(x) \ \forall x \in \Omega$ é 1, então denominamos aperiódico. Se a cadeia não é aperiódico, então é periódico.
-}
-
-{\Prop \label{prop:1.3}
-	Se $P$ é irredutível, então existe um inteiro $r$ tal que $\mathbb{P}^{r}(x,y) > 0$ para $\forall x,y \in \Omega$.
-}
 \begin{proof}
-	Antes de provar essa proposição, vamos demonstrar um lemma que nos garantirá que a partir de um inteiro vai ser possível o retorno de um $x \in \Omega$.
-	
-	{\Lema Seja $S \subset \mathbb{Z}^{+}$ tal qual é fechado por adição e de $\operatorname{mmc} S = 1$, então existe $m_{s} \in \mathbb{Z}^{+}$ tal que para todos $m \geq m_{s}$ pode ser escrito como combinação linear de elementos de $S$.
+	Antes de provar essa proposição, iremos demonstrar um lema que nos garantirá que a partir de um inteiro vai ser possível o retorno de um $x \in \Omega$.
+	\begin{Lema}
+		Seja $S \subset \mathbb{Z}^{+}$ tal qual é fechado por adição e de $\operatorname{mdc}(S) = 1$, então existe $m_{s} \in \mathbb{Z}^{+}$ tal que para todos $m \maior m_{s}$ pode ser escrito como combinação linear de elementos de $S$.
 		\begin{proof}
-			Como o $\operatorname{mmc}(S) = 1$, podemos aplicar o teorema de Bézout.
-			\\Seja $a,b \in S, \exists x,y \in \mathbb{Z}$ ($ax + by = 1$). O caso de $x,y \geqslant 0$, então está feito. O caso de $x,y < 0$, não ocorre, pois $a,b \leqslant 0$. Então só nos resta o caso de $x > 0$ e $y < 0$ ou contrário.
-			\\Suponhamos que $y > 0$ e $x < 0$, e seja $k \in \mathbb{Z}^{+}$, logo $\exists r,q \in \mathbb{Z}^{+} (k = aq + r $ e $ a \geqslant r \geqslant q)$.
+			Como o $\operatorname{mdc}(S) = 1$, podemos aplicar o Teorema de Bézout.
+			Seja $a,b \in S, \exists x,y \in \mathbb{Z}, ax + by = 1$. O caso de $x,y \maior 0$, então está feito. O caso de $x,y < 0$, não ocorre, pois $a,b \menor 0$. Então só nos resta o caso de $x > 0$ e $y < 0$ ou contrário.
+			Suponhamos que $y > 0$ e $x < 0$, e seja $k \in \mathbb{Z}^{+}$, logo $\exists r,q \in \mathbb{Z}^{+} (k = aq + r \ \land \ a \maior r \maior q)$.
 			\begin{align*}
-				1 = xa + yb &\Leftrightarrow r = rxa + ryb, \\
-				\Leftrightarrow k = aq + r = rxa + aq + ryb &\Leftrightarrow k = (rx + q)a + ryb.
+				1 &= xa + yb \\
+				r &= rxa + ryb, \\
+				k = aq + r &= rxa + aq + ryb \\
+				k &= (rx + q)a + ryb.
 			\end{align*}
-			Como $y > 0$ e $r \leqslant 0$, então só precisamos verificar $xr + q$. Lembrando que $x < 0$, logo $(-x) > 0$.
+			Como $y > 0$ e $r \menor 0$, então só precisamos verificar $xr + q$. Lembrando que $x < 0$, logo $(-x) > 0$.
 			$$xr + q > 0 \Leftrightarrow q > (-x)r.$$
 			Como $a > r$, então $q > (-x)a$.
 		\end{proof}
-	}
-	Agora, podemos provar a proposição ~\ref{prop:1.3}.Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$. Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \geqslant t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
-	$$\mathbb{P}^{t}(x,y) \geqslant \mathbb{P}^{t_{x}}(x,x)\mathbb{P}^{r(x,y)}(x,y) > 0.$$
+	\end{Lema}
+	Agora, podemos provar a proposição\ref{prop:1.3}. Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$. Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \maior t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
+	$$\mathbb{P}^{t}(x,y) \maior \mathbb{P}^{t_{x}}(x,x)\mathbb{P}^{r(x,y)}(x,y) > 0.$$
 \end{proof}
 
 \section{Passeio aleatório em grafos}
 
-Um grafo $G = (V, E)$ consiste em um conjunto de vértice $V$ e um conjunto de aresta $E$, onde $E \subset \{ \{x, y\} : x,y \in V \text{ e } x \neq y \}$ e $V$ é o conjunto de pontos tal que para cada par de ponto ligados por um linha. Denotando $\{x,y\} \in E$ como $x \sim y$, chamamos $y$ de vizinhança de $x$. E o total de vizinhança de $x$ como o grau de $x$, ou seja, $| \{ x \sim y: y \in V \}| = deg(x)$.
+Um grafo $G = (V, E)$ consiste em um conjunto de vértice $V$ e um conjunto de aresta $E$, onde $E \subset \{ \{x, y\} : x,y \in V \text{ e } x \neq y \}$ e $V$ é o conjunto de pontos tal que para cada par de ponto ligados por um linha. Denotando $\{x,y\} \in E$ como $x \sim y$, chamamos $y$ de vizinhança de $x$. E o total de vizinhança de $x$ como o grau de $x$, ou seja, $| \{ x \sim y: y \in V \}| = \deg(x)$.
 
 Como um exemplo inicial, podemos definir um grafo e criar uma função de probabilidade a partir da vizinhança de um ponto, tornando a escolha de um vértice pular para outro, ser uniforme.
 \begin{align}
 	\mathbb{P}(x,y) =
 	\begin{cases}
-		\dfrac{1}{deg(x)} ; \text{ se } x \sim y, \NT \\
+		\dfrac{1}{\deg(x)} ; \text{ se } x \sim y, \NT \\
 		0 ; \text{ c.c}.
 	\end{cases}
 \end{align}
@@ -779,11 +622,11 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 \begin{Exem}
 	Utilizando o simples andar aleatório sobre um grafo $G = (V,E)$. Para qualquer $y \in V$
 	$$ 
-	\Sum_{x \in V } \oper{deg}(x) P(x,y) = \Sum_{x \sim y} \dfrac{\oper{deg}(x)}{\oper{deg}(x)} = \oper{deg}(y) 
+	\Sum_{x \in V } \deg(x) P(x,y) = \Sum_{x \sim y} \dfrac{\deg(x)}{\deg(x)} = \deg(y) 
 	$$
-	Utilizando como normalizador $\Sum_{y \in V} \oper{deg}(y) = 2|E|$, podemos dizer que a medida de probabilidade
+	Utilizando como normalizador $\Sum_{y \in V} \deg(y) = 2|E|$, podemos dizer que a medida de probabilidade
 	$$
-	\pi(y) = \dfrac{\oper{deg}(y)}{2|E|} \hspace{0.5cm} \forall \ y \ \in V
+	\pi(y) = \dfrac{\deg(y)}{2|E|} \hspace{0.5cm} \forall \ y \ \in V
 	$$ 
 	é uma distribuição estacionária.
 \end{Exem}
@@ -810,10 +653,10 @@ Assim,
 \begin{cases}
 \ \sigma(t - 1) &,\text{se} \ I(t) \neq j; \\
 \  +1 &,\text{se} \ I(t) = j; \ U(t) < \tfrac{1}{2}; \\
-\  -1 &,\text{se} \ I(t) = j; \ U(t) \geq \tfrac{1}{2}.
+\  -1 &,\text{se} \ I(t) = j; \ U(t) \maior \tfrac{1}{2}.
 \end{cases}
 \]
-\subsection{Passeio homogêneo não preguiçoso $\xi(t)$} Seja $\xi(0) = \nu \in H_{N}$ e $\xi(t)$ um passeio aleatório no $H_{N}$ definido em $(\Omega_{0}, \mathcal{F}_{0}, \mathbb{P}_{0})$ com probabilidade de transição $\mathbb{P}(\xi(t + 1) = \nu^{i} | \xi(t) = \nu) = \tfrac{1}{N}$ para todo $k \geq 1$, $i \in \{1, \dotsc, N\}$. Perceba que $\mathbb{P}(\xi(t + 1) = \nu | \xi(t) = \nu) = 0$, pois $\displaystyle \sum_{i}^{N} \mathbb{P}(\xi(t + 1) = \nu^{i} | \xi(t) = \nu) = \left( N \cdot \dfrac{1}{N} \right) = 1$, ou seja, a probabilidade dele mudar alguma entrada/spin 100\%.
+\subsection{Passeio homogêneo não preguiçoso $\xi(t)$} Seja $\xi(0) = \nu \in H_{N}$ e $\xi(t)$ um passeio aleatório no $H_{N}$ definido em $(\Omega_{0}, \mathcal{F}_{0}, \mathbb{P}_{0})$ com probabilidade de transição $\mathbb{P}(\xi(t + 1) = \nu^{i} | \xi(t) = \nu) = \tfrac{1}{N}$ para todo $k \maior 1$, $i \in \{1, \dotsc, N\}$. Perceba que $\mathbb{P}(\xi(t + 1) = \nu | \xi(t) = \nu) = 0$, pois $\displaystyle \sum_{i}^{N} \mathbb{P}(\xi(t + 1) = \nu^{i} | \xi(t) = \nu) = \left( N \cdot \dfrac{1}{N} \right) = 1$, ou seja, a probabilidade dele mudar alguma entrada/spin 100\%.
 
 %Podemos definir em um subconjunto $M$ de $H_{N}$, definido em ($\Omega_{M}, \mathcal{F}_{M},\mathbb{P}_{M}$). Sendo a probabilidade de um $\nu \in H_{N}$ pertencer a $M$ é igual  $\tfrac{1}{N^{\gamma}}, \gamma > 0 $, independente de outros  pontos, ou seja, a probabilidade tem distribuição de Bernoulli. Seja $\forall F \subset H_{N}, \mathbb{P}_{M}(M \cap F) = (1 - \tfrac{1}{N^{\gamma}})^{\left| F \right|}$, sendo $\left| F \right|$ a cardinalidade do conjunto F.
 
@@ -842,7 +685,7 @@ $D^{\nu, \zeta}_{N} (t) \coloneqq \left| \dfrac{K^{\nu} (t) - P^{\zeta} (t)}{2N}
 $V[0, N^{\gamma}] \coloneqq \{\sigma^{+}(0), \dotsc, \sigma^{+}(N^{\gamma})\}$.
 
 
- O Teorema ~\ref{thm:teorema_1} nos dá uma estimativa do crescimento do tempo que leva para dois pontos do hipercubo se encontrarem quando $N \to \infty$.
+ O Teorema\ref{thm:teorema_1} nos dá uma estimativa do crescimento do tempo que leva para dois pontos do hipercubo se encontrarem quando $N \to \infty$.
 
 
 \begin{Teo}\label{thm:teorema_1}
@@ -850,7 +693,7 @@ $V[0, N^{\gamma}] \coloneqq \{\sigma^{+}(0), \dotsc, \sigma^{+}(N^{\gamma})\}$.
 	$$\lim_{N \to \infty} \mathbb{P}\left( \left| \dfrac{t^{-}_{N}}{N \log N} - 1 \right| > \varepsilon \right) = 0, \forall \varepsilon > 0. $$
 \end{Teo}
 
-\begin{proof}[Demonstração do Teorema~\ref{thm:teorema_1}]
+\begin{proof}[Demonstração do Teorema\ref{thm:teorema_1}]
 Para provar o teorema é suficiente mostrar que $$\displaystyle \lim_{N \to \infty} \mathbb{P} \left( \dfrac{t^{-}_{N}}{N\log N} \right) = 1.$$
 \par Seja $\displaystyle D_{N}(t) = \dfrac{1}{2N} \sum^{N}_{i = 1} \left| \sigma_{i}^{+}(t) - \sigma_{i}^{-}(t) \right|$ a distância no instante $n$ entre $\sigma^{+}$ e $\sigma^{-}$. Pela evolução de $\sigma(t)$ temos que $D_{N}(t)$ é uma cadeia de Markov em $\{0, \tfrac{1}{N}, \dotsc, \tfrac{N - 1}{N}, 1 \}$ sendo a probabilidade de transição dada por:
 
@@ -901,18 +744,18 @@ Logo,
 \mathbb{E}(t^{-}_{N}) &= \mathbb{E}\left( \sum^{N}_{k = 0} \lambda_{k} \right) = \sum^{N}_{k = 0} \dfrac{N}{N + 1 - k}, \\
 &= N\sum^{N}_{k = 0} \dfrac{1}{N + 1 - k} = N \sum^{N}_{k = 1} \dfrac{1}{k}.
 \end{align*}
-Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \log N$, então $\displaystyle N \log (N - 1) \leq \mathbb{E}(\lambda_{k}) = N \sum^{N}_{k = 1} \dfrac{1}{k} \leq N \log(N)$.
+Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \log N$, então $\displaystyle N \log (N - 1) \menor \mathbb{E}(\lambda_{k}) = N \sum^{N}_{k = 1} \dfrac{1}{k} \menor N \log(N)$.
 
 \noindent Quando $n \to \infty$, $\mathbb{E}(t^{-}_{N}) \sim N \log (N)$. Logo, pela desigualdade de Tchebyshev:
 \begin{align}
-\mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \leq \dfrac{\var(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
+\mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \menor \dfrac{\var(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
 &= \dfrac{N}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N}_{k=1} \dfrac{(k - 1)}{(N - k + 1)^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1}\right)^{2}}. \label{eq:eq1}
 \end{align}
 Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então $\left( \ref{eq:eq1} \right)$ é menor ou igual a
 \begin{align}
 \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N - 1}_{k=1} \dfrac{1}{k^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1} \right)^{2}} 
-&\leq \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \sum^{N - 1}_{k=2} \dfrac{1}{k^{2} - 1}}{\left( \log N \right)^{2}}, \notag \\
-&\leq \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}}. \notag
+&\menor \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \sum^{N - 1}_{k=2} \dfrac{1}{k^{2} - 1}}{\left( \log N \right)^{2}}, \notag \\
+&\menor \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}}. \notag
 \end{align}
 Quando $N \to \infty$,
 $$\lim_{N \to \infty} \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}} = 0.$$
@@ -920,15 +763,15 @@ Portanto, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}
 \end{proof}
 
 \begin{Cor}\label{thm:corolário_1}
-Sejam $\sigma^{\nu}$ e $\sigma^{\zeta}$ passeios homogêneos em $H_{N}$ construídos simultaneamente, com configurações iniciais $\nu, \zeta$. Suponha para $0 \leq f \leq 1$, que $D_{N}(0) = \dfrac{[N \cdot f]}{N}$.
+Sejam $\sigma^{\nu}$ e $\sigma^{\zeta}$ passeios homogêneos em $H_{N}$ construídos simultaneamente, com configurações iniciais $\nu, \zeta$. Suponha para $0 \menor f \menor 1$, que $D_{N}(0) = \dfrac{[N \cdot f]}{N}$.
 Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) = 0$, para qualquer $t(N)$ com $\displaystyle \lim_{N \to \infty} \dfrac{t(N)}{N \log N}= \infty$.
 \end{Cor}
 
-\begin{proof}[Demonstração Corolário ~\ref{thm:corolário_1}]
+\begin{proof}[Demonstração Corolário\ref{thm:corolário_1}]
 Primeiros notamos que
 $t^{-}_{N} = \inf(t > 0: \{I(1), \dotsc, I(t)\} = \{1, \dotsc, N\})$.
 Assim,
-$$\mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) \leq \mathbb{P}(t^{-}_{N} > t(N)) \leq \dfrac{N(\log N + 1)}{t(N)}.$$
+$$\mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) \menor \mathbb{P}(t^{-}_{N} > t(N)) \menor \dfrac{N(\log N + 1)}{t(N)}.$$
 Portanto, por hipótese temos que
 $$\lim_{N \to \infty} \mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) = 0. $$
 \end{proof}
@@ -939,7 +782,7 @@ $$\lim_{N \to \infty} \left|\mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \dfrac{1}{2^{
 para todo $\zeta \in H_{N}$.
 \end{Cor}
 
-\begin{proof}[Demonstração do corolário~\ref{thm:corolário_{2}}]
+\begin{proof}[Demonstração do corolário\ref{thm:corolário_{2}}]
 	Vamos primeiro mostrar que $\mu$ é uma medida invariantes com respeito à evolução do passeio homogêneo.
 	\begin{align*}
 		\mathbb{P}(x_{1} = \zeta) &= \sum_{\nu \in H_{N}} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \nu) \cdot \dfrac{1}{2^{N}}, \\
@@ -950,12 +793,12 @@ para todo $\zeta \in H_{N}$.
 	Assim,
 	\begin{align*}
 		\left| \mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \dfrac{1}{2^{N}} \right| &= \left| \mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \sum_{\nu \in H_{N}} \mu(\nu) \mathbb{P}((\sigma^{\nu} = \zeta) \right|,  \\
-		&\leq \sum_{\nu \in H_{N}} \mu(\nu) \left| \mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \mathbb{P}(\sigma^{\nu}(t(N)) = \zeta) \right|, \\
-		&\leq \sum_{\nu \in H_{N}} \sup(\mathbb{P}(\sigma^{+}(t(N)) \neq \sigma^{\nu}(t(N)))) = 0.
+		&\menor \sum_{\nu \in H_{N}} \mu(\nu) \left| \mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \mathbb{P}(\sigma^{\nu}(t(N)) = \zeta) \right|, \\
+		&\menor \sum_{\nu \in H_{N}} \sup(\mathbb{P}(\sigma^{+}(t(N)) \neq \sigma^{\nu}(t(N)))) = 0.
 	\end{align*}
 	A última igualdade é análoga ao corolário anterior.
 \end{proof}
-	Obs: Para um movimento não preguiçoso, $\xi (t)$, talvez não seja possível ocorrer um acoplamento. Se duas configurações iniciais, $\nu$ e $\zeta$, diferem em um número ímpar de coordenadas e tem esse tipo de movimentação, nunca poderá haver um acoplamento, pois a distância mínima é, $D_{N} (t) \geq \dfrac{1}{N}$.
+	Obs: Para um movimento não preguiçoso, $\xi (t)$, talvez não seja possível ocorrer um acoplamento. Se duas configurações iniciais, $\nu$ e $\zeta$, diferem em um número ímpar de coordenadas e tem esse tipo de movimentação, nunca poderá haver um acoplamento, pois a distância mínima é, $D_{N} (t) \maior \dfrac{1}{N}$.
 
 
 \begin{proof}
@@ -968,9 +811,9 @@ para todo $\zeta \in H_{N}$.
 	\end{enumerate}
 	
 	Se ocorrer alguns desses casos, a distância das nossas cadeias, ou se mantém a mesma ou afastam-se, mas nunca se aproximam. Logo, supondo que por ventura só alteramos as entradas que são distintas ao longo do tempo.
-	Como a cada passo, $I_{\nu}(1) = i$ e $I_{\phi}(1) = j$ tal que $i \neq j$, então $D_{N}^{\nu , \phi}(1) = n - 2$ já que estamos considerando sempre o melhor dos casos, que seria mudar duas entradas diferentes. Repetindo isso várias vezes, temos que existe um $t'$ tal que $D_{N}^{\nu , \phi}(t') = 1$, pois $n$ é ímpar e a cada tempo diminuímos duas posições. Assim, caímos no caso 3), ou seja, $D_{N}^{\nu, \phi}(t) \leq \tfrac{1}{N}$.
+	Como a cada passo, $I_{\nu}(1) = i$ e $I_{\phi}(1) = j$ tal que $i \neq j$, então $D_{N}^{\nu , \phi}(1) = n - 2$ já que estamos considerando sempre o melhor dos casos, que seria mudar duas entradas diferentes. Repetindo isso várias vezes, temos que existe um $t'$ tal que $D_{N}^{\nu , \phi}(t') = 1$, pois $n$ é ímpar e a cada tempo diminuímos duas posições. Assim, caímos no caso 3), ou seja, $D_{N}^{\nu, \phi}(t) \menor \tfrac{1}{N}$.
 \end{proof}
-	O Teorema ~\ref{thm:teorema_2} nos diz que é certo que $\xi(t)$ retorna a uma posição visitada quando $N \to \infty$, além de nos mostrar que essa posição de retorno é do tipo $\xi(i)$ e $\xi(j) \ \forall i, j \leq k + 1$, e $\xi(k + 2) = \xi(k)$ para algum $k$.
+	O Teorema\ref{thm:teorema_2} nos diz que é certo que $\xi(t)$ retorna a uma posição visitada quando $N \to \infty$, além de nos mostrar que essa posição de retorno é do tipo $\xi(i)$ e $\xi(j) \ \forall i, j \menor k + 1$, e $\xi(k + 2) = \xi(k)$ para algum $k$.
 
 \begin{Teo}\label{thm:teorema_2}
 Seja $S_{N} = \inf(k > 0: \xi(k) \in \{\xi(0), \xi(1), \dotsc, \xi(k-1)\})$ e $\Gamma_{1} = \inf(k > 0: I(k) = I(k-1))$. Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}[S_{N} = \Gamma_{1}] = 1$.
@@ -985,22 +828,22 @@ Para a demonstração desse teorema vamos adotar algumas definição e notações:
 \end{enumerate}
 Uma foma de pensar nos vetores desses J's é ver eles como caminho na forma de laço.
 \begin{Prop}\label{thm:lema_1_teo_2}
-Para $l \geq 3$
-$$\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l}) \leq \dfrac{8}{N^{3}}.$$
+Para $l \maior 3$
+$$\mathbb{P}(I_{1}, \ldots, I_{2l}) \in J_{l}) \menor \dfrac{8}{N^{3}}.$$
 \end{Prop}
 
-\begin{proof}[Demonstração da Preposição~\ref{thm:lema_1_teo_2}]
+\begin{proof}[Demonstração da Preposição]\ref{thm:lema_1_teo_2}
 	Sabemos que $\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l} = \dfrac{\left| J_{l} \right|}{N^{2l}}$.
-	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \leq 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
+	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \menor 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
 	%
 	%
 	% DESENHAR A FIGURA
 	%
 	%
-	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2l - 1}, I_{2l}) \in J_{l}$, então $\displaystyle \sum^{2l}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2l}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos índices são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{l} \right| \leq 2N^{2l - 2}$.
+	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2l - 1}, I_{2l}) \in J_{l}$, então $\displaystyle \sum^{2l}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2l}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos índices são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{l} \right| \menor 2N^{2l - 2}$.
 	Podemos dividir $J_{l}$ em dois conjuntos disjuntos, $J_{l}^{''}$ e $J_{l}^{'}$, onde $J^{''}_{l}$ é o conjunto onde
-	nas três últimas entradas existe duas iguais, e $J^{'}_{l}$ é o conjunto onde as três últimas entradas são distintas. Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{l}$ como a entrada $2l - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2l - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2l - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2l}_{k=1} 1_{ \{I_{2l - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2l - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{l} \right| \leq 3!N^{2l - 3}$. No conjunto $J^{''}_{l}$perceba que como $I_{2l - 1} \neq I_{2l}$, então existem somente dois casos $I_{2l - 2} = I_{2l}$ e $I_{2l - 1} = I_{2l - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2l - 1} \neq I_{2l}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2l$ entradas como se fosse de $2l - 2$ entradas. Assim, $\left| J_{l}^{''} \right| \leq N \cdot \left| J^{''}_{l - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
-	$$\frac{|J_{l}|}{N^{2l}} = \frac{|J_{l}^{'}|}{N^{2l}} + \frac{|J_{l}^{''}|}{N^{2l}} \leq \frac{3!N^{2l-3}}{N^{2l}} + \dfrac{N \cdot 2N^{2l-4}}{N^{2l}} = \frac{8}{N^{3}}. $$
+	nas três últimas entradas existe duas iguais, e $J^{'}_{l}$ é o conjunto onde as três últimas entradas são distintas. Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{l}$ como a entrada $2l - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2l - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2l - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2l}_{k=1} 1_{ \{I_{2l - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2l - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{l} \right| \menor 3!N^{2l - 3}$. No conjunto $J^{''}_{l}$perceba que como $I_{2l - 1} \neq I_{2l}$, então existem somente dois casos $I_{2l - 2} = I_{2l}$ e $I_{2l - 1} = I_{2l - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2l - 1} \neq I_{2l}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2l$ entradas como se fosse de $2l - 2$ entradas. Assim, $\left| J_{l}^{''} \right| \menor N \cdot \left| J^{''}_{l - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
+	$$\frac{|J_{l}|}{N^{2l}} = \frac{|J_{l}^{'}|}{N^{2l}} + \frac{|J_{l}^{''}|}{N^{2l}} \menor \frac{3!N^{2l-3}}{N^{2l}} + \dfrac{N \cdot 2N^{2l-4}}{N^{2l}} = \frac{8}{N^{3}}. $$
 \end{proof}
 
 
@@ -1080,12 +923,11 @@ onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ sa
 $$ 
 \Gamma_{N}(\eta) = \Sum_{k=0}^{3} k\chi_{\Est{k}{N}}(\eta). 
 $$
-Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado irá ter $(N^{d} - 1)$ vértices.
-\\A função da evolução assintótica do \textit{Coarse-grained-model} 
+Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado irá ter $(N^{d} - 1)$ vértices. A função da evolução assintótica do \textit{Coarse-grained-model} 
 $$
 \textbf{Y}_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pela proposição ~\ref{prop:1}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pela proposição\ref{prop:1}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
 Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$. Definamos também $B$ como o conjunto dos pontos de intersecção, $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Logo, seja 
 $$ 

@@ -315,7 +315,7 @@
 	%
 	\chapter*{Resumo}
 	\thispagestyle{empty}
-	O objetivo desta dissertação é estudar e apresentar alguns resultados sobre .....
+	Este trabalho é um estudo sobre metaestabilidade, siguiando desde o entendimento de propriedades de probabilidade até os conceitos de mataesbilidade com uma abordagem de proteciais. É utilizado simulações de processos como o andar do bêbando em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de metaestabildiade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, é destacado propriedades como convergência entre configurações distintas e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estátistica.
 
 
 	\vspace*{0.5cm}
@@ -331,7 +331,7 @@
 	%
 	\chapter*{Abstract}
 	\thispagestyle{empty}
-	The objective of this dissertation is .
+	This work is a study on metastability, following from the understanding of probability properties to the concepts of mortality with a protecial approach. Simulations of processes such as the drunken walk in $N$ dimensions and a metastable walk with four states are used, in order to illustrate phenomena of metastablyship. Using models that explore the evolution of random systems over time, properties such as convergence between distinct configurations and prolonged permanence in specific regions of state space are highlighted. Through dynamic visualizations, it is evident how the local dynamics and the global structure of a system influence the macroscopic behavior, contributing to the understanding of fundamental concepts of Markov chains and Static Mechanics.
 
 
 	\vspace*{0.5cm}
@@ -357,11 +357,11 @@
 	\pagenumbering{arabic}
 	\addcontentsline{toc}{chapter}{Introdução}
 	\chapter*{Introdução}\label{Introdução}
-A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da teoria das probabilidades, da mecânica estatística e das cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da física quanto da matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
+A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da teoria das probabilidade, da Mecânica Estatística e das cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da Física quanto da matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
 
 De forma geral, a metaestabilidade descreve situações em que um sistema permanece por longos períodos em estados que não são verdadeiramente estáveis, mas que apresentam uma estabilidade aparente antes de ocorrer uma transição para um estado mais estável. Esse comportamento é particularmente relevante em modelos probabilísticos, nos quais a análise do tempo de permanência e das transições entre estados desempenha um papel central. Assim, o estudo da metaestabilidade torna-se essencial para a compreensão de fenômenos complexos, com aplicações que vão desde processos físicos até algoritmos estocásticos.
 
-Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade e cadeias de Markov. Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (lattice), com base em uma aula ministrada pelo professor Peixoto em um curso de verão do IMPA, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
+Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade e cadeias de Markov. Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (\textit{lattice}), com base em uma aula ministrada pelo professor Peixoto em um colóquio do IMPA, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
 
 
 	\setcounter{page}{1}
@@ -381,7 +381,7 @@ Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamo
 Uma álgebra é uma classe que se pode realizar operações elementares de conjuntos, o que é característica muito boa, pois como funções trabalham com conjunto e, sem esses objetos, ficamos muito restritos ou até de mãos atadas ao desenvolver uma teoria. Contudo, a álgebra ainda não é uma estrutura adequada para trabalhar com probabilidade, pois, apesar das uniões de dois elementos da álgebra estarem na álgebra, a união infinitesimal desses elementos pode não estar no conjunto. Logo, precisamos de uma estrutura que seja fechada para uniões enumeráveis.
 \begin{Def} Uma $\sigma$-álgebra é uma álgebra fechada por uniões enumeráveis, ou seja,
 	\begin{enumerate}[iv.]
-		\item $A_{j} \in \algebra$ tal que $j = 1, 2, \cdots $  implica que $\displaystyle \bigcup^{\infty}_{j=1}A_{j} \in \algebra$.
+		\item $A_{j} \in \algebra$ tal que $j = 1, 2, \ldots $  implica que $\displaystyle \bigcup^{\infty}_{j=1}A_{j} \in \algebra$.
 	\end{enumerate}
 \end{Def}
 \begin{Exem}
@@ -453,17 +453,17 @@ Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, m
 		Para provar $A_{n} \downarrow A$, podemos utilizar o que acabamos de provar. Tome a sequência $A^{c}_{n} \uparrow A^{c}$ e lembrando que $P(A_{n}) = 1 - P(A^{c}_{n})$, então se $n \to \infty$ temos que $\displaystyle \lim_{n \to \infty} P(A_{n}) = 1 - P(A^c{})$.
 	\end{enumerate}
 \end{proof}
-Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade ? É intuitivo pensar que probabilidade satisfaça as definição de medida, pois com esse objeto temos o intuito de medir quão provável um evento pode ocorrer.
+Agora que entendemos um pouco sobre medidas e $\sigma$-álgebras, podemos começar a adentrar no assunto de probabilidade. Contudo o que seria uma probabilidade? É intuitivo pensar que probabilidade satisfaça as definição de medida, pois com esse objeto temos o intuito de medir quão provável um evento pode ocorrer.
 \begin{Def}\hypertarget{Definição 5} Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de medida. Se $\mu: \sigAlgebra \rightarrow \mathbb{R}$  é uma função  que satisfaz:
 	\begin{enumerate}[i.]
 		\item $\mu(\Omega) = 1$,
 		\item $\displaystyle \mu\left(\bigcup_{i=1}^{\infty} A_{i}\right) = \sum^{\infty}_{i=1}\mu(A_{i})$ para todo $A_{i} \in \sigAlgebra$ dois a dois disjuntos.
 	\end{enumerate}
-	Então $\mu$ é uma medida de probabilidade. A tripla $(\Omega, \sigAlgebra, \mu)$ denomina-se espaço de probabilidade.
+	Então $\mu$ é dita uma medida de probabilidade. Uma tripla $(\Omega, \sigAlgebra, \mu)$ denomina-se espaço de probabilidade.
 \end{Def}
 Perceba que pela afirmação\ref{eq:teo1.I}, temos que $\mu(\Omega) = 1 - \mu(\varnothing) = 1$. Logo, essa definição para probabilidade $\mu$, nos diz que também é medida, assim tudo que vimos para medida vale para probabilidade.
 
-Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \sigAlgebra$ tais que $\mu(A) = a$ e $\mu(B) = b$. Qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece ?
+Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de probabilidade. Tome dois eventos $A,B \in \sigAlgebra$ tais que $\mu(A) = a$ e $\mu(B) = b$. Qual é a probabilidade do evento acontecer $A$ se sabemos que o evento $B$ acontece?
 
 %FIGURA DE CONJUNTOS EM FORMA DE CÍCULO. O A VAI ESTÁ CONTIDO NO B.
 %ACHO QUE A PARCIALMENTE CONTIDO É MAIS LEGAL.IMAGINA AS BOLOS COM BORDA TRAÇADA. E CADA UM COM UMA COR SENDO A INTERSECÇÃO TAMBÉM COM UMA COR IDEPENDENTE.
@@ -478,7 +478,7 @@ Seja $(\Omega, \sigAlgebra, \mu)$ um espaço de probabilidade. Tome dois eventos 
 Quando $\mu(B)=0$, então definimos $\mathbb{P}(A|B) = \mathbb{P}(A)$.
 \end{Def}
 A probabilidade condicional diferente da noção usual de probabilidade, contextualiza as chances de um evento acontecer. Perceba que quando $\mathbb{P}(B)>0$, a primeira nada mais é do que relativização da probabilidade do evento $A$ para o evento $B$. Veja que estamos falando de eventos, elementos da $\sigma$-álgebra e não qualquer subconjunto de $\Omega$.
-\begin{Teo}[Regra do produto] Em $(\Omega, \sigAlgebra, \mu)$. Dados os eventos $A_{1}, A_{2}, \cdots , A_{n} \in \sigAlgebra$,
+\begin{Teo}[Regra do produto] Em $(\Omega, \sigAlgebra, \mu)$. Dados os eventos $A_{1}, A_{2}, \ldots , A_{n} \in \sigAlgebra$,
 	$$\mathbb{P}\left( \bigcap^{n}_{i=1} A_{i}\right) = \mathbb{P}(A_{1})\mathbb{P}(A_{2}|A_{1})\mathbb{P}(A_{3}|A_{1} \cap A_{2}) \text{{ \large . . . }} \mathbb{P}\left(A_{n} \left| \ \bigcap^{n-1}_{i=1} A_{i}\right. \right). $$
 \end{Teo}
 
@@ -514,14 +514,14 @@ tal que essa sequência é uma cadeia de Markov com uma matriz de transição $P$ co
 \end{Prop}
 
 \begin{proof}
-	Seja $P$ uma matriz de transição de um espaço de Markov com o espaço de estados $\Omega = \{x_{1}, x_{2}, \cdots, x_{n} \}$ e seja $\Lambda = [0,1]$, onde as variáveis aleatórias auxiliares $Z, Z_{1}, Z_{2}, \cdots$ são iid's nesse intervalo. Definamos $F_{ij} = \Sum^{j}_{k=1} \mathbb{P}(x_{i}, x(k))$, então podemos definir $f$ como $f(x_{i}, Z) := x_{j}$ quando $F_{i, j-1} < Z < F_{i, j}$. Portanto,
+	Seja $P$ uma matriz de transição de um espaço de Markov com o espaço de estados $\Omega = \{x_{1}, x_{2}, \ldots, x_{n} \}$ e seja $\Lambda = [0,1]$, onde as variáveis aleatórias auxiliares $Z, Z_{1}, Z_{2}, \ldots$ são iid's nesse intervalo. Definamos $F_{ij} = \Sum^{j}_{k=1} \mathbb{P}(x_{i}, x(k))$, então podemos definir $f$ como $f(x_{i}, Z) := x_{j}$ quando $F_{i, j-1} < Z < F_{i, j}$. Portanto,
 	$$\mathbb{P}\{f(x_{i}, Z) = x_{j}\} = \mathbb{P}\{F_{i, j-1} < Z < F_{i, j}\} = \mathbb{P}(x_{i}, x_{j}).$$
 \end{proof}
 Veremos em seguidas algumas propriedades dessas cadeias de Markov que nos permite extrair algumas informações.  
 \begin{Def}[Irredutível] Seja $P$ uma cadeia, se para todo $x,y \in \Omega$, existe um inteiro $t$ tal que $\mathbb{P}^{t}(x,y) > 0$.
 \end{Def}
 
-\begin{Def}[Período de x] Definamos o conjunto $T(x) = \{t \maior 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de x é o maior divisor comum ($\operatorname{mdc}$ de $T(x)$).
+\begin{Def}[Período de $x$] Definamos o conjunto $T(x) = \{t \maior 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de $x$ é o maior divisor comum $( \operatorname{mdc}$ de $T(x))$.
 \end{Def}
 \begin{Prop}Se $P$ é irredutível, então $\operatorname{mdc}(T(x)) = \operatorname{mdc}(T(y))$ para $x,y \in \Omega$.
 \end{Prop}
@@ -531,12 +531,12 @@ Veremos em seguidas algumas propriedades dessas cadeias de Markov que nos permit
 	\begin{align*}
 		\mathbb{P}^{k + m}(x,x) &= \mathbb{P}^{k}(x,x)\mathbb{P}^{r}(x,y)\mathbb{P}^{l}(y,x) \\
 		&= \mathbb{P}^{l}(y,x)\mathbb{P}^{k}(x,x)\mathbb{P}^{r}(x,y) \\
-		&= \mathbb{P}^{l + k + r}(y,y) = \mathbb{P}^{m + k}(y,y)
+		&= \mathbb{P}^{l + k + r}(y,y) = \mathbb{P}^{m + k}(y,y).
 	\end{align*}
-	Então $k+m \in T(y)$, então $k \in T(y)-m \ \Rightarrow T(x) \subset T(y) - m$. Portanto, $\dfrac{\operatorname{mdc}(T(y))}{T(x)}$, consequentemente $\operatorname{mdc}(T(y)) \menor \operatorname{mdc}(T(x))$. Para $\operatorname{mdc}(T(x)) \menor \operatorname{mdc}(T(y))$ é análogo. Portanto, $\operatorname{mdc}(T(y)) = \operatorname{mdc}(T(x))$.
+	Então $k+m \in T(y)$, então $k \in \{n - m : n \in T(y) \} \ \Rightarrow T(x) \subset T(y) - m$. Portanto, como $m \in T(y)$, $\operatorname{mdc}T(y)$ divide todo elemento de $T(x)$, consequentemente $\operatorname{mdc}(T(y)) \menor \operatorname{mdc}(T(x))$. Para $\operatorname{mdc}(T(x)) \menor \operatorname{mdc}(T(y))$ é análogo. Portanto, $\operatorname{mdc}(T(y)) = \operatorname{mdc}(T(x))$.
 \end{proof}
 \begin{Def}[Aperiódico]
-Se em uma cadeia o $\operatorname{mdc}(T(x)) \ \forall x \in \Omega$ é 1, então denominamos aperiódico. Se a cadeia não é aperiódico, então é periódico.
+Se em uma cadeia o $\operatorname{mdc}(T(x)) \ \forall x \in \Omega$ é $1$, então denominamos aperiódico. Se a cadeia não é aperiódico, então é periódico.
 \end{Def}
 \begin{Prop}\label{prop:1.3}
 Se $P$ é irredutível, então existe um inteiro $r$ tal que $\mathbb{P}^{r}(x,y) > 0$ para $\forall x,y \in \Omega$.
@@ -561,7 +561,7 @@ Se $P$ é irredutível, então existe um inteiro $r$ tal que $\mathbb{P}^{r}(x,y) >
 			Como $a > r$, então $q > (-x)a$.
 		\end{proof}
 	\end{Lema}
-	Agora, podemos provar a proposição\ref{prop:1.3}. Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$. Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \maior t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
+	Agora, podemos provar a Proposição \ref{prop:1.3}. Vamos provar que $\forall x \in \Omega$, $T(x)$ é fechado por adição. Seja $a,b \in T(x)$, $\mathbb{P}^{a+b}(x,x) = \mathbb{P}^{a}(x,x)\mathbb{P}^{b}(x,x) > 0$, então $a+b \in T(x)$. Logo, pelo lema anterior, sabemos que existe $t_{x}$ tal que $t \maior t_{x}$, $\mathbb{P}^{t_{x}}(x,x) > 0$. Como sistema é irredutível, então existe um inteiro $k = k(x,y)$ tal que $\mathbb{P}^{k}(x,y) > 0$. Logo, fixado x, seja $t = t_{x} + r(x,y)$,
 	$$\mathbb{P}^{t}(x,y) \maior \mathbb{P}^{t_{x}}(x,x)\mathbb{P}^{r(x,y)}(x,y) > 0.$$
 \end{proof}
 
@@ -756,13 +756,13 @@ Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \log N$, então $\displayst
 \mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \menor \dfrac{\var(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
 &= \dfrac{N}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N}_{k=1} \dfrac{(k - 1)}{(N - k + 1)^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1}\right)^{2}}. \label{eq:eq1}
 \end{align}
-Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então $\left( \ref{eq:eq1} \right)$ é menor ou igual a
+Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então a expressão em $\left( \ref{eq:eq1} \right)$ é menor ou igual a
 \begin{align}
 \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N - 1}_{k=1} \dfrac{1}{k^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1} \right)^{2}} 
 &\menor \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \sum^{N - 1}_{k=2} \dfrac{1}{k^{2} - 1}}{\left( \log N \right)^{2}}, \notag \\
 &\menor \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}}. \notag
 \end{align}
-Quando $N \to \infty$,
+Portanto,
 $$\lim_{N \to \infty} \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}} = 0.$$
 Portanto, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}_{N}}{\mathbb{E}(t^{-}_{N})} - 1 \right| > \varepsilon \right)$.
 \end{proof}
@@ -772,9 +772,9 @@ Sejam $\sigma^{\nu}$ e $\sigma^{\zeta}$ passeios homogêneos em $H_{N}$ construíd
 Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) = 0$, para qualquer $t(N)$ com $\displaystyle \lim_{N \to \infty} \dfrac{t(N)}{N \log N}= \infty$.
 \end{Cor}
 
-\begin{proof}[Demonstração Corolário\ref{thm:corolário_1}]
+\begin{proof}
 Primeiros notamos que
-$t^{-}_{N} = \inf(t > 0: \{I(1), \dotsc, I(t)\} = \{1, \dotsc, N\})$.
+$t^{-}_{N} = \inf(t > 0: \{I(1), \dotsc, I(t)\} \break = \{1, \dotsc, N\})$.
 Assim,
 $$\mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) \menor \mathbb{P}(t^{-}_{N} > t(N)) \menor \dfrac{N(\log N + 1)}{t(N)}.$$
 Portanto, por hipótese temos que
@@ -787,7 +787,7 @@ $$\lim_{N \to \infty} \left|\mathbb{P}(\sigma^{+}(t(N)) = \zeta) - \dfrac{1}{2^{
 para todo $\zeta \in H_{N}$.
 \end{Cor}
 
-\begin{proof}[Demonstração do corolário\ref{thm:corolário_{2}}]
+\begin{proof}
 	Vamos primeiro mostrar que $\mu$ é uma medida invariantes com respeito à evolução do passeio homogêneo.
 	\begin{align*}
 		\mathbb{P}(x_{1} = \zeta) &= \sum_{\nu \in H_{N}} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \nu) \cdot \dfrac{1}{2^{N}}, \\
@@ -818,7 +818,7 @@ para todo $\zeta \in H_{N}$.
 	Se ocorrer alguns desses casos, a distância das nossas cadeias, ou se mantém a mesma ou afastam-se, mas nunca se aproximam. Logo, supondo que por ventura só alteramos as entradas que são distintas ao longo do tempo.
 	Como a cada passo, $I_{\nu}(1) = i$ e $I_{\phi}(1) = j$ tal que $i \neq j$, então $D_{N}^{\nu , \phi}(1) = n - 2$ já que estamos considerando sempre o melhor dos casos, que seria mudar duas entradas diferentes. Repetindo isso várias vezes, temos que existe um $t'$ tal que $D_{N}^{\nu , \phi}(t') = 1$, pois $n$ é ímpar e a cada tempo diminuímos duas posições. Assim, caímos no caso 3), ou seja, $D_{N}^{\nu, \phi}(t) \menor \tfrac{1}{N}$.
 \end{proof}
-	O Teorema\ref{thm:teorema_2} nos diz que é certo que $\xi(t)$ retorna a uma posição visitada quando $N \to \infty$, além de nos mostrar que essa posição de retorno é do tipo $\xi(i)$ e $\xi(j) \ \forall i, j \menor k + 1$, e $\xi(k + 2) = \xi(k)$ para algum $k$.
+	O Teorema \ref{thm:teorema_2} nos diz que é certo que $\xi(t)$ retorna a uma posição visitada quando $N \to \infty$, além de nos mostrar que essa posição de retorno é do tipo $\xi(i)$ e $\xi(j) \ \forall i, j \menor k + 1$, e $\xi(k + 2) = \xi(k)$ para algum $k$.
 
 \begin{Teo}\label{thm:teorema_2}
 Seja $S_{N} = \inf(k > 0: \xi(k) \in \{\xi(0), \xi(1), \dotsc, \xi(k-1)\})$ e $\Gamma_{1} = \inf(k > 0: I(k) = I(k-1))$. Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}[S_{N} = \Gamma_{1}] = 1$.
@@ -837,7 +837,7 @@ Para $l \maior 3$
 $$\mathbb{P}(I_{1}, \ldots, I_{2l}) \in J_{l}) \menor \dfrac{8}{N^{3}}.$$
 \end{Prop}
 
-\begin{proof}[Demonstração da Preposição]\ref{thm:lema_1_teo_2}
+\begin{proof}
 	Sabemos que $\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l} = \dfrac{\left| J_{l} \right|}{N^{2l}}$.
 	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \menor 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
 	%
@@ -951,15 +951,480 @@ Para $d \maior 3$,
 Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $l^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de encontro nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
 %PAREI NA PAGINA 147, INICIAR NA PARTE QUE FALAR DOS SALTOS, ESCALANDO O TEMPO DE HITTING TIME.
 
-\section{Apêndice A}\label{codigo}
-Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso das bibliotecas \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}.
+\section{Simulações em python}\label{codigo}
+Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso das bibliotecas \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Temos dois tipos de simulação, onde cada possui uma versão visual e no terminal.
+
+\subsection{Caminhar aleatório com acoplamento}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{IMG/GraphicCouple.png}
+	\includegraphics[width=1\textwidth]{IMG/GraphicCouple.png}
 	\caption{Acoplamento de dois caminhar aleatório com N fixo}
 	\label{fig:GraphicCouple}
 \end{figure}
+
+O código apresentado cria uma simulação com visualização gráfica cujo objetivo principal é ilustrar o comportamento de acoplamento (coupling) entre duas configurações aleatórias ao longo do tempo. Para isso, são utilizadas bibliotecas como NumPy para manipulação eficiente de vetores, Matplotlib para a construção da interface gráfica e animação.
+
+Inicialmente, é definido um tamanho fixo \textit{TAM}=50, que representa o número de posições do sistema. Cada posição pode assumir um valor de "spin", isto é, $+1$ ou $-1$, o que remete ao modelo de Ising. Duas configurações independentes são criadas a partir da classe Configuracao, uma iniciada com todos os spins positivos e outra com todos negativos. Essas configurações são armazenadas como listas, e sua representação visual é feita por meio de pontos (as "bolinhas") no gráfico.
+
+Um ponto central do código é o uso de atributos de classe, como \textit{icouple} e \textit{disponiveis}. O conjunto \textit{icouple} armazena os índices das posições onde as duas configurações coincidem, ou seja, onde já ocorreu o acoplamento. Esse mecanismo é essencial para o entendimento do código, pois, uma vez que duas posições forem acopladas, suas evoluções futuras passam a ser sincronizadas.
+
+A dinâmica do sistema é implementada no método andar, que representa um passo temporal da simulação. A cada iteração, dois índices aleatórios são selecionados. Para cada configuração, o valor do spin nesses índices é atualizado de forma aleatória. Porém como dito anteriormente, se o índice já pertence ao conjunto icouple, a atualização é feita de forma conjunta nas duas configurações, garantindo que permaneçam iguais naquela posição. Caso contrário, as atualizações ocorrem de maneira independente. Após essa etapa, o algoritmo verifica novamente todas as posições para identificar novos acoplamentos.
+
+O metodo visualizar desempenha um papel fundamental na compreensão do processo. O método visuaizar utiliza cores para indicar o estado de cada posição: vermelho e preto representam spins positivos e negativos, respectivamente, enquanto verde indica posições onde ocorreu acoplamento. Assim, ao longo da animação, é possível observar a propagação gradual dessas regiões verdes, evidenciando a convergência entre as duas configurações.
+
+A animação é controlada pela função update, utilizada em conjunto com a classe FuncAnimation do Matplotlib. A cada quadro, o tempo é incrementado e um novo passo da dinâmica é executado. O processo continua até que todas as posições estejam acopladas, isto é, quando o tamanho do conjunto icouple atinge \textit{TAM}. Nesse momento, a simulação é interrompida e são exibidas informações relevantes, como o tempo total necessário para o acoplamento completo e uma estimativa teórica baseada em \textit{TAM $\cdot$ log(TAM)}, que é teorizada pelo Teorema \ref{thm:teorema_1}.
+
+\begin{minted}{python}
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import numpy as np
+import random as rd
+import math
+
+TAM = 50  # constante do tamanho do vetor
+Tempo: int = 0  # tempo
+
+# Definindo o intervalo do eixo x
+x = np.arange(0, TAM, 1)
+
+class Configuracao:
+    icouple = set()  # conj. de indice que estão em couple
+    disponiveis = [i for i in range(TAM)]  # conj. de indice
+    
+    def __init__(self, spin: int, pos, neg):  
+    # construtor criando um configuração e inicializando 
+    #com o spin (+ ou -)
+        self.conf = [spin for i in range(TAM)]
+        if spin > 0:
+            for i in range(0, TAM):
+                pos[i].set_facecolor("red")
+        else:
+            for i in range(0, TAM):
+                neg[i].set_facecolor("black")
+    
+    @classmethod 
+    def visuaizar(cls, p1, p2, bolinhas1, bolinhas2):
+        for i in range(0, TAM):
+            if p1.conf[i] == p2.conf[i]:  # procurando o couple
+                if p1.conf[i] > 0:
+                    bolinhas1[i].set_facecolor("green")
+                    bolinhas2[i].set_facecolor("white")
+                else:
+                    bolinhas1[i].set_facecolor("white")
+                    bolinhas2[i].set_facecolor("green")
+            else:
+                if p1.conf[i] > 0:
+                    bolinhas1[i].set_facecolor("red")
+                else:
+                    bolinhas1[i].set_facecolor("black")
+                if p2.conf[i] > 0:
+                    bolinhas2[i].set_facecolor("red")
+                else:
+                    bolinhas2[i].set_facecolor("black")
+    
+    @classmethod
+    def andar(cls, p1, p2, bolinhas1, bolinhas2):  
+    # Move uma posição aleatória 
+        i1 = rd.choice(Configuracao.disponiveis)  
+        # escolhendo o indice
+        i2 = rd.choice(Configuracao.disponiveis)
+        
+        if i1 in Configuracao.icouple:
+            p1.conf[i1] = rd.choice([1, -1])  
+            # escolhendo o spin do indice in couple
+            p2.conf[i1] = p1.conf[i1]
+        elif i1 not in Configuracao.icouple: 
+            p1.conf[i1] = rd.choice([1, -1])  
+            # escolhendo o spin do indice
+        
+        if i2 in Configuracao.icouple:
+            p2.conf[i2] = rd.choice([1, -1])  
+            # escolhendo o spin do indice in couple
+            p1.conf[i2] = p2.conf[i2]
+        elif i2 not in Configuracao.icouple: 
+            p2.conf[i2] = rd.choice([1, -1])  
+            # escolhendo o spin do indice
+        
+        for i in range(0, TAM):  
+        # adiciona os indices que fizeram couple
+            if p1.conf[i] == p2.conf[i]:
+                Configuracao.icouple.add(i)
+        
+        Configuracao.visuaizar(p1, p2, bolinhas1, bolinhas2)
+
+# === Definição do matplotlib ===
+fig, ax = plt.subplots(figsize=(8, 4))
+
+# Caminho 1
+ax.hlines(y=1, xmin=0, xmax=TAM - 1, 
+color="black", zorder=1, label="Eixo (-)")
+ax.hlines(y=3, xmin=0, xmax=TAM - 1, 
+color="red", zorder=1, label="Eixo (+)")
+
+bolinhas2 = [ax.scatter(xi, 1, facecolors="white", 
+edgecolors="black", s=100, zorder=2) for xi in x]
+bolinhas1 = [ax.scatter(xi, 3, facecolors="white", 
+edgecolors="black", s=100, zorder=2) for xi in x]
+
+# Ajustes do gráfico
+ax.set_xlim(-1, TAM)
+ax.set_ylim(0, 8)
+ax.set_aspect("equal", adjustable="box")
+ax.axis("off")
+ax.legend(loc='upper left', frameon=True, fancybox=True, shadow=True)
+
+# === Função de atualização da animação ===
+p1 = Configuracao(+1, bolinhas1, bolinhas2)
+p2 = Configuracao(-1, bolinhas1, bolinhas2)
+
+def update(frame):
+    global Tempo
+    Tempo += 1
+    Configuracao.andar(p1, p2, bolinhas1, bolinhas2)
+    if len(Configuracao.icouple) == TAM:
+        print("\n" + "="*50)
+        print("TODAS AS BOLINHAS ESTÃO VERDES!")
+        print("="*50)
+        print(f"Tempo total: {Tempo} segundos")
+        print(f"Tempo esperado: {format(math.log(TAM)*TAM,'.2f')} segundos")
+        print("="*50)
+        anim.event_source.stop()
+    return bolinhas1 + bolinhas2
+
+# === Criação da animação ===
+anim = FuncAnimation(fig, update, frames=200, 
+interval=100, blit=False, repeat=True)
+
+plt.show()
+
+\end{minted}
+
+\subsection{metaestabilidade: Uma abordagem com potêncial}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMG/andarMetaestavel.png}
+	\caption{Andar mestaestável com 4 estados}
+	\label{fig:GraphicCouple}
+\end{figure}
+
+O código apresentado implementa uma simulação de passeio aleatório em uma estrutura de grafo especialmente construída para evidenciar o fenômeno de metaestabilidade. A modelagem combina conceitos de probabilidade, grafos e visualização computacional, utilizando bibliotecas como \textit{NumPy}, \textit{Matplotlib} e \textit{NetworkX}. A ideia central é representar o espaço de estados como uma rede de regiões conectadas (os "cubos"), mas com poucas conexões entre si, o que induz um comportamento típico de sistemas metaestáveis: longos períodos de permanência em uma região antes de transições raras para outra.
+
+A classe \textit{MetastableRandomWalk} é responsável por construir e gerenciar essa estrutura. No método '\textit{\_grafo}', o espaço de estados é definido como um grafo composto por quatro "cubos" (d)-dimensionais, cada um contendo ($N^{d}$) vértices. Cada vértice representa um estado possível do sistema e é identificado por um rótulo que indica tanto o cubo ao qual pertence quanto sua posição interna. A conversão entre índices lineares e coordenadas multidimensionais é tratada pelos métodos '\textit{\_indexCoord}' e '\textit{\_coordIndex}', permitindo organizar os vértices como se estivessem em uma grade discreta.
+
+Dentro de cada cubo, os vértices são conectados aos seus vizinhos imediatos, formando uma malha regular. Essa densa conectividade interna garante que o passeio aleatório se mova facilmente dentro de um mesmo cubo. Por outro lado, o método '\textit{\_JuntarCubo}' cria apenas algumas conexões específicas entre cubos distintos, ligando pontos de canto. Essa escolha é crucial: ela cria "gargalos" estruturais no grafo, dificultando a transição entre regiões diferentes e, consequentemente, gerando o comportamento metaestável.
+
+A dinâmica do passeio aleatório é definida de maneira simples e clássica. O método '\textit{inicio}' escolhe um estado inicial dentro de um cubo específico, com uma restrição adicional, o ponto deve estar em uma região mais central do cubo, evitando bordas. Essa escolha reforça o efeito metaestável, pois aumenta a probabilidade de o sistema permanecer inicialmente dentro do mesmo cubo. Já o método '\textit{andar}' implementa o passo do passeio aleatório, no qual o próximo estado é escolhido uniformemente entre os vizinhos do estado atual.
+
+A trajetória do sistema é armazenada ao longo do tempo, permitindo acompanhar o caminho percorrido. Esse registro é essencial para a visualização e para a análise do comportamento do processo. O método '\textit{simular}' apenas automatiza a execução de múltiplos passos consecutivos, retornando a sequência de estados visitados.
+
+A visualização é tratada pela classe '\textit{visualizar}', que constrói uma representação bidimensional do grafo. O método '\textit{\_nodeCoord}' projeta os diferentes cubos em posições distintas do plano, organizando-os como regiões separadas (norte, sul, leste e oeste). Isso facilita a interpretação visual das transições entre cubos. A função '\textit{setup\_plot}' desenha os nós e arestas, diferenciando as conexões internas (em cinza) das conexões entre cubos (em vermelho tracejado), além de configurar elementos como legenda e título.
+
+A animação é controlada por meio da função '\textit{animate\_step}', que atualiza, a cada quadro, tanto a posição atual do passeio quanto o caminho acumulado. O ponto vermelho indica o estado atual, enquanto a linha azul mostra a trajetória já percorrida. Informações adicionais, como o número do passo, o cubo atual e as coordenadas internas, são exibidas dinamicamente. A utilização de '\textit{FuncAnimation}' permite observar em tempo real a evolução do sistema.
+
+Do ponto de vista conceitual, o código ilustra de forma clara o fenômeno de metaestabilidade: o passeio aleatório tende a permanecer por longos períodos dentro de um mesmo cubo (devido à alta conectividade interna), realizando apenas ocasionalmente transições para outros cubos (devido às poucas conexões entre eles). Esse comportamento é característico de sistemas com múltiplos ?poços de energia? ou regiões de estabilidade local, sendo amplamente estudado em áreas como física estatística, teoria das cadeias de Markov e algoritmos de amostragem.
+
+\begin{minted}{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from collections import defaultdict
+import networkx as nx
+import math
+from matplotlib.animation import FuncAnimation
+
+class MetastableRandomWalk:
+    def __init__(self, N, d=2):
+        self.N = N
+        self.d = d
+        self.EN = self._grafo()
+        self.estadoAtual = None
+        self.passo = 0
+        self.caminho = []
+    
+    def _grafo(self):
+        G = nx.Graph()
+        # Cria os 4 cubos (E0, E1, E2, E3)
+        cuboPonto = {}
+        
+        # Para cada cubo (0: norte, 1: leste, 2: sul, 3: oeste)
+        for cubo in range(4):
+            cuboPonto[cubo] = []
+            
+            # Gera pontos do cubo d-dimensional da vez cube
+            for i in range(self.N**self.d):
+                coords = self._indexCoord(i)
+                NodeId = f"{cubo}_{i}"
+                G.add_node(NodeId, cubo=cubo, coords=coords)
+                cuboPonto[cubo].append(NodeId)
+        
+        # Conecta as vizinhas de cada cubo dentro de cada curbo,
+        #mas não os pontos de intersecção
+        for cubo in range(4):
+            points = cuboPonto[cubo]
+            for i, nodeOrin in enumerate(points):
+                coords1 = self._indexCoord(i)
+                # Encontra vizinhos no cubo
+                for dim in range(self.d):
+                    for delta in [-1, 1]:
+                        vizin = coords1.copy()
+                        vizin[dim] += delta
+                        if 0 <= vizin[dim] < self.N:
+                            j = self._coordIndex(vizin)
+                            node2 = points[j]
+                            G.add_edge(nodeOrin, node2)
+        
+        # Conecta cubos adjacentes (pontos de canto compartilhados)
+        self._JuntarCubo(G, cuboPonto)
+        
+        return G
+    
+    def _indexCoord(self, index):
+        #Converte índice linear para coordenadas d-dimensionais
+        coords = []
+        vindex = index
+        for _ in range(self.d):
+            coords.append(vindex % self.N)
+            vindex //= self.N
+        return coords
+    
+    def _coordIndex(self, coords):
+        #Converte coordenadas d-dimensionais para índice linear
+        index = 0
+        potDim = 1
+        for i, coord in enumerate(coords):
+            index += coord * potDim
+            potDim *= self.N
+        return index
+    
+    def _JuntarCubo(self, G, vCuboPontos):
+        #Ajunção dos cubos
+        conecta = [(0, 1), (1, 2), (2, 3), (3, 0)]  
+        # pares de cubos adjacentes
+        
+        conectaPonto = [(self.N-1, 0), 
+        (0, self.N-1), (0,0), (self.N-1,self.N-1),
+        (0, self.N-1), (self.N-1, 0), (self.N-1, self.N-1), 
+        (0, 0)] #Quem queremos ligar
+        
+        for i in range(0,8,2):
+            pontos1 = vCuboPontos[conecta[int(i/2)][0]]
+            pontos2 = vCuboPontos[conecta[int(i/2)][1]]
+            
+            indexNode1 = self._coordIndex(conectaPonto[i])
+            indexNode2 = self._coordIndex(conectaPonto[i+1])
+
+            print(indexNode1, indexNode2)
+
+            G.add_edge(pontos1[indexNode1], pontos2[indexNode2])
+
+    def inicio(self, start=0):
+        #Inicializa o passeio aleatório em um cubo
+        cuboPontos= [node for node in self.EN.nodes 
+        if self.EN.nodes[node]['cubo'] == start]
+        procurando = True
+        while(procurando):
+            procurando = False
+            self.estadoAtual = np.random.choice(cuboPontos)
+            for i in range(2):
+                if(self.EN.nodes[self.estadoAtual]['coords'][i] > self.N - 
+                ( math.floor( math.sqrt(self.N) ) )/2 ): 
+                #para começar no quadrado interno
+                    procurando = True
+                    break
+                elif(self.EN.nodes[self.estadoAtual]['coords'][i] < 
+                ( math.floor( math.sqrt(self.N) ) )/2 ):
+                    procurando = True
+                    break
+        self.passo = 0
+        self.caminho = [self.estadoAtual]
+
+    def andar(self):
+            vizin = list(self.EN.neighbors(self.estadoAtual))
+            self.estadoAtual = np.random.choice(vizin)
+            self.passo += 1
+            self.caminho.append(self.estadoAtual)
+            
+            return self.estadoAtual
+
+    def simular(self, steps, start=0):
+            self.inicio(start)
+            
+            for _ in range(steps):
+                self.andar()
+            
+            return self.caminho
+
+    def _nodeCoord(self):
+        #Calcula posições dos nós para visualização 2D
+        pos = {}
+        cuboMeio = {
+            0: (0, self.N + 1),      # Norte
+            1: (self.N + 1, 0),      # Leste  
+            2: (0, -self.N - 1),     # Sul
+            3: (-self.N - 1, 0)      # Oeste
+        }
+        
+        for node in self.EN.nodes:
+            cubo = self.EN.nodes[node]['cubo']
+            coords = self.EN.nodes[node]['coords']
+            projX, projY = cuboMeio[cubo]
+            pos[node] = (coords[0] + projX, coords[1] + projY)
+            
+        return pos
+
+class visualizar:
+    def __init__(self, random_walk, iter=200):
+        self.rw = random_walk
+        self.iter = iter
+        self.fig, self.ax = plt.subplots(figsize=(12, 10))
+        self.pos = self.rw._nodeCoord()
+        
+        self.cubo_colors = ['lightblue', 'lightgreen', 
+        'lightcoral', 'lightsalmon'] # Cores para diferentes cubos
+        self.atualPonto = None
+        self.line = None
+        self.textPasso = None
+        
+    def setup_plot(self):
+        """Configura o plot inicial"""
+        self.ax.clear()
+        
+        # Desenha os cubos
+        for cubo in range(4):
+            # Nos do cubo
+            nodeCubos = [node for node in self.rw.EN.nodes 
+                         if self.rw.EN.nodes[node]['cubo'] == cubo]
+            
+            # Desenha arestas do cubo
+            arestasCubo = [(u, v) for u, v in self.rw.EN.edges() 
+                         if u in nodeCubos and v in nodeCubos]
+            
+            nx.draw_networkx_edges(self.rw.EN, self.pos,
+             edgelist=arestasCubo,
+             ax=self.ax, edge_color='gray', alpha=0.6)
+            
+            # Desenha nós do cubo
+            nx.draw_networkx_nodes(self.rw.EN, self.pos,
+            nodelist=nodeCubos,node_color=self.cubo_colors[cubo], 
+            node_size=50, alpha=0.7, ax=self.ax)
+        
+        # Desenha arestas entre cubos (conexões)
+        arestasCuboInter = []
+        for u, v in self.rw.EN.edges():
+            cubo_u = self.rw.EN.nodes[u]['cubo']
+            cubo_v = self.rw.EN.nodes[v]['cubo']
+            if cubo_u != cubo_v:
+                arestasCuboInter.append((u, v))
+        
+        nx.draw_networkx_edges(self.rw.EN, self.pos,
+        edgelist=arestasCuboInter,
+                             ax=self.ax, edge_color='red', style='--',
+                             alpha=0.8)
+        
+        # Configurações do plot
+        self.ax.set_title('Passeio Aleatório Metaestável \n Visualização 
+        em Tempo Real', fontsize=16, pad=20)
+        self.ax.axis('equal')
+        self.ax.grid(True, alpha=0.3)
+        
+        # Legenda
+        legend_elements = [
+            plt.Line2D([0], [0], marker='o', color='w', 
+            markerfacecolor='lightblue', 
+                      markersize=10, label='Cubo 0 (Norte)'),
+            plt.Line2D([0], [0], marker='o', color='w', 
+            markerfacecolor='lightgreen', 
+                      markersize=10, label='Cubo 1 (Leste)'),
+            plt.Line2D([0], [0], marker='o', color='w', 
+            markerfacecolor='lightcoral', 
+                      markersize=10, label='Cubo 2 (Sul)'),
+            plt.Line2D([0], [0], marker='o', color='w', 
+            markerfacecolor='lightsalmon', 
+                      markersize=10, label='Cubo 3 (Oeste)'),
+            plt.Line2D([0], [0], color='red', linestyle='--', 
+            label='Conexões entre cubos'),
+            plt.Line2D([0], [0], marker='o', color='red', markersize=10, 
+            label='Posição atual'),
+            plt.Line2D([0], [0], color='blue', linewidth=2, label='Caminho 
+            percorrido')
+        ]
+        self.ax.legend(handles=legend_elements, loc='upper right')
+        
+        # Inicializa elementos de animação
+        self.atualPonto, = self.ax.plot([], [], 'ro', markersize=12, 
+        label='Posição Atual')
+        self.line, = self.ax.plot([], [], 'b-', alpha=0.7, linewidth=2, 
+        label='Caminho')
+        self.textPasso = self.ax.text(0.02, 0.98, '', 
+        transform=self.ax.transAxes, 
+                                    fontsize=12, verticalalignment='top',
+                                    bbox=dict(boxstyle='round', 
+                                    facecolor='white', alpha=0.8))
+        
+        return self.atualPonto, self.line, self.textPasso
+    
+    def animate_step(self, frame):
+        """Atualiza a animação para cada frame"""
+        if frame == 0:
+            # Reinicia a simulação
+            self.rw.inicio(0)
+            self.rw.caminho = [self.rw.estadoAtual]
+        elif frame <= self.iter:
+            # Executa um passo
+            self.rw.andar()
+        
+        # Atualiza visualização
+        if self.rw.caminho:
+            # Pega coordenadas do caminho
+            camCoord = [self.pos[node] for node in self.rw.caminho]
+            x_vals, y_vals = zip(*camCoord) if camCoord else ([], []) 
+            #faz a projeção dos x em x_vals e de y em y_vals como lista
+            
+            # Atualiza linha do caminho
+            self.line.set_data(x_vals, y_vals)
+            
+            # Atualiza ponto atual
+            posAtual = self.pos[self.rw.estadoAtual]
+            self.atualPonto.set_data([posAtual[0]], [posAtual[1]])
+            
+            # Atualiza texto
+            cubo_atual = self.rw.EN.nodes[self.rw.estadoAtual]['cubo']
+            coords_atual = self.rw.EN.nodes[self.rw.estadoAtual]['coords']
+            self.textPasso.set_text(f'Passo: {frame}/{self.iter}\nCubo: 
+            {cubo_atual}\nCoords: {coords_atual}')
+        
+        return self.atualPonto, self.line, self.textPasso
+    
+    def animate(self, interval=100):
+        """Cria e exibe a animação"""
+        self.setup_plot()
+        anim = FuncAnimation(self.fig, self.animate_step, 
+        frames=self.iter+1,
+                           interval=interval, blit=True, repeat=True)
+        plt.tight_layout()
+        plt.show()
+        return anim
+
+if __name__ == "__main__":
+    # Parâmetros da simulação
+    N = 4  # Tamanho do cubo
+    d = 2  # Dimensão
+    iter = 2000  # Número de passos para animação
+    
+    print("Criando passeio aleatório metaestável...")
+    rw = MetastableRandomWalk(N, d)
+    
+    print("Iniciando visualização animada...")
+    print("Configuração:")
+    print(f"- {N}x{N} pontos por cubo")
+    print(f"- 4 cubos conectados")
+    print(f"- {iter} passos da animação")
+    print("\nA animação será iniciada...")
+    
+    visualizer = visualizar(rw, iter)
+    anim = visualizer.animate(interval=150)  # Intervalo em milissegundos
+\end{minted}
 
  \break
 	\renewcommand{\bibname}{Referências Bibliográficas}

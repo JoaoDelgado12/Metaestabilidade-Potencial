@@ -315,7 +315,7 @@
 	%
 	\chapter*{Resumo}
 	\thispagestyle{empty}
-	Este trabalho é um estudo sobre metaestabilidade, siguiando desde o entendimento de propriedades de probabilidade até os conceitos de mataesbilidade com uma abordagem de proteciais. É utilizado simulações de processos como o andar do bêbando em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de metaestabildiade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, é destacado propriedades como convergência entre configurações distintas e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estátistica.
+	Este trabalho é um estudo sobre metaestabilidade, se guiando desde o entendimento de propriedades de probabilidade até os conceitos de mataesbilidade com uma abordagem de potênciais. Foi utilizado simulações de processos como o andar do bêbado em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de mataesbilidade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, destacando propriedades como convergência de estado e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estatística.
 
 
 	\vspace*{0.5cm}
@@ -641,7 +641,7 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 
 Chamaremos $H_{N} = \{ -1, +1 \}^{N}$ um conjunto de configurações de $N$ spins (as entradas) com possíveis valores $\{+1, -1 \}$.
 Os elementos do $H_{N}$ são representados por $\nu$ e $\zeta$, ou seja, $\nu = (\nu_{1}, \dotsc , \nu_{N})$ e $\zeta = (\zeta_{1}, \dotsc , \zeta_{N})$ onde $\zeta_{i}$ e $\nu_{i} \in \{+1, - 1\}, \forall i \in \{1, \dotsc , N \}$.
-Seja $\nu \in H_{N}$, o valor da troca no spin j de $\nu$ é denotado por $\nu^{j}$.
+Seja $\nu \in H_{N}$, o valor da troca no spin $j$ de $\nu$ é denotado por $\nu^{j}$.
 \[
 (\nu^{j})_{i} =
 \begin{cases}
@@ -698,7 +698,7 @@ $V[0, N^{\gamma}] \coloneqq \{\sigma^{+}(0), \dotsc, \sigma^{+}(N^{\gamma})\}$.
 	$$\lim_{N \to \infty} \mathbb{P}\left( \left| \dfrac{t^{-}_{N}}{N \log N} - 1 \right| > \varepsilon \right) = 0, \forall \varepsilon > 0. $$
 \end{Teo}
 
-\begin{proof}[Demonstração do Teorema\ref{thm:teorema_1}]
+\begin{proof}
 Para provar o teorema é suficiente mostrar que $$\displaystyle \lim_{N \to \infty} \mathbb{P} \left( \dfrac{t^{-}_{N}}{N\log N} \right) = 1.$$
 \par Seja $\displaystyle D_{N}(t) = \dfrac{1}{2N} \sum^{N}_{i = 1} \left| \sigma_{i}^{+}(t) - \sigma_{i}^{-}(t) \right|$ a distância no instante $n$ entre $\sigma^{+}$ e $\sigma^{-}$. Pela evolução de $\sigma(t)$ temos que $D_{N}(t)$ é uma cadeia de Markov em $\{0, \tfrac{1}{N}, \dotsc, \tfrac{N - 1}{N}, 1 \}$ sendo a probabilidade de transição dada por:
 
@@ -756,7 +756,7 @@ Como $\displaystyle \int^{N}_{1} \dfrac{1}{x} \, dx = \log N$, então $\displayst
 \mathbb{P}(t^{-}_{N} - \mathbb{E}(t^{-}_{N}) | \varepsilon \cdot \mathbb{E}(t^{-}_{N})) \menor \dfrac{\var(t^{-}_{N})}{\varepsilon^{2} \cdot \mathbb{E}(t^{-}_{N})} &=\dfrac{\sum^{N}_{k=1} \dfrac{N(k - 1)}{(N - K + 1)^{2}}}{\varepsilon^{2}\left(\sum^{N}_{k=1} \dfrac{N}{N - K + 1} \right)^{2} }, \notag\\
 &= \dfrac{N}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N}_{k=1} \dfrac{(k - 1)}{(N - k + 1)^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1}\right)^{2}}. \label{eq:eq1}
 \end{align}
-Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então a expressão em $\left( \ref{eq:eq1} \right)$ é menor ou igual a
+Sendo $N-1$ o maior número dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então a expressão em $\left( \ref{eq:eq1} \right)$ é menor ou igual a
 \begin{align}
 \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{\sum^{N - 1}_{k=1} \dfrac{1}{k^{2}}}{\left(\sum^{N}_{k=1} \dfrac{1}{N - k + 1} \right)^{2}} 
 &\menor \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \sum^{N - 1}_{k=2} \dfrac{1}{k^{2} - 1}}{\left( \log N \right)^{2}}, \notag \\
@@ -764,7 +764,7 @@ Sendo $N-1$ o maior numero dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então a ex
 \end{align}
 Portanto,
 $$\lim_{N \to \infty} \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}} = 0.$$
-Portanto, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}_{N}}{\mathbb{E}(t^{-}_{N})} - 1 \right| > \varepsilon \right)$.
+Portanto, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}_{N}}{\mathbb{E}(t^{-}_{N})} - 1 \right| > \varepsilon \right) = 0$.
 \end{proof}
 
 \begin{Cor}\label{thm:corolário_1}
@@ -774,7 +774,7 @@ Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}(\sigma^{\nu}(t(N)) \neq \si
 
 \begin{proof}
 Primeiros notamos que
-$t^{-}_{N} = \inf(t > 0: \{I(1), \dotsc, I(t)\} \break = \{1, \dotsc, N\})$.
+$t^{-}_{N} = \inf \{t > 0: \{I(1), \dotsc, I(t)\} \break = \{1, \dotsc, N\}\}$.
 Assim,
 $$\mathbb{P}(\sigma^{\nu}(t(N)) \neq \sigma^{\zeta}(t(N))) \menor \mathbb{P}(t^{-}_{N} > t(N)) \menor \dfrac{N(\log N + 1)}{t(N)}.$$
 Portanto, por hipótese temos que
@@ -879,7 +879,7 @@ Vamos denotar $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de l
 	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
 	\label{fig:malhaEN}
 \end{figure}
-Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequencia de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura a abaixo.
+Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequencia de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura à abaixo.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -924,7 +924,7 @@ Dizemos que o grau de $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. 
 $$
 \medpi{\eta} = \dfrac{\deg(\eta)}{Z_{N}} 
 $$
-onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, então a distribuição é estacionária e única.	Vamos estudar o exemplo \textit{Coarse-grained-model}. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo,
+onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, então a distribuição é estacionária e única.	Vamos estudar o exemplo \textit{Coarse-grained-model}. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo e $\chi$ a função característica,
 $$ 
 \Gamma_{N}(\eta) = \Sum_{k=0}^{3} k\chi_{\Est{k}{N}}(\eta). 
 $$
@@ -938,7 +938,7 @@ Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$. Definamos também $B$ como
 $$ 
 H^{N}_{B} = \inf \{ t \maior 0 :\eta_{N}(t) \in B \}.
 $$
-Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa "partícula" esquece do caminho que veio, como consequência a probabilidade da partícula mudar de estado se a próxima de $\tfrac{1}{2}$. Quando a partícula termaliza, ela passeia em $\Est{j}{N}$ em um tempo de ordem $\alpha_{N}$ até chegar em ponto de intersecção, que denominamos de $\xi$. Para evitar essa pergunta, podemos definir uma sequência $(l_{N} : N \maior 1)$ de números reais tais que $l_{N} \to \infty$ e $ \dfrac{l_{N}}{N} \to 0 $. Assim criamos $V_{N}$, o conjunto dos pontos que distam até $l_{N}$ de $\xi$. Após alcançar $\xi$, nosso caminho aleatório faz um pequeno percurso em $V_{N}$. Como escolhemos uma boa vizinhança, o que poderia acontecer, de a partícula voltar para $\xi$ antes de sair de $V_{N}$, certamente não acorrerá, pois a ordem da partícula escapar de $V_{N}$ é menor que a ordem do tempo de encontro.  Para $d = 2$, 
+Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa "partícula" \ esquece do caminho que veio, como consequência a probabilidade da partícula mudar de estado se a próxima de $\tfrac{1}{2}$. Quando a partícula termaliza, ela passeia em $\Est{j}{N}$ em um tempo de ordem $\alpha_{N}$ até chegar em ponto de intersecção, que denominamos de $\xi$. Para evitar essa pergunta, podemos definir uma sequência $(\ell_{N} : N \maior 1)$ de números reais tais que $\ell_{N} \to \infty$ e $ \dfrac{\ell_{N}}{N} \to 0 $. Assim criamos $V_{N}$, o conjunto dos pontos que distam até $\ell_{N}$ de $\xi$. Após alcançar $\xi$, nosso caminho aleatório faz um pequeno percurso em $V_{N}$. Como escolhemos uma boa vizinhança, o que poderia acontecer, de a partícula voltar para $\xi$ antes de sair de $V_{N}$, certamente não acorrerá, pois a ordem da partícula escapar de $V_{N}$ é menor que a ordem do tempo de encontro.  Para $d = 2$, 
 \begin{align*}
 	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}\log N} = 
 	\left( \dfrac{t}{N} \right)^{2} \cdot \dfrac{1}{\log N} \to 0 \cdot 0 = 0.
@@ -948,7 +948,7 @@ Para $d \maior 3$,
 	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}} = 
 	\left( \dfrac{t}{N} \right)^{2} \to 0.
 \end{align*}
-Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $l^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de encontro nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
+Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $\ell^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de encontro nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
 %PAREI NA PAGINA 147, INICIAR NA PARTE QUE FALAR DOS SALTOS, ESCALANDO O TEMPO DE HITTING TIME.
 
 \section{Simulações em python}\label{codigo}
@@ -959,7 +959,7 @@ Como base para entendermos o escopo deste trabalho, foi criado algumas simulaçõe
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{IMG/GraphicCouple.png}
-	\caption{Acoplamento de dois caminhar aleatório com N fixo}
+	\caption{Acoplamento de dois passeios aleatórios}
 	\label{fig:GraphicCouple}
 \end{figure}
 

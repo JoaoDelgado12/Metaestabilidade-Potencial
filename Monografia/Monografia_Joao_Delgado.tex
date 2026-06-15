@@ -952,7 +952,7 @@ Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}
 %PAREI NA PAGINA 147, INICIAR NA PARTE QUE FALAR DOS SALTOS, ESCALANDO O TEMPO DE HITTING TIME.
 
 \section{Simulações em python}\label{codigo}
-Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso das bibliotecas \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Temos dois tipos de simulação, onde cada possui uma versão visual e no terminal.
+Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.
 
 \subsection{Caminhar aleatório com acoplamento}
 
@@ -1100,9 +1100,9 @@ plt.show()
 
 \end{minted}
 
-\subsection{metaestabilidade: Uma abordagem com potêncial}
+\subsection{Metaestabilidade: Uma abordagem com potêncial}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{IMG/andarMetaestavel.png}
 	\caption{Andar mestaestável com 4 estados}
@@ -1424,6 +1424,112 @@ if __name__ == "__main__":
     
     visualizer = visualizar(rw, iter)
     anim = visualizer.animate(interval=150)  # Intervalo em milissegundos
+\end{minted}
+
+\subsection{Convergência de distribuição: Tempo de saída}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{IMG/convergencia.png}
+	\caption{Convergência da distribuição do tempo de fuga de um estado}
+\end{figure}
+
+Nesta simulação é apresentado a modelagem de um caminhar aleatório em uma malha bidimensional quadrada de tamanho $N \times N$, estruturada na forma de um grafo. A simulação afere o tempo de saida do estado (a malha) que a particula se encontra, e demonstra para qual convegência a distribuição da abservação desse evento tende. Diferente do modelo anterior que foi construido 4 malhas conectadas utilizando conceitos básicos de grafos, como nesse modelo temos somente uma malha, podemos utilizar o método '\textit{grid\_ 2d\_ graph}' da biblioteca '\textit{NetworkX}' para criar tal objeto. A descrição do modelo é a mesma do anteior, começando no meio do estado, transição uniforme, e com o tempo de termalização menor do que o tempo de chegar na borda para a transição de estado. Um ponto importe a se salientar sobre o código, é o método para indicar que a particula saiu do estádo é uma borda ao redor do quadrado $N \times N$, ou seja, o método cria um grid para \textit{N+1}, mas o estado é de \textit{N}, o resto é uma adaptação para representar a saída do estado. Por fim, para representar e verificar a comparação da convergência da distribuição, utilizamos o teorema de Glivenko-Cantelli para intuir no resultado da convergência, e na simulação utilizamos a bioblioteca '\textit{scipy.stats}', focada em probabilidade e estatística,para plotar o gráfico da Logística e realizar a comparação.
+
+
+
+\begin{minted}{python}
+import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+import math
+
+class SingleCubeEscape:
+    def __init__(self, N):
+        self.N = N
+        self.G = self._build_graph()
+        self.reset()
+
+        self.escapes = []   # tempos de saída
+        self.attempt = 0
+
+    def _build_graph(self):
+        # Cria um grid NxN
+        return nx.grid_2d_graph(self.N, self.N)
+
+    def reset(self):
+        self.passo = 0
+        self.caminho = []
+        mid = self.N // 2 # Começa sempre no centro
+        self.estadoAtual = (mid, mid)
+        self.caminho.append(self.estadoAtual)
+
+    def is_boundary(self, node):
+        x, y = node
+        return x == 0 or y == 0 or x == self.N - 1 or y == self.N - 1
+
+    def andar(self):
+        vizinhos = list(self.G.neighbors(self.estadoAtual))
+        self.estadoAtual = vizinhos[np.random.randint(len(vizinhos))]
+
+        self.passo += 1
+        self.caminho.append(self.estadoAtual)
+
+        # Condição de escape
+        if self.is_boundary(self.estadoAtual):
+            # Normalização de escala para malha 2D
+            fator_escala = ((self.N - 1) ** 2 * math.log(self.N - 1))
+            self.escapes.append(self.passo / fator_escala)
+            self.attempt += 1
+            self.reset()
+
+    def simular(self, tentativas):
+        for i in range(tentativas):
+            while True:
+                self.andar()
+                if self.attempt > i:
+                    break
+            print(f"Tentativa {i+1}/{tentativas} concluída.")
+        return self.escapes
+        
+def plot_resultados(escapes):
+    plt.figure(figsize=(12, 6))
+
+    escapes_ordenados = np.sort(escapes)
+
+    plt.ecdf(escapes_ordenados, marker='o', label='F_n(x) 
+    Empírica (Dados Simulados)', color='tab:blue')
+
+    x_teorico = np.linspace(escapes_ordenados[0], escapes_ordenados[-1], 200)
+
+    from scipy.stats import logistic # especifico para distribuição
+    loc_estimado = np.median(escapes_ordenados) 
+    scale_estimado = np.std(escapes_ordenados) * 0.55
+    cdf_teorica = logistic.cdf(x_teorico, loc=loc_estimado, 
+    scale=scale_estimado)
+
+    plt.plot(x_teorico, cdf_teorica, color='red', linestyle='--', linewidth=2
+     label='F(x) Teórica Alvo')
+
+
+    plt.title("Glivenko-Cantelli: Tempo de Escape Normalizado", fontsize=14)
+    plt.xlabel("Tempo de Escape Adimensional 
+    ($t  [(N-1)^2 ln(N-1)])", fontsize=11)
+    plt.ylabel("Probabilidade Acumulada P(T < t)$", fontsize=11)
+    plt.grid(True, alpha=0.3)
+    plt.legend(fontsiz
+    e=11)
+    plt.show()
+if __name__ == "__main__":
+    N = 1000
+    tentativas = 200
+
+    sim = SingleCubeEscape(N + 1)
+
+    print("Rodando simulação...")
+    escapes = sim.simular(tentativas)
+
+    plot_resultados(escapes)
 \end{minted}
 
  \break

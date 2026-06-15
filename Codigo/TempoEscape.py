@@ -54,20 +54,19 @@ class SingleCubeEscape:
         return self.escapes
 
 
+    
 def plot_resultados(escapes):
-    escapes.sort()
     plt.figure(figsize=(20,10))
-    plt.plot(range(1, len(escapes)+1), escapes, marker='o', linestyle = None )
+    plt.plot(np.sort(escapes), range(1, len(escapes)+1) , marker='o' )
     plt.title("Tempo de saída do cubo por tentativa")
-    plt.xlabel("Tempo")
-    plt.ylabel("Tempo de escape")
+    plt.xlabel("Tempo de escape")
     plt.grid(True, alpha=0.3)
     plt.show()
 
 
 if __name__ == "__main__":
-    N = 1500
-    tentativas = 1000
+    N = 1000
+    tentativas = 100
 
     sim = SingleCubeEscape(N + 1)
 

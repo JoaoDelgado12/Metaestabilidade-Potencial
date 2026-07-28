@@ -637,6 +637,14 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 \end{Exem}
 
 
+{\Teo \label{teo:distDoisPoint} Seja $x$ e $y$ dois pontos de distância $k \maior 1$ no toru $\mathbb{Z}^{}_{N}$ e seja $\tau_{y}$ o primeiro tempo de chegada em $y$. Então existe uma constante $0 < c_{d} \menor C_{d} < \infty$ tal que 
+\begin{align*}
+c_{d}N^{d} \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{d}N^{d} \text{\hspace{10pt} unifomimente em $k$ se $d \maior 3$}  \\
+c_{2}N^{2}\log(k) \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{2}N^{2}\log(k+1) \text{\hspace{10pt} se $d = 2$}
+\end{align*}
+}
+
+
 \chapter{Metaestabilidade para o passeio aleatório no  hipercubo}
 
 Chamaremos $H_{N} = \{ -1, +1 \}^{N}$ um conjunto de configurações de $N$ spins (as entradas) com possíveis valores $\{+1, -1 \}$.
@@ -854,7 +862,9 @@ $$\mathbb{P}(I_{1}, \ldots, I_{2l}) \in J_{l}) \menor \dfrac{8}{N^{3}}.$$
 
 \chapter{Abordagem Potencial para Metaestabilidade}
 
-Vamos denotar $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de largura $N$ e dimensão $d$, como representado abaixo. Os estados (pontos ou configurações) de $\E$ é representado por $\eta, \xi, \zeta$.
+No capítulo anterior, estudamos o processo de metaestibilidade no contexto do  hipercubo, onde provamos teoremas base da natureza desse processo. Neste capítulo, iremos estudar o processo de metaestabilidade abordando a ideia de pot\^{e}nciais.
+\subsection{Caminhar aleatório em malhas}
+Inicialmente temos um exemplo de um processo de Cadeia de Markov em malhas conectadas que nos elucida a motivação da definição de metaestabilidade. Denotamos $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de largura $N$ e dimensão $d$, como representado abaixo. Os estados (pontos ou configurações) de $\E$ é representado por $\eta, \xi, \zeta$.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -879,7 +889,7 @@ Vamos denotar $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de l
 	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
 	\label{fig:malhaEN}
 \end{figure}
-Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequencia de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura à abaixo.
+Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequência de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura à abaixo.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -924,32 +934,26 @@ Dizemos que o grau de $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. 
 $$
 \medpi{\eta} = \dfrac{\deg(\eta)}{Z_{N}} 
 $$
-onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, então a distribuição é estacionária e única.	Vamos estudar o exemplo \textit{Coarse-grained-model}. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo e $\chi$ a função característica,
+onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, a distribuição é estacionária e única.	Como síntese da evolução da cadeia de Markov, utilizaremos o \textit{Coarse-grained-model} que permite simplificar a representação do estado da partícula. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo e $\chi$ a função característica,
 $$ 
 \Gamma_{N}(\eta) = \Sum_{k=0}^{3} k\chi_{\Est{k}{N}}(\eta). 
 $$
 Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado irá ter $(N^{d} - 1)$ vértices. A função da evolução assintótica do \textit{Coarse-grained-model} 
 $$
-\textbf{Y}_{N}(t) = \Gamma_{N}(\eta_{N}(t))
+Y_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pela proposição\ref{prop:1}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pelo Teorema \ref{teo:distDoisPoint}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
-Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$. Definamos também $B$ como o conjunto dos pontos de intersecção, $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Logo, seja 
+Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$, definimos $B$ como o conjunto dos pontos de intersecção $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Ademais, tomemos 
 $$ 
 H^{N}_{B} = \inf \{ t \maior 0 :\eta_{N}(t) \in B \}.
 $$
-Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa "partícula" \ esquece do caminho que veio, como consequência a probabilidade da partícula mudar de estado se a próxima de $\tfrac{1}{2}$. Quando a partícula termaliza, ela passeia em $\Est{j}{N}$ em um tempo de ordem $\alpha_{N}$ até chegar em ponto de intersecção, que denominamos de $\xi$. Para evitar essa pergunta, podemos definir uma sequência $(\ell_{N} : N \maior 1)$ de números reais tais que $\ell_{N} \to \infty$ e $ \dfrac{\ell_{N}}{N} \to 0 $. Assim criamos $V_{N}$, o conjunto dos pontos que distam até $\ell_{N}$ de $\xi$. Após alcançar $\xi$, nosso caminho aleatório faz um pequeno percurso em $V_{N}$. Como escolhemos uma boa vizinhança, o que poderia acontecer, de a partícula voltar para $\xi$ antes de sair de $V_{N}$, certamente não acorrerá, pois a ordem da partícula escapar de $V_{N}$ é menor que a ordem do tempo de encontro.  Para $d = 2$, 
-\begin{align*}
-	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}\log N} = 
-	\left( \dfrac{t}{N} \right)^{2} \cdot \dfrac{1}{\log N} \to 0 \cdot 0 = 0.
-\end{align*}
-Para $d \maior 3$,
-\begin{align*}
-	\dfrac{\ell_{N}^{2}}{\alpha_{N}} = \dfrac{\ell_{N}^{2}}{N^{2}} = 
-	\left( \dfrac{t}{N} \right)^{2} \to 0.
-\end{align*}
-Nesse vai e volta ao $\xi$ dentro do $V_{N}$ que pode está ocorrendo em $\Est{i}{N}$ ou $\Est{i \pm 1}{N}$, ao alcançar um tempo de ordem $\ell^{2}$ , a partícula consegue escapar do $V_{N}$. Perceba que esse tempo é irrisório comparado ao tempo de encontro nas quinas, $\alpha_{N}$. Desde que esse tempo seja muito maior do que o tempo de equilíbrio, temos a repetição do processo novamente. 
-%PAREI NA PAGINA 147, INICIAR NA PARTE QUE FALAR DOS SALTOS, ESCALANDO O TEMPO DE HITTING TIME.
+Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa partícula esquece do caminho que veio, consequentemente a probabilidade da partícula mudar de estado em $B$ se a próxima de $\tfrac{1}{2}$. Definindo uma sequência especial podemos descrever o que ocorre com a particula ao se aproximar de $\xi$. Seja $(\ell_{N} : N \maior 1)$ de números reais tais que $\ell_{N} \to \infty$ e $ \tfrac{\ell_{N}}{N} \to 0 $, criamos $V_{N}$, o conjunto dos pontos que distam até $\ell_{N}$ de $\xi$. Tomando o momento que a partícula chega a fronteira de $V_{N}$, sabemos que a ordem de tempo de sair de $V_{N}$ é $\ell^{2}_{N}\log(\ell^{2}_{N})$, uma medida muito menor que a ordem da particula alcançar o $\xi$. Assim ao adentrar em $V_{N}$ a particula realiza uma caminhada de tempo irrisório, chegando e retornando em $\xi$, passando em $E_{j,N}$ ou $E_{j \pm 1, N}$. Como o tempo de convergência da distribuição em $V_{N}$ é $\ell_{N}^{2}$, ao dentrar no quadrado, em pouco tempo o processo é termalizado.
+Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time} são insiginificantes em relaçao a escala do tempo de escape, podemos adequadamente ignorar essa passagem por $V_{N}$ e o tempo até a convergência da distribuição, permitindo que a cadeia de Markov cresça na mesma ordem do tempo de escape $\alpha_{N}$:
+$$ 
+\textbf{Y}_{N}(t) = Y_{N}(t\alpha_{N}) = \Gamma_{N}(\eta_{N}(t\alpha_{N}))
+$$
+o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $Y_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$.
 
 \section{Simulações em python}\label{codigo}
 Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.

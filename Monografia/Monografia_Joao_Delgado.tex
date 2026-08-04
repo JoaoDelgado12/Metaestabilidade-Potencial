@@ -862,34 +862,12 @@ $$\mathbb{P}(I_{1}, \ldots, I_{2l}) \in J_{l}) \menor \dfrac{8}{N^{3}}.$$
 
 \chapter{Abordagem Potencial para Metaestabilidade}
 
-No capítulo anterior, estudamos o processo de metaestibilidade no contexto do  hipercubo, onde provamos teoremas base da natureza desse processo. Neste capítulo, iremos estudar o processo de metaestabilidade abordando a ideia de pot\^{e}nciais.
-\subsection{Caminhar aleatório em malhas}
-Inicialmente temos um exemplo de um processo de Cadeia de Markov em malhas conectadas que nos elucida a motivação da definição de metaestabilidade. Denotamos $\E, N \maior 1$, o conjunto de estados de uma malha quadrada de largura $N$ e dimensão $d$, como representado abaixo. Os estados (pontos ou configurações) de $\E$ é representado por $\eta, \xi, \zeta$.
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[scale=0.4]
-		
-		% Malha 10x10
-		\draw[step=1cm, very thin, gray!60] (0,0) grid (10,10);
-		
-		
-		% Pontos da malha
-		\foreach \x in {0,...,10}
-		\foreach \y in {0,...,10}
-		\fill[black] (\x,\y) circle (1pt);
-		
-		% --- CONFIGURAÇÃO DESTACADA ---
-		\fill[blue] (6,8) circle (6pt);
-		
-		% Rótulo E_N
-		\node at (11.3,8.5) {$E_{N}$};
-		
-	\end{tikzpicture}
-	
-	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
-	\label{fig:malhaEN}
-\end{figure}
-Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, $E_{t, N}$. Para isso, consideremos que para $E_{t,N}$, temos um sequência de malhas $\Lambda_{N}$ onde para cada par de malhas vizinhas temos somente um ponto em comum, como a figura à abaixo.
+Na seção anterior, estudamos o processo de metaestibilidade no contexto do hipercubo, onde provamos que a escala de tempo para o acoplamento de dois pontos extremais é  $N \log N$, e no caminhar \textit{no lazy} ao extender a dimensão do cubo infinitamente, a partícula somente retornará a alguma posição visitada se for a posição anterior. Nesta seção, iremos estudar o processo de metaestabilidade de uma forma um pouco diferente, mas que transmite naturalidade do que imaginamos ser um processo metaestável.
+
+\section{Caminhar aleatório em malhas}
+Para compreender a metaestabilidade, basta lembrar de uma cena clássica de mesa de bar. Em um dia abafado, ao pedir uma cerveja estupidamente gelada para aliviar o calor, o que deveria ser uma solução pode se transformar em uma pequena frustração. Basta o contato da mão quente na garrafa para quebrar o frágil equilíbrio entre o líquido e o sólido, em questão de segundos, a cerveja congela por completo. A física e a química explicam o fenômeno, mas a lógica por trás da metaestabilidade vai muito além do bar. Seja no congelamento do líquido sobrefusão ou na alteração de campos magnéticos, o padrão se repete: o sistema se preserva em um estado provisório até que um leve gatilho o lance, de forma ultrarrápida, a uma nova forma permanente. Para elucidar iremos abordar um exemplo que traz uma descrição sintética desse fenômeno.
+
+Denotamos $\Lambda_{N} = \{1, \cdots, N\}^{d}$, uma malha quadrada de largura $N$ e dimensão $d$ (retratando um estado), e seja $\E, N \maior 1$, a união de $\lambda_{N}$'s interligados por somente um ponto em comum, como representada na figura~\ref{fig:malhaEtN}. Tomemos, um conjunto de quatro estados, da forma anteriormente indicada, que representamos por $E_{j,N}$ sendo $0 \menor j \menor 3$.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -917,18 +895,15 @@ Se considerarmos uma evolução dos estados podemos indexar $\E$ para cada tempo, 
 		\foreach \y in {0,...,10}
 		\fill[black] (\x + 10,\y - 10 ) circle (1pt);
 		
-		% --- CONFIGURAÇÃO DESTACADA1 ---
-		\fill[red] (15,-8) circle (6pt);
-		
 		% Rótulo E_t-1,N
 		\node at (21.3,-2.5) {$E_{1,N}$};
 		
 	\end{tikzpicture}
 	
-	\caption{Um caminhar aleatório com dois estados}
+	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
 	\label{fig:malhaEtN}
 \end{figure}
-Assim podemos definir $\E$ como a união dos $\Est{t}{N}$, ou seja, podemos pensar $\E$ como os estados de uma partícula de $0 \menor t \menor p$ sendo $p$ um inteiro. Vamos denotar $\eta_{N}(t)$ uma cadeia de Markov de tempo contínuo em $\E$ tal que o pulo de $\eta \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível.
+Vamos denotar $\eta_{N}(t)$ uma cadeia de Markov de tempo contínuo em $\E$ tal que o pulo de $\eta \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível.
 
 Dizemos que o grau de $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. Assim conseguimos definir uma medida de probabilidade 
 $$

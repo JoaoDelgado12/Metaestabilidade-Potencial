@@ -113,7 +113,7 @@
 \usepackage{calrsfs}
 
 
-%%%%%%%%%   Diogo  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%   DELGADO  %%%%%%%%%%%%%%%%%%%%%%
 \newtheorem{Cor}{Corolario}[chapter]
 \newtheorem{Teo}{Teorema}[chapter]
 \newtheorem{Pro}{Prova}[chapter]
@@ -146,7 +146,6 @@
 \makeindex
 
 \allowdisplaybreaks
-
 \begin{document}
 
 	\thispagestyle{empty}
@@ -867,7 +866,7 @@ Na seção anterior, estudamos o processo de metaestibilidade no contexto do hiper
 \section{Caminhar aleatório em malhas}
 Para compreender a metaestabilidade, basta lembrar de uma cena clássica de mesa de bar. Em um dia abafado, ao pedir uma cerveja estupidamente gelada para aliviar o calor, o que deveria ser uma solução pode se transformar em uma pequena frustração. Basta o contato da mão quente na garrafa para quebrar o frágil equilíbrio entre o líquido e o sólido, em questão de segundos, a cerveja congela por completo. A física e a química explicam o fenômeno, mas a lógica por trás da metaestabilidade vai muito além do bar. Seja no congelamento do líquido sobrefusão ou na alteração de campos magnéticos, o padrão se repete: o sistema se preserva em um estado provisório até que um leve gatilho o lance, de forma ultrarrápida, a uma nova forma permanente. Para elucidar iremos abordar um exemplo que traz uma descrição sintética desse fenômeno.
 
-Denotamos $\Lambda_{N} = \{1, \cdots, N\}^{d}$, uma malha quadrada de largura $N$ e dimensão $d$ (retratando um estado), e seja $\E, N \maior 1$, a união de $\lambda_{N}$'s interligados por somente um ponto em comum, como representada na figura~\ref{fig:malhaEtN}. Tomemos, um conjunto de quatro estados, da forma anteriormente indicada, que representamos por $E_{j,N}$ sendo $0 \menor j \menor 3$.
+Denotamos $\Lambda_{N} = \{1, \cdots, N\}^{d}$, uma malha quadrada de largura $N$ e dimensão $d$ (retratando um estado), e seja $\E, N \maior 1$, a união de $\Lambda_{N}$'s interligados por somente um ponto em comum, como representada na figura~\ref{fig:malhaEtN}.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=0.4]
@@ -903,13 +902,11 @@ Denotamos $\Lambda_{N} = \{1, \cdots, N\}^{d}$, uma malha quadrada de largura $N
 	\caption{Malha $\Lambda_{N} = \{0, \ldots, N \}^{d}$ com um elemento de $\E$ destacado por azul.}
 	\label{fig:malhaEtN}
 \end{figure}
-Vamos denotar $\eta_{N}(t)$ uma cadeia de Markov de tempo contínuo em $\E$ tal que o pulo de $\eta \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível.
-
-Dizemos que o grau de $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. Assim conseguimos definir uma medida de probabilidade 
+Tomemos, um conjunto de quatro estados, da forma anteriormente indicada, que represetaremos por $E_{j,N}$ sendo $0 \menor j \menor 3$. Vamos denotar $\eta_{N}(t)$, uma cadeia de Markov de tempo contínuo em $E_{N}$, de ordem exponencial em cada configuração tal que o pulo de $\eta_{N}(t) \in E_{t,N}$ para seus vértices vizinhos é uniforme, e para mudar seu estado espera um tempo exponencial. Perceba que essa cadeia de Markov é irredutível. Dizemos que o grau da configuração $\eta \in E_{N}$, $\deg(\eta)$, é quantidade de vizinhos. Conseguimos definir uma medida de probabilidade 
 $$
 \medpi{\eta} = \dfrac{\deg(\eta)}{Z_{N}} 
 $$
-onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Então, como sabemos que $\pi_{N}$ satisfaz a \textit{Equação de balanço}, a distribuição é estacionária e única.	Como síntese da evolução da cadeia de Markov, utilizaremos o \textit{Coarse-grained-model} que permite simplificar a representação do estado da partícula. Vamos denotar $\Gamma_{N} : \E \to \{0, 1, 2, 3 \}$ a projeção de uma partícula no seu tempo e $\chi$ a função característica,
+onde $Z_{N} = \Sum_{\xi \in \E} \deg(\xi)$. Como $\pi_{N}$ satisfaz a \textit{Equação de balanço}, como conseguência temos uma medida com distribuição estacionária e única.	Para elucidar a dinâmica da evolução da cadeia de Markov, utilizaremos o \textit{Coarse-grained-model} que nos permite estudar essa mecânica de forma simplificada, mas sem perda de informações importante. Seja $\chi$ a função caractéristica, podemos denotar $\Gamma_{N} : E_{N}\rightarrow \{0, 1, 2, 3\}$, a função projeção de uma partícula em  \{0, 1, 2, 3\} a partir do seu estado presente,
 $$ 
 \Gamma_{N}(\eta) = \Sum_{k=0}^{3} k\chi_{\Est{k}{N}}(\eta). 
 $$
@@ -917,7 +914,7 @@ Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado 
 $$
 Y_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é um passeio aleatório entre cubos discretos. Vamos denotar $z_{N}(t)$ o andar aleatório simétrico, de tempo contínuo em $\Lambda^{N}$, ou seja, o processo $\eta_{N}$ restrito a $\Lambda_{N}$, ademais seja $\medpi{\Lambda_{N}}$ a medida estacionária em $\Lambda_{N}$. Pelo Teorema \ref{teo:distDoisPoint}, temos que a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é a mesma representação da dinâmica descrita, porém focando somente em qual estado a partícula se encontra. Como $\eta_{N}(t)$ é retrito a $\Lambda_{N}$, dizemos que $z_{N}(t)$ é um caminhar aleatório simétrico com distribuição estacionária $\pi_{Lambda_{N}}$ também definda pelo grau da configuração, e $z_{N}(t)$ restrito a $\Lambda_{N}$ é congruente a $\eta_{N}(t)$. Sabemos que em um Toro, a ordem de \textit{mixing time} é de $N^{2}$, e a estimativa de um ponto encontrar pela primeira vez outro ponto no Toro distando $k$ está entre $cn^{2}\log(k)$ e $Cn^{2}\log(k)$, portanto a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
 Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$, definimos $B$ como o conjunto dos pontos de intersecção $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Ademais, tomemos 
 $$ 
@@ -928,7 +925,7 @@ Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time}
 $$ 
 \textbf{Y}_{N}(t) = Y_{N}(t\alpha_{N}) = \Gamma_{N}(\eta_{N}(t\alpha_{N}))
 $$
-o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $Y_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$.
+o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $Y_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$. Mas será que esse $Y_{N}(t)$ converge para uma cadeia de markov? Relembrando o processo da particula sainda do centro da malha, temos que ao se aproximar em escala $\alpha_{N}$ das intersecções, por um breve período de ordem muito menor, a particula pode alternar entre o próximo e atual estado por um tempo. Consequentemente cria um ponto de descontinuidade como pode ser visto na figura abaixo.
 
 \section{Simulações em python}\label{codigo}
 Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.
@@ -939,7 +936,6 @@ Como base para entendermos o escopo deste trabalho, foi criado algumas simulaçõe
 	\centering
 	\includegraphics[width=1\textwidth]{IMG/GraphicCouple.png}
 	\caption{Acoplamento de dois passeios aleatórios}
-	\label{fig:GraphicCouple}
 \end{figure}
 
 O código apresentado cria uma simulação com visualização gráfica cujo objetivo principal é ilustrar o comportamento de acoplamento (coupling) entre duas configurações aleatórias ao longo do tempo. Para isso, são utilizadas bibliotecas como NumPy para manipulação eficiente de vetores, Matplotlib para a construção da interface gráfica e animação.

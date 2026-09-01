@@ -914,7 +914,7 @@ Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado 
 $$
 Y_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é a mesma representação da dinâmica descrita, porém focando somente em qual estado a partícula se encontra. Como $\eta_{N}(t)$ é retrito a $\Lambda_{N}$, dizemos que $z_{N}(t)$ é um caminhar aleatório simétrico com distribuição estacionária $\pi_{Lambda_{N}}$ também definda pelo grau da configuração, e $z_{N}(t)$ restrito a $\Lambda_{N}$ é congruente a $\eta_{N}(t)$. Sabemos que em um Toro, a ordem de \textit{mixing time} é de $N^{2}$, e a estimativa de um ponto encontrar pela primeira vez outro ponto no Toro distando $k$ está entre $cn^{2}\log(k)$ e $Cn^{2}\log(k)$, portanto a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é a mesma representação da dinâmica descrita, porém focando somente em qual estado a partícula se encontra. Como $\eta_{N}(t)$ é retrito a $\Lambda_{N}$, dizemos que $z_{N}(t)$ é um caminhar aleatório simétrico com distribuição estacionária $\pi_{\Lambda_{N}}$ também definda pelo grau da configuração, e $z_{N}(t)$ restrito a $\Lambda_{N}$ é congruente a $\eta_{N}(t)$. Sabemos que em um Toro, a ordem de \textit{mixing time} é de $N^{2}$, e a estimativa de um ponto encontrar pela primeira vez outro ponto no Toro distando $k$ está entre $cn^{2}\log(k)$ e $Cn^{2}\log(k)$, portanto a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
 Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$, definimos $B$ como o conjunto dos pontos de intersecção $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Ademais, tomemos 
 $$ 
@@ -925,7 +925,57 @@ Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time}
 $$ 
 \textbf{Y}_{N}(t) = Y_{N}(t\alpha_{N}) = \Gamma_{N}(\eta_{N}(t\alpha_{N}))
 $$
-o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $Y_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$. Mas será que esse $Y_{N}(t)$ converge para uma cadeia de markov? Relembrando o processo da particula sainda do centro da malha, temos que ao se aproximar em escala $\alpha_{N}$ das intersecções, por um breve período de ordem muito menor, a particula pode alternar entre o próximo e atual estado por um tempo. Consequentemente cria um ponto de descontinuidade como pode ser visto na figura abaixo.
+o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $\textbf{Y}_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$. Mas será que esse $\textbf{Y}_{N}(t)$ converge para uma cadeia de markov? Ao se aproximar, em escala $\alpha_{N}$, das intersecções, a particula pula do estado atual para o próximo estado ou permanecer no mesmo, contudo sabemos que por um instante essa particula certamente saiu de seu estado atual. Consequentemente criando um ponto de descontinuidade como pode ser visto na figura abaixo. Logo, $\textbf{Y}_{N}(t)$ converge na topologia Skorohod.
+
+\begin{tikzpicture}[scale=1.0, >=stealth]
+  % Eixo Y
+  \draw[->] (0, -0.4) -- (0, 3.6);
+  
+  % Eixo X (t)
+  \draw[->] (-0.1, -0.4) -- (8.5, -0.4) node[right] {$t$};
+
+  % Marcadores e rótulos do eixo Y
+  \foreach \y in {0, 1, 2, 3} {
+    \draw (0, \y) -- (-0.08, \y) node[left] {$\y$};
+  }
+
+  % Sinal principal e barras pretas
+  \draw[thick] (0, 0) -- (3.4, 0);
+  \fill (3.4, 0) rectangle (3.5, 1);
+  \draw[thick] (3.5, 0) -- (5.9, 0);
+  \fill (5.9, 0) rectangle (6.08, 3);
+  \draw[thick] (6.08, 3) -- (8.3, 3);
+
+  % Setas e rótulos vermelhos (alpha_N)
+  \draw[<->, red, semithick] (0.2, 0.5) -- (3.2, 0.5) node[midway, above] {$\alpha_N$};
+  \draw[<->, red, semithick] (3.7, 0.5) -- (5.7, 0.5) node[midway, above] {$\alpha_N$};
+  \draw[<->, red, semithick] (6.2, 3.5) -- (8.1, 3.5) node[midway, above] {$\alpha_N$};
+\end{tikzpicture}
+
+\section{Metaestabilidade como \textit{model reduction}}
+Como demostrado na seção anterior, podemos contornar o calcanhar de arquiles dos sistemas microscópicos formulando um modelo macroscópico resumido (o nosso \textit{coarse-grained} ), que preserva as propriedades fundamentais do processo. O modelo que realizamos um breve estudo não é único, existem inúmeros outros modelos que possuem em um intervalo grande entra em equilibrio e transiociona em um tempo muito. À exemplo, o \textit{Random walks in a potential field} e \textit{Spin dynamics}. Portanto, iremos reformular nosso $\textbf{Y}_{N}(t)$.
+
+Seja $\eta_N(t)$ um passeio de tempo contínuo, de imagem $E_N$, uma cadeia de Markov irredutível. O gerador da cadeia é representado por $\mathcal{L}_N$ e
+tem seu único estádo estacionário como $\pi_N$. Assim, tomemos $f : E_N \to \mathbb{R}$,
+\[
+    (\mathcal{L}_N f)(\eta) \;=\; \sum_{\xi \in E_N} R_N(\eta, \xi) \, [ \, f(\xi) - f(\eta) \, ] \;,
+\]
+sendo $R_N(\eta, \xi)$ o peso de pulo para cada estados.
+
+Tomemos $A$ como um subsconjuto não vazio de $E_{N}$, podemos definir $H_{A}$ como o primeiro tempo de chegada em $A$ e $H_{A}^{+}$ o primeiro tempo de retorno a $A$.
+\begin{equation*}
+    H_A \;:=\; \inf\{t \ge 0 : \eta_N(t) \in A\} \;, \quad H_A^+ \;=\; \inf\{t \ge \tau_1 : \eta_N(t) \in A\}
+\end{equation*}
+tal que $\tau_1$ é o primeiro tempo de chegada em $\eta_N(t)$, $\tau_1 = \inf\{t \ge 0 : \eta_N(t) \neq \eta_N(0)\}$.
+
+Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido com o conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{?}{n}\}$, e a projeção das configurações de $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
+\[
+    \Phi_N(\eta) \;:=\; \sum_{k=1}^{\mathfrak{n}} k \, \chi_{\mathcal{E}_N^k}(\eta) \;+\; \mathfrak{d} \, \chi_{\Delta_N}(\eta) \;.
+\]
+Consequentemente, definimos $X_N(t)$ um processo de $(S \cup \{\mathfrak{d}\})$ como
+\begin{equation*}
+    X_N(t) \;:=\; \Phi_N \big( \eta_N(t) \big) \;. 
+\end{equation*}
 
 \section{Simulações em python}\label{codigo}
 Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.

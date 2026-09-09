@@ -968,7 +968,7 @@ Tomemos $A$ como um subsconjuto não vazio de $E_{N}$, podemos definir $H_{A}$ co
 \end{equation*}
 tal que $\tau_1$ é o primeiro tempo de chegada em $\eta_N(t)$, $\tau_1 = \inf\{t \ge 0 : \eta_N(t) \neq \eta_N(0)\}$.
 
-Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido com o conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{?}{n}\}$, e a projeção das configurações de $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
+Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido ao conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{n}\}$, e a projeção dos \textit{valleys} $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
 \[
     \Phi_N(\eta) \;:=\; \sum_{k=1}^{\mathfrak{n}} k \, \chi_{\mathcal{E}_N^k}(\eta) \;+\; \mathfrak{d} \, \chi_{\Delta_N}(\eta) \;.
 \]
@@ -976,6 +976,78 @@ Consequentemente, definimos $X_N(t)$ um processo de $(S \cup \{\mathfrak{d}\})$ 
 \begin{equation*}
     X_N(t) \;:=\; \Phi_N \big( \eta_N(t) \big) \;. 
 \end{equation*}
+\subsection{Última passagem}
+Como foi observado essa dinâmica provoca rápidas flutuações, porém podemos contorna-las substituindo esse periodo pelo último estado visitado. Para $t > 0$, vamos denotar por $\eta_N(t-)$ o limite à esquerda de $\eta_N$ em $t$:
+\[
+\eta_N(t-) = \lim_{s \to t,\, s < t} \eta_N(s).
+\]
+Definindo $X_N^V(t)$ por
+\begin{equation*}
+X_N^L(t) := \Phi_N(\eta_N(\mathfrak{v}_N(t))),
+\end{equation*}
+onde
+\[
+\mathfrak{v}_N(t) = 
+\begin{cases} 
+t & \text{se } \eta_N(t) \in \mathcal{E}_N, \\ 
+\mathfrak{w}_N(t)- & \text{c.c}, 
+\end{cases}
+\]
+e $\mathfrak{w}_N(t)$ representa o último tempo antes de $t$ em que o processo esteve em um dos vales $\mathcal{E}_N^k$:
+\[
+\mathfrak{w}_N(t) := \sup\{s \le t : \eta_N(s) \in \mathcal{E}_N\} \quad \text{e} \quad \mathcal{E}_N := \bigcup_{k=1}^{\mathfrak{n}} \mathcal{E}_N^k.
+\]
+Não existe preocupação caso o $\mathfrak{w}_N(t) = 0$, pois sempre iniciamos o processo a partir de uma configuração de $\mathcal{E}_{N}$. Para facilitar, podemos reescrever a fórmula utilizando a sequência de tempos de paradas $(T_j : j \ge 0)$ sendo $T_0 = 0$,
+\[
+T_{j+1} = \inf \left\{ t \ge T_j : \Phi(\eta_N(t)) \in S \setminus \{\Phi(\eta_N(T_j))\} \right\}, \quad j \ge 0.
+\]
+
+Sendo $T_{j+1}$ o primeiro tempo após $T_j$ no qual $\Phi(\eta_N(t))$ tem um valor diferente de $\mathfrak{d}$ e $\Phi(\eta_N(T_j))$. Ou seja,  $T_{j+1}$ é o primeiro tempo após $T_j$, $\eta_N(t)$ visitar um novo vale(estado). Consequentemente, dentro do intervalo $[T_j, T_{j+1})$, $X_N^V(t) = \Phi_N(\eta_N(T_j))$, temos que
+\[
+X_N^V(t) = \sum_{j \ge 0} \Phi_N(\eta_N(T_j)) \chi_{[T_j, T_{j+1})}(t),
+\]
+tal que $\chi_A$ representa a função indicadora do conjunto $A$.
+
+Sabemos que nossa partícula sai do centro de $\mathcal{E}_{N}^{a}$, que o próximo vale alcançado por ela é $\mathcal{E}_{N}^{b}$, durante o tempo em que está em $\Delta_{N}$ tinhamos uma descontinuidade que não nos permitia convergir na topologia \textit{Skorohod}. Porém, utilizando a dinâmica da Útilma passagem, conseguimos fixar os saltos de ida e vinda de $E_{a,N}$ e $E_{b, N}$ no ultimo valor do último vale visitado. Lembrando que $H_{\mathcal{E}_N^b}$ representa o \textit{Hitting time} deste vale. No intervalo de tempo $[0, H_{\mathcal{E}_N^b}]$, durante o passeio aleatório $\eta_N(t)$ em $\Delta_N$, $X_N^L(t)$ permanece igual a $k$. Portanto, como para todo $j \maior 0$; $H_{\mathcal{E}^{j}_{N}}$ tem uma escala de tempo de $\alpha_{N}$, podemos estender essa ideia para todo $j$, consequentemente eliminando as descontinuidades apresentadas no \textit{reduced model} e permitindo a convergência da nossa Cadeia de Markov.
+
+\begin{tikzpicture}[scale=1.0, >=stealth]
+  % Eixo Y
+  \draw[->] (0, -0.4) -- (0, 3.6);
+  
+  % Eixo X (t)
+  \draw[->] (-0.1, -0.4) -- (8.5, -0.4) node[right] {$t$};
+
+  % Marcadores e rótulos do eixo Y
+  \foreach \y in {0, 1, 2, 3} {
+    \draw (0, \y) -- (-0.08, \y) node[left] {$\y$};
+  }
+
+  % Sinal principal e barras pretas
+  \draw[thick] (0, 0) -- (3.5, 0);
+  \draw[thick] (3.5, 0) -- (5.9, 0);
+  \fill (5.9, 0) rectangle (6.08, 3);
+  \draw[thick] (6.08, 3) -- (8.3, 3);
+
+  % Setas e rótulos vermelhos (alpha_N)
+  \draw[<->, red, semithick] (0.2, 0.5) -- (5.7, 0.5) node[midway, above] {$\alpha_N$};
+  \draw[<->, red, semithick] (6.2, 3.5) -- (8.1, 3.5) node[midway, above] {$\alpha_N$};
+\end{tikzpicture} 
+ 
+
+{\Def
+Definimos que uma cadeia de Markov $\eta_N(t)$ é metastável, na abordagem da última passagem, na escala de tempo $\alpha_{N}$ se existir uma partição $\{\mathcal{E}_N^1, \dots, \mathcal{E}_N^{\mathfrak{n}}, \Delta_N\}$ do espaço de estados $E_N$ e uma cadeia de Markov a tempo contínuo $\mathbf{X}(t)$ tomando valores em $S$ tal que:
+\begin{enumerate}
+    \item[\textbf{(LP1)}] Para todo $k \in S = \{1, \dots, \mathfrak{n}\}$ e qualquer sequência $(\eta_N : N \ge 1)$ tal que $\eta_N \in \mathcal{E}_N^k$, partindo de $\eta_N$, $\mathbf{X}_N^V(t) = X_N^V(t \alpha_N)$ converge na topologia de \textit{Skorohod} para $\mathbf{X}(t)$.
+    \item[\textbf{(LP2)}] O tempo gasto em $\Delta_N$ é desprezível: Para todo $t > 0$,
+    \[
+    \lim_{N \to \infty} \max_{\eta \in \mathcal{E}_N} \mathbb{E}_\eta^N \left[ \int_0^t \chi_{\Delta_N}(\eta_N(s\alpha_N)) \, ds \right] = 0.
+    \]
+\end{enumerate}
+}
+
+Os conjuntos $\mathcal{E}_N^j$ são chamados de \emph{vales} e o processo $\mathbf{X}(t)$ de \emph{modelo reduzido}.
+
+
 
 \section{Simulações em python}\label{codigo}
 Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.

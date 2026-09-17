@@ -831,37 +831,66 @@ para todo $\zeta \in H_{N}$.
 Seja $S_{N} = \inf(k > 0: \xi(k) \in \{\xi(0), \xi(1), \dotsc, \xi(k-1)\})$ e $\Gamma_{1} = \inf(k > 0: I(k) = I(k-1))$. Então, $\displaystyle \lim_{N \to \infty} \mathbb{P}[S_{N} = \Gamma_{1}] = 1$.
 \end{Teo}
 
-Para a demonstração desse teorema vamos adotar algumas definição e notações:
+Para a demonstração desse teorema vamos adotar algumas definição e provar um proposição:
 \begin{enumerate}
 \item[1)] Seja $I$ uma variável que escolhe uma coordenada $i$ de um $\nu \in H_{N}$. Vamos denotar $I$ avaliado no tempo k como $I_{k}$.
 \item[2)] $J_{1} = \{(I_{1}, I_{2}) \in \{1, 2, \dotsc, N\}^{2} : I_{1} = I_{2} \}$.
-\item[3)] $\displaystyle J_{l} = \{(I_{1}, I_{2}, \dotsc, I_{2l}) \in \{1, 2, \dotsc, N\}^{2l} : \sum^{2l}_{k=1} 1_{ \{i=I_{k}\} } \in \{0, 2, 4, \dotsc, 2l\} \ \forall i \in \{1, 2, \dotsc, N\} \text{ e }  \\ (I_{1}, I_{2}, \dotsc , I_{2k}) \notin J_{k} \ \forall k \in \{1, 2, \dotsc , l - 1 \}  \}$.
-\item[4)] Definimos um grupo de $i \in \{1, 2, \dotsc, N\}$ do vetor $(I_{1}, I_{2}, \dotsc, I_{2l}) \in J_{l}$ como $\{k \in \{1, 2, \dotsc, 2l-1, 2l\}: i = I(k) \}$.
+\item[3)] $\displaystyle J_{\ell} = \{(I_{1}, I_{2}, \dotsc, I_{2\ell}) \in \{1, 2, \dotsc, N\}^{2\ell} : \sum^{2\ell}_{k=1} 1_{ \{i=I_{k}\} } \in \{0, 2, 4, \dotsc, 2\ell\} \ \forall i \in \{1, 2, \dotsc, N\} \text{ e }  \\ (I_{1}, I_{2}, \dotsc , I_{2k}) \notin J_{k} \ \forall k \in \{1, 2, \dotsc , \ell - 1 \}  \}$.
+\item[4)] Definimos um grupo de $i \in \{1, 2, \dotsc, N\}$ do vetor $(I_{1}, I_{2}, \dotsc, I_{2\ell}) \in J_{\ell}$ como $\{k \in \{1, 2, \dotsc, 2\ell-1, 2\ell\}: i = I(k) \}$.
+\item[5)] $S_{N} = \inf(k \maior 2 : \xi(k) \in V[0,k-1] = \{\xi(0), \ldots, \xi(k-1)\})$.
+\item[6)] $\Gamma_{1} = \inf((k \maior 2, I(k) = I(k-1))$ e $\Gamma_{\ell} = \inf(k \maior 2\ell : (I(k - 2\ell + 1), \ldots, I(k)) \in J_{\ell} )$
 \end{enumerate}
 Uma foma de pensar nos vetores desses J's é ver eles como caminho na forma de laço.
 \begin{Prop}\label{thm:lema_1_teo_2}
-Para $l \maior 3$
-$$\mathbb{P}(I_{1}, \ldots, I_{2l}) \in J_{l}) \menor \dfrac{8}{N^{3}}.$$
+Para $\ell \maior 3$
+$$\mathbb{P}(I_{1}, \ldots, I_{2\ell}) \in J_{\ell}) \menor \dfrac{8}{N^{3}}.$$
 \end{Prop}
 
 \begin{proof}
-	Sabemos que $\mathbb{P}(I_{1}, \dotsc, I_{2l}) \in J_{l} = \dfrac{\left| J_{l} \right|}{N^{2l}}$.
-	Fazendo uma estimativa superior temos que $\left| J_{l} \right| \menor 2N^{2l - 2}$, pois sendo $(I_{1}, \dotsc, I_{2l}) \in J_{l}$, então $(I_{1}, \dotsc, I_{2l - 2}) \notin J_{l-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2l - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
+	Sabemos que $\mathbb{P}(I_{1}, \dotsc, I_{2\ell}) \in J_{\ell} = \dfrac{\left| J_{\ell} \right|}{N^{2\ell}}$.
+	Fazendo uma estimativa superior temos que $\left| J_{\ell} \right| \menor 2N^{2\ell - 2}$, pois sendo $(I_{1}, \dotsc, I_{2\ell}) \in J_{\ell}$, então $(I_{1}, \dotsc, I_{2\ell - 2}) \notin J_{\ell-1}$, evitando a recursividade, podemos supor que $\exists i' \in \{1, \dotsc, N\}$ tal que $\displaystyle \sum^{2\ell - 2}_{k=1} 1_{ \{i' = I_{k}\} }$ é ímpar, como o tamanho do vetor é par, então deve $\exists i'' \neq i'$ tal que $\displaystyle \sum^{2\ell - 2}_{k=1} 1_{ \{i'' = I_{k}\} }$ é ímpar.
 	%
 	%
 	% DESENHAR A FIGURA
 	%
 	%
-	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2l - 1}, I_{2l}) \in J_{l}$, então $\displaystyle \sum^{2l}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2l}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos índices são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{l} \right| \menor 2N^{2l - 2}$.
-	Podemos dividir $J_{l}$ em dois conjuntos disjuntos, $J_{l}^{''}$ e $J_{l}^{'}$, onde $J^{''}_{l}$ é o conjunto onde
-	nas três últimas entradas existe duas iguais, e $J^{'}_{l}$ é o conjunto onde as três últimas entradas são distintas. Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{l}$ como a entrada $2l - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2l - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2l - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2l}_{k=1} 1_{ \{I_{2l - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2l - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{l} \right| \menor 3!N^{2l - 3}$. No conjunto $J^{''}_{l}$perceba que como $I_{2l - 1} \neq I_{2l}$, então existem somente dois casos $I_{2l - 2} = I_{2l}$ e $I_{2l - 1} = I_{2l - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2l - 1} \neq I_{2l}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2l$ entradas como se fosse de $2l - 2$ entradas. Assim, $\left| J_{l}^{''} \right| \menor N \cdot \left| J^{''}_{l - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
-	$$\frac{|J_{l}|}{N^{2l}} = \frac{|J_{l}^{'}|}{N^{2l}} + \frac{|J_{l}^{''}|}{N^{2l}} \menor \frac{3!N^{2l-3}}{N^{2l}} + \dfrac{N \cdot 2N^{2l-4}}{N^{2l}} = \frac{8}{N^{3}}. $$
+	Logo, como $(I_{1}, I_{2}, \dotsc, I_{2\ell - 1}, I_{2\ell}) \in J_{\ell}$, então $\displaystyle \sum^{2\ell}_{k=1} 1_{ \{i' = I_{k}\} }$ e $\displaystyle \sum^{2\ell}_{k=1} 1_{ \{i'' = I_{k}\} }$ são somas pares, ou seja, os dois últimos índices são determinados pelos $i'$ e $i''$. Como $i'$ e $i''$ são diferentes, então podemos permuta-los, assim $\left| J_{\ell} \right| \menor 2N^{2\ell - 2}$.
+	Podemos dividir $J_{\ell}$ em dois conjuntos disjuntos, $J_{\ell}^{''}$ e $J_{\ell}^{'}$, onde $J^{''}_{\ell}$ é o conjunto onde
+	nas três últimas entradas existe duas iguais, e $J^{'}_{\ell}$ é o conjunto onde as três últimas entradas são distintas. Vamos achar uma estimativa superior para esse conjuntos. Em $J^{'}_{\ell}$ como a entrada $2\ell - 2$ é distinta das duas últimas e sabemos que temos dois blocos ímpares distintos que determinam as duas últimas entradas, então o bloco de $I_{2\ell - 2}$ no subvetor $(I_{1}, I_{2}, \dotsc, I_{2\ell - 3})$ é ímpar, pois se fosse o contrário, a soma $\displaystyle \sum^{2\ell}_{k=1} 1_{ \{I_{2\ell - 2} = I_{k}\} }$ seria ímpar. Logo, a entrada $2\ell - 2$ é determinado por um terceiro bloco ímpar. Logo, $\left| J'_{\ell} \right| \menor 3!N^{2\ell - 3}$. No conjunto $J^{''}_{\ell}$perceba que como $I_{2\ell - 1} \neq I_{2\ell}$, então existem somente dois casos $I_{2\ell - 2} = I_{2\ell}$ e $I_{2\ell - 1} = I_{2\ell - 2}$. Sem perda de generalidade, vamos supor que é verdade $I_{2\ell - 1} \neq I_{2\ell}$. Como ambas as duas coordenadas estão determinadas pelos mesmo bloco, então podemos lidar com esse vetor de $2\ell$ entradas como se fosse de $2\ell - 2$ entradas. Assim, $\left| J_{\ell}^{''} \right| \menor N \cdot \left| J^{''}_{\ell - 1} \right|$, pois as coordenada repetida pode ter combinação de $N$ valores. Portanto,
+	$$\frac{|J_{\ell}|}{N^{2\ell}} = \frac{|J_{\ell}^{'}|}{N^{2\ell}} + \frac{|J_{\ell}^{''}|}{N^{2\ell}} \menor \frac{3!N^{2\ell-3}}{N^{2\ell}} + \dfrac{N \cdot 2N^{2\ell-4}}{N^{2\ell}} = \frac{8}{N^{3}}. $$
 \end{proof}
 
+\begin{Teo} Para $S_{N}$ e $\Gamma_{1}$, como definido acima, podemos afirma que 
+$$
+\lim_{N \to \infty} \mathbb{P}\left( S_{N} = \Gamma_{1} \right) = 1.
+$$
+\end{Teo}
+\begin{proof}
+Veja que como estamos trabalhando com o caminha $\xi$, $\Gamma_{\ell}$ é o primeiro tempo de retorno depois de $2 \ell$. Portanto, $S_{N} = \displaystyle \min_{\ell \maior 1} \Gamma_{\ell}$. Consequentemente, podemos demonstrar o teorema provando que
+$$
+\mathbb{P}\left( \Gamma_{1} < N^{1+\sigma} < \min_{N^{1+\sigma} \maior \ell \maior 2 } \Gamma_{\ell} \right) = 1,
+$$ 
+para alguma $\sigma > 0$.
+Sabemos que para $\ell \maior $, $\mathbb{P}((I_{1}, \ldots, I_{2\ell}) \in J_{\ell}) \menor \tfrac{8}{N^{3}}$, a partir desse resultado podemos conseguir um limite para $\mathbb{P}(\Gamma_{\ell} \menor k)$ sendo $\ell \maior 3$. 
+\begin{align*}
+ \mathbb{P}(\Gamma_{\ell} \menor k) = \Sum_{j=2\ell}^{k}\mathbb{P}(\Gamma_{l} = j) =& \Sum_{j=2\ell}^{k}\mathbb{P}( \forall t < j (I_{t - 2l + 1}, \ldots, I_{t})  \notin J_{l}  \cap (I_{j - 2l + 1}, \ldots, I_{j}) \in J_{\ell}) \\
+\menor& \Sum_{j=2\ell}^{k} \mathbb{P}((I_{t - 2l + 1}, \ldots, I_{t}) \in J_{\ell}) = (k - 2\ell)\mathbb{P}((I_{1}, \ldots, I_{2\ell}) \in J_{\ell}).
+\end{align*}
+Utilizando o restultado anterior,
+\begin{align*}
+(k - 2\ell)\mathbb{P}((I_{1}, \ldots, I_{2\ell}) \in J_{\ell}) \menor (k - 2\ell)\dfrac{8}{N^{3}} \menor k\dfrac{8}{N^{3}}.
+\end{align*}
+Como consequência podemos utilizar essa limitação superior para provar que $\mathbb{P}(\Gamma_{1} < N^{1 + \sigma})$.
+\begin{align*}
+\mathbb{P}(\Gamma_{1} < N^{1 + \sigma}) = 1 - \mathbb{P}(\Gamma_{1} \maior N^{1 + \sigma}) = 1 - \left(1 - N^{1 + \sigma}\dfrac{8}{N^{3}}\right).
+\end{align*}
+Em seguinda, fazendo $N \to \infty$, o  $\displaystyle \lim_{N \to \infty} \mathbb{P}(\Gamma_{1} < N^{1 + \sigma}) = \lim_{N \to \infty} 1 - \left(1 - N^{1 + \sigma} \dfrac{8}{N^{3}}\right) = 1$
 
+
+\end{proof}
 \chapter{Abordagem Potencial para Metaestabilidade}
 
-Na seção anterior, estudamos o processo de metaestibilidade no contexto do hipercubo, onde provamos que a escala de tempo para o acoplamento de dois pontos extremais é  $N \log N$, e no caminhar \textit{no lazy} ao extender a dimensão do cubo infinitamente, a partícula somente retornará a alguma posição visitada se for a posição anterior. Nesta seção, iremos estudar o processo de metaestabilidade de uma forma um pouco diferente, mas que transmite naturalidade do que imaginamos ser um processo metaestável.
+Na seção anterior, estudamos o processo de metaestibilidade no contexto do hipercubo, onde provamos que a escala de tempo para o acoplamento de dois pontos extremais é $N \log N$, e no caminhar \textit{no lazy} ao extender a dimensão do cubo infinitamente, a partícula somente retornará a alguma posição visitada se for a posição anterior. Nesta seção, iremos estudar o processo de metaestabilidade de uma forma um pouco diferente, mas que transmite naturalidade do que imaginamos ser um processo metaestável.
 
 \section{Caminhar aleatório em malhas}
 Para compreender a metaestabilidade, basta lembrar de uma cena clássica de mesa de bar. Em um dia abafado, ao pedir uma cerveja estupidamente gelada para aliviar o calor, o que deveria ser uma solução pode se transformar em uma pequena frustração. Basta o contato da mão quente na garrafa para quebrar o frágil equilíbrio entre o líquido e o sólido, em questão de segundos, a cerveja congela por completo. A física e a química explicam o fenômeno, mas a lógica por trás da metaestabilidade vai muito além do bar. Seja no congelamento do líquido sobrefusão ou na alteração de campos magnéticos, o padrão se repete: o sistema se preserva em um estado provisório até que um leve gatilho o lance, de forma ultrarrápida, a uma nova forma permanente. Para elucidar iremos abordar um exemplo que traz uma descrição sintética desse fenômeno.

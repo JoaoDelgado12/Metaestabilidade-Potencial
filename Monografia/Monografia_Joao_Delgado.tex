@@ -280,6 +280,7 @@
 	%%%%%%%%%% AGRADECIMENTOS %%%%%%%%%%
 	%
 	\chapter*{Agradecimentos}
+	Gostaria de expressar meus sinceros agradecimentos ao meu orientador, Prof. Tertuliano, pela paciência, dedicação e orientação constante ao longo deste percurso. Sua prontidão para apoiar e guiar o desenvolvimento desta pesquisa, especialmente diante dos diversos desafios encontrados, foi fundamental para a concretização deste trabalho. Estendo também minha profunda gratidão à minha família, à minha namorada e aos meus sogros. O apoio, a compreensão e o incentivo de cada um foram o alicerce necessário para que eu concluísse esta etapa, que simboliza tanto o encerramento de um ciclo importante na minha formação acadêmica quanto o início de novos desafios profissionais. Olhando para trás, reconheço que a jornada foi exigente, marcada pela rotina intensa de conciliar os estágios, as demandas acadêmicas da UFBA e as aulas noturnas no SENAI CIMATEC. Apesar do cansaço acumulado, sinto-me imensamente realizado por concluir este trabalho com êxito.
 	\pagenumbering{roman}
 	\setcounter{page}{-1}
 	\thispagestyle{empty}
@@ -314,7 +315,7 @@
 	%
 	\chapter*{Resumo}
 	\thispagestyle{empty}
-	Este trabalho é um estudo sobre metaestabilidade, se guiando desde o entendimento de propriedades de probabilidade até os conceitos de mataesbilidade com uma abordagem de potênciais. Foi utilizado simulações de processos como o andar do bêbado em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de mataesbilidade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, destacando propriedades como convergência de estado e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estatística.
+	Este trabalho é um estudo sobre metaestabilidade, se guiando desde o entendimento de propriedades de probabilidade até os conceitos de metaesbilidade com uma abordagem de potenciais. Foi utilizado simulações de processos como o andar do bêbado em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de metaesbilidade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, destacando propriedades como convergência de estado e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estatística.
 
 
 	\vspace*{0.5cm}
@@ -356,7 +357,7 @@
 	\pagenumbering{arabic}
 	\addcontentsline{toc}{chapter}{Introdução}
 	\chapter*{Introdução}\label{Introdução}
-A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da teoria das probabilidade, da Mecânica Estatística e das cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da Física quanto da matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
+A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da teoria de probabilidade, da Mecânica Estatística e das Cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da Física quanto da matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
 
 De forma geral, a metaestabilidade descreve situações em que um sistema permanece por longos períodos em estados que não são verdadeiramente estáveis, mas que apresentam uma estabilidade aparente antes de ocorrer uma transição para um estado mais estável. Esse comportamento é particularmente relevante em modelos probabilísticos, nos quais a análise do tempo de permanência e das transições entre estados desempenha um papel central. Assim, o estudo da metaestabilidade torna-se essencial para a compreensão de fenômenos complexos, com aplicações que vão desde processos físicos até algoritmos estocásticos.
 
@@ -369,7 +370,7 @@ Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessári
 
 
 \chapter{Noções básicas de medida e probabilidade}
-Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir esse objeto com uma medida, assim seguindo para a construção da medida de probabilidade. Em sequência, falamos um sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade.
+Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir esse objeto com uma medida, assim seguindo para a construção da medida de probabilidade. Em sequência, falamos sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade.
 \begin{Def} Uma álgebra de um conjunto $\Omega$ é uma classe $\algebra$ de subconjuntos de $\Omega$ tal que:
 	\begin{enumerate}[i.]
 		\item $\Omega \in \algebra$,
@@ -377,7 +378,7 @@ Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamo
 		\item $A,B \in \algebra$ implica que $A\cup B \in \algebra$.
 	\end{enumerate}
 \end{Def}
-Uma álgebra é uma classe que se pode realizar operações elementares de conjuntos, o que é característica muito boa, pois como funções trabalham com conjunto e, sem esses objetos, ficamos muito restritos ou até de mãos atadas ao desenvolver uma teoria. Contudo, a álgebra ainda não é uma estrutura adequada para trabalhar com probabilidade, pois, apesar das uniões de dois elementos da álgebra estarem na álgebra, a união infinitesimal desses elementos pode não estar no conjunto. Logo, precisamos de uma estrutura que seja fechada para uniões enumeráveis.
+Uma álgebra de conjuntos permite realizar operações naturais, mas ainda é insuficiente para a teoria de probabilidade. Embora a união de dois elementos pertença à álgebra, a união enumerável desses elementos pode não pertencer ao conjunto. Por isso, precisamos de uma estrutura fechada para uniões enumeráveis.
 \begin{Def} Uma $\sigma$-álgebra é uma álgebra fechada por uniões enumeráveis, ou seja,
 	\begin{enumerate}[iv.]
 		\item $A_{j} \in \algebra$ tal que $j = 1, 2, \ldots $  implica que $\displaystyle \bigcup^{\infty}_{j=1}A_{j} \in \algebra$.
@@ -492,13 +493,13 @@ Logo, se a sequência de eventos $A_{i}$ são independentes, então $\displaystyle 
 \begin{Def}[Cadeia de Markov finita] Seja $\left (\Omega, \sigma \{ \Omega \}, \mathbb{P} \right)$ um espaço de probabilidade e $\left( X_{1}, X_{2}, X_{3}, ... \right)$ uma sequência aleatória de variáveis que satisfaz, juntamente com uma matriz de transição $\mathbb{P}$, a propriedade de Markov, definida da seguinte forma: Se para $\forall x,y \in \Omega$, para todo $t \maior 1$, e para todo evento $H_{t-1} = \displaystyle \bigcap^{t-1}_{s=0} \left\{ X_{s} = x_{s}\right\}$ satisfaz $\mathbb{P} \left(H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right) > 0$, nos temos que
 	$$\mathbb{P} \left\{ X_{t+1} = y | H_{t-1} \bigcap \left\{ X_{t} = x \right\} \right\} =  \mathbb{P} \left\{ X_{t+1} = y | \left\{ X_{t} = x \right\} \right\}.$$
 \end{Def}
-Em termos mais amigáveis, a probabilidade de a sequência chegar a um determinado estado depende apenas do estado anterior, podemos pensar nisso como uma sequência que apresenta perda de memória. Como estamos trabalhando com probabilidade, a soma das chances de transição de um estado para todos os outros deve ser igual a 1. Por isso, a nossa matriz de transição precisa ser estocástica.
-\begin{Def}[Matriz estocástica] Denominamos $P$ de matriz estocástica, se as suas entradas são não-negativas e a soma de elementos de cada coluna da matriz é igual a um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 \ \forall x \in \Omega$.
+Em termos mais amigáveis, a probabilidade de a sequência chegar a um determinado estado depende apenas do estado anterior, podemos pensar nisso como uma sequência que apresenta perda de memória. Como estamos trabalhando com probabilidade, a soma das chances de transição de um estado para todos os outros deve ser igual a $1$	. Por isso, a nossa matriz de transição precisa ser estocástica.
+\begin{Def}[Matriz estocástica] Denominamos $P$ de matriz estocástica, se as suas entradas são não-negativas e a soma de elementos de cada coluna da matriz é igual a um, isso é, $\Sum_{j \in | \Omega | } P_{ij} = \mathbb{P}(x, \cdot)= 1 , \ \forall x \in \Omega$.
 \end{Def}
 
-Em muitos casos gostaríamos de trabalhar com distribuições de pontos diferentes do espaço, $\mathbb{P}(x, \cdot), \mathbb{P}(y, \cdot)$, então para facilitar a compreensão, vamos utilizar a notação $\mathbb{E}_{x}, \mathbb{P}_{x}$.
+Em muitos casos gostaríamos de trabalhar com distribuições de pontos diferentes do espaço, $\mathbb{P}(x, \cdot), \mathbb{P}(y, \cdot)$, então para facilitar a compreensão, vamos utilizar as notações $\mathbb{E}_{x}, \mathbb{P}_{x}$.
 $$\mathbb{E}_{x}(f(X_{1})) = \sum_{y}f(y)\mathbb{P}_{x} \left( X_{1} = y \right) = \sum_{y} f(y)\mathbb{P}(x,y) = \mathbb{P}f(X). $$
-tal que $f$ é uma função. Notação: $\mathbb{P}_{x}(X_{t} = y) = (\delta_{x} \mathbb{P}^{t})(y) = \mathbb{P}^{t}(x,y)$.
+onde $f: \Omega \to \mathbb{R}  $ é uma função. Notação: $\mathbb{P}_{x}(X_{t} = y) = (\delta_{x} \mathbb{P}^{t})(y) = \mathbb{P}^{t}(x,y)$.
 \section{Função de representação aleatória}
 \begin{Def}[Função de representação aleatória de uma matriz $P$ em um espaço de estados $\Omega$]
 A função $f$ é uma representação aleatória se $f: \Omega \times \Lambda \rightarrow \Lambda$, onde $\Lambda$ são os valores da variável aleatória $Z$ definida em $\Omega$, satisfaz
@@ -646,6 +647,8 @@ c_{2}N^{2}\log(k) \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{2}N^{2}\log(k+1) \te
 
 \chapter{Metaestabilidade para o passeio aleatório no  hipercubo}
 
+Baseando-se nos princípios fundamentais das medidas de probabilidade, $\sigma$-álgebras e propriedades da cadeia de Markov estabelecidas no capítulo inicial, o Capítulo 2 avança esses conceitos teóricos para uma análise de modelos dinâmicos e complexos. Especificamente, o capítulo seguinte investiga o fenômeno da metaestabilidade através da lente de caminhadas aleatórias no hipercubo, avaliando tempos de reunião assintóticos e estruturas de retorno tanto para processos estocásticos \textit{lazy} quanto \textit{no lazy}.
+\section{Tipos de passeios aleatórios homogêneos:}
 Chamaremos $H_{N} = \{ -1, +1 \}^{N}$ um conjunto de configurações de $N$ spins (as entradas) com possíveis valores $\{+1, -1 \}$.
 Os elementos do $H_{N}$ são representados por $\nu$ e $\zeta$, ou seja, $\nu = (\nu_{1}, \dotsc , \nu_{N})$ e $\zeta = (\zeta_{1}, \dotsc , \zeta_{N})$ onde $\zeta_{i}$ e $\nu_{i} \in \{+1, - 1\}, \forall i \in \{1, \dotsc , N \}$.
 Seja $\nu \in H_{N}$, o valor da troca no spin $j$ de $\nu$ é denotado por $\nu^{j}$.
@@ -656,7 +659,6 @@ Seja $\nu \in H_{N}$, o valor da troca no spin $j$ de $\nu$ é denotado por $\nu^
 \ -\nu_{j}&,\text{se} \ i = j.
 \end{cases}
 \]
-\section{Tipos de passeios aleatórios homogêneos:}
 \subsection{ Passeio homogêneo preguiçoso $\sigma(t)$} Seja $\nu \in H_{N}$ e $\sigma(0) = \nu$, $\sigma(t)$ é um evolução estocática em relação a um tempo discreto, onde para cada $t$ escolhemos $i \in \{1, \dotsc , N\}$ com probabilidade $\tfrac{1}{N}$ e escolheremos em seguida o spin  $\sigma_{i} = +1$ com probabilidade $\tfrac{1}{2}$. Podemos interpretar o passeio homogêneo como a sequência de duas variáveis aleatórias $I(t)$ e $U(t)$, definidas em $(\Omega_{N}, \mathcal{F}_{N}, \mathbb{P}_{N})$, sendo $I(t) \in \{1, \dotsc , N\}$ independente e $\forall k \in \{1, \dotsc, N \}; \ \mathbb{P}_{N} (I(t) = k ) = \tfrac{1}{N}$ e $U(t) \in [0, 1]$ independente e $\forall u \in [0, 1]; \ \mathbb{P}_{N} (U(t) < u) = u$, ou seja, identicamente distribuída uniformemente em [0, 1].
 
 Assim,
@@ -697,7 +699,7 @@ $D^{\nu, \zeta}_{N} (t) \coloneqq \left| \dfrac{K^{\nu} (t) - P^{\zeta} (t)}{2N}
 $V[0, N^{\gamma}] \coloneqq \{\sigma^{+}(0), \dotsc, \sigma^{+}(N^{\gamma})\}$.
 
 
- O Teorema\ref{thm:teorema_1} nos dá uma estimativa do crescimento do tempo que leva para dois pontos do hipercubo se encontrarem quando $N \to \infty$.
+ O Teorema \ref{thm:teorema_1} nos dá uma estimativa do crescimento assintótico do tempo que leva para dois passeios no hipercubo se encontrarem.
 
 
 \begin{Teo}\label{thm:teorema_1}
@@ -771,7 +773,7 @@ Sendo $N-1$ o maior número dos termos da soma $\Sum_{k=1}^{N} (k-1)$, então a ex
 \end{align}
 Portanto,
 $$\lim_{N \to \infty} \dfrac{N(N - 1)}{\varepsilon^{2} \cdot N^{2}} \cdot \dfrac{1 + \dfrac{3}{4} - \dfrac{2N + 1}{2N(N + 1)}}{\left( \log N \right)^{2}} = 0.$$
-Portanto, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}_{N}}{\mathbb{E}(t^{-}_{N})} - 1 \right| > \varepsilon \right) = 0$.
+Daí, $\displaystyle \lim_{N \to \infty} \mathbb{P}\left( \left|\dfrac{t^{-}_{N}}{\mathbb{E}(t^{-}_{N})} - 1 \right| > \varepsilon \right) = 0$.
 \end{proof}
 
 \begin{Cor}\label{thm:corolário_1}
@@ -1018,9 +1020,9 @@ Tomemos $A$ como um subsconjuto não vazio de $E_{N}$, podemos definir $H_{A}$ co
 \end{equation*}
 tal que $\tau_1$ é o primeiro tempo de chegada em $\eta_N(t)$, $\tau_1 = \inf\{t \ge 0 : \eta_N(t) \neq \eta_N(0)\}$.
 
-Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido ao conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{n}\}$, e a projeção dos \textit{valleys} $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
+Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \\ \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido ao conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{n}\}$, e a projeção dos \textit{valleys} $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
 \[
-    \Phi_N(\eta) \;:=\; \sum_{k=1}^{\mathfrak{n}} k \, \chi_{\mathcal{E}_N^k}(\eta) \;+\; \mathfrak{d} \, \chi_{\Delta_N}(\eta) \;.
+	    \Phi_N(\eta) \;:=\; \sum_{k=1}^{\mathfrak{n}} k \, \chi_{\mathcal{E}_N^k}(\eta) \;+\; \mathfrak{d} \, \chi_{\Delta_N}(\eta) \;.
 \]
 Consequentemente, definimos $X_N(t)$ um processo de $(S \cup \{\mathfrak{d}\})$ como
 \begin{equation*}

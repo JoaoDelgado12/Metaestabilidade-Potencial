@@ -141,7 +141,7 @@
 \newcommand{\algebra}{\mathcal{F}}
 
 \pagestyle{myheadings}
-\bibliographystyle{plain}
+
 
 \makeindex
 
@@ -315,7 +315,7 @@
 	%
 	\chapter*{Resumo}
 	\thispagestyle{empty}
-	Este trabalho é um estudo sobre metaestabilidade, se guiando desde o entendimento de propriedades de probabilidade até os conceitos de metaesbilidade com uma abordagem de potenciais. Foi utilizado simulações de processos como o andar do bêbado em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de metaesbilidade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, destacando propriedades como convergência de estado e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estatística.
+	Este trabalho é um estudo sobre metaestabilidade, se guiando desde o entendimento de propriedades de probabilidade até os conceitos de metaesbilidade com uma abordagem de potenciais. Foram utilizados simulações de processos como o andar do bêbado em $N$ dimensões e um caminhar metaestável com quatro estados, com o objetivo de ilustrar fenômenos de metaesbilidade. Utilizando modelos que exploram a evolução de sistemas aleatórios ao longo do tempo, destacando propriedades como convergência de estado e permanência prolongada em regiões específicas do espaço de estados. Por meio de visualizações dinâmicas, evidencia-se como a dinâmica local e a estrutura global de um sistema sistema influenciam o comportamento macroscópico, contribuindo para a compreensão de conceitos fundamentais de Cadeias de Markov e Mecânica Estatística.
 
 
 	\vspace*{0.5cm}
@@ -331,7 +331,7 @@
 	%
 	\chapter*{Abstract}
 	\thispagestyle{empty}
-	This work is a study on metastability, following from the understanding of probability properties to the concepts of mortality with a protecial approach. Simulations of processes such as the drunken walk in $N$ dimensions and a metastable walk with four states are used, in order to illustrate phenomena of metastablyship. Using models that explore the evolution of random systems over time, properties such as convergence between distinct configurations and prolonged permanence in specific regions of state space are highlighted. Through dynamic visualizations, it is evident how the local dynamics and the global structure of a system influence the macroscopic behavior, contributing to the understanding of fundamental concepts of Markov chains and Static Mechanics.
+	This work is a study on metastability, following from the understanding of probability properties to the concepts of mortality with a protecial approach. Simulations of processes such as the drunken walk in $N$ dimensions and a metastable walk with four states are used, in order to illustrate phenomena of metastability. Using models that explore the evolution of random systems over time, properties such as convergence between distinct configurations and prolonged permanence in specific regions of state space are highlighted. Through dynamic visualizations, it is evident how the local dynamics and the global structure of a system influence the macroscopic behavior, contributing to the understanding of fundamental concepts of Markov chains and Static Mechanics.
 
 
 	\vspace*{0.5cm}
@@ -357,11 +357,11 @@
 	\pagenumbering{arabic}
 	\addcontentsline{toc}{chapter}{Introdução}
 	\chapter*{Introdução}\label{Introdução}
-A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da teoria de probabilidade, da Mecânica Estatística e das Cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da Física quanto da matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
+A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente no estudo de sistemas dinâmicos e probabilísticos. Sua investigação ganhou notoriedade a partir da necessidade de compreender comportamentos aparentemente estáveis em sistemas que, a longo prazo, sofrem transições abruptas entre estados. Historicamente, esse tema está associado ao desenvolvimento da Teoria de Probabilidade, da Mecânica Estatística e das Cadeias de Markov, áreas impulsionadas por problemas oriundos tanto da Física quanto da Matemática pura. Contribuições fundamentais de diversos pesquisadores ao longo do século XX permitiram a consolidação dessas ideias, estabelecendo as bases teóricas para o estudo rigoroso da metaestabilidade.
 
 De forma geral, a metaestabilidade descreve situações em que um sistema permanece por longos períodos em estados que não são verdadeiramente estáveis, mas que apresentam uma estabilidade aparente antes de ocorrer uma transição para um estado mais estável. Esse comportamento é particularmente relevante em modelos probabilísticos, nos quais a análise do tempo de permanência e das transições entre estados desempenha um papel central. Assim, o estudo da metaestabilidade torna-se essencial para a compreensão de fenômenos complexos, com aplicações que vão desde processos físicos até algoritmos estocásticos.
 
-Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade e cadeias de Markov. Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (\textit{lattice}), com base em uma aula ministrada pelo professor Peixoto em um colóquio do IMPA, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
+Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade e cadeias de Markov. Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (\textit{lattice}), com base em um curso ministrada pelos professores Adilson Simonis e Cláudia Peixoto em um colóquio do IMPA, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
 
 
 	\setcounter{page}{1}
@@ -414,7 +414,7 @@ Observe que isso inclui somas finitas, pois podemos considerar os $A_{n}$ tal qu
 	\delta_{p}(A) =
 	\begin{cases}
 		1, & \text{se } p \in A;\\
-		0, & c.c.
+		0, & \text{c.c.}
 	\end{cases}
 	$$
 \end{Exem}
@@ -444,7 +444,6 @@ Vamos agora ver algumas propriedades das medidas que não são nenhuma surpresa, m
 			& = \sum^{k}_{i}\mu(A_{i} \setminus A_{i-1}),\\
 			&= \sum^{k}_{i}(\mu(A_{i}) - \mu(A_{i-1})).
 		\end{align*}
-		\newpage %PARA AJUSTAR ESPAÇAMENTO DO PARAGRAFO.
 		Como o lado direito da equação é uma soma telescópica, temos que $\mu(\bigcup^{k}_{i} B_{i})  = \mu(A_{k}) - \mu(A_{0})$. Logo, \vspace{-10pt} 
 		\begin{align*}
 			&\lim_{k \to \infty} \mu \left(\bigcup^{k}_{i} B_{i}\right) = \lim_{k \to \infty}\mu(A_{k}),\\
@@ -521,7 +520,7 @@ Veremos em seguidas algumas propriedades dessas cadeias de Markov que nos permit
 \begin{Def}[Irredutível] Seja $P$ uma cadeia, se para todo $x,y \in \Omega$, existe um inteiro $t$ tal que $\mathbb{P}^{t}(x,y) > 0$.
 \end{Def}
 
-\begin{Def}[Período de $x$] Definamos o conjunto $T(x) = \{t \maior 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de $x$ é o maior divisor comum $( \operatorname{mdc}$ de $T(x))$.
+\begin{Def}[Período de $x$] Definamos o conjunto $T(x) = \{t \maior 1 : \mathbb{P}^{t}(x,x) > 0 \}$. O período de $x$ é o maior divisor comum $( \operatorname{mdc})$ de $T(x)$.
 \end{Def}
 \begin{Prop}Se $P$ é irredutível, então $\operatorname{mdc}(T(x)) = \operatorname{mdc}(T(y))$ para $x,y \in \Omega$.
 \end{Prop}
@@ -618,14 +617,14 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 	$$ 
 	\pi = \pi P.
 	$$
-	De forma equivalente podemos reescrever nossa definição como
+	De forma equivalente, podemos reescrever nossa definição como
 	$$ 
 	\pi(y) = \Sum_{x \in V } \pi(x) P(x,y).
 	$$
 \end{Def}
 
 \begin{Exem}
-	Utilizando o simples andar aleatório sobre um grafo $G = (V,E)$. Para qualquer $y \in V$
+	Utilizando o passeio aleatório sobre um grafo $G = (V,E)$. Para qualquer $y \in V$
 	$$ 
 	\Sum_{x \in V } \deg(x) P(x,y) = \Sum_{x \sim y} \dfrac{\deg(x)}{\deg(x)} = \deg(y) 
 	$$
@@ -636,11 +635,11 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 	é uma distribuição estacionária.
 \end{Exem}
 
-
+Aceitaremos sem demonstração o seguinte teorema.
 {\Teo \label{teo:distDoisPoint} Seja $x$ e $y$ dois pontos de distância $k \maior 1$ no toru $\mathbb{Z}^{}_{N}$ e seja $\tau_{y}$ o primeiro tempo de chegada em $y$. Então existe uma constante $0 < c_{d} \menor C_{d} < \infty$ tal que 
 \begin{align*}
-c_{d}N^{d} \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{d}N^{d} \text{\hspace{10pt} unifomimente em $k$ se $d \maior 3$}  \\
-c_{2}N^{2}\log(k) \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{2}N^{2}\log(k+1) \text{\hspace{10pt} se $d = 2$}
+c_{d}N^{d} \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{d}N^{d} \text{\hspace{10pt} uniformimente em $k$ se $d \maior 3$}, e  \\
+c_{2}N^{2}\log(k) \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{2}N^{2}\log(k+1) \text{\hspace{10pt}, se $d = 2$.}
 \end{align*}
 }
 
@@ -797,7 +796,7 @@ para todo $\zeta \in H_{N}$.
 \end{Cor}
 
 \begin{proof}
-	Vamos primeiro mostrar que $\mu$ é uma medida invariantes com respeito à evolução do passeio homogêneo.
+	Vamos primeiro mostrar que $\mu$ é uma medida invariante com respeito à evolução do passeio homogêneo.
 	\begin{align*}
 		\mathbb{P}(x_{1} = \zeta) &= \sum_{\nu \in H_{N}} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \nu) \cdot \dfrac{1}{2^{N}}, \\
 		&= \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \zeta) \cdot \dfrac{1}{2^{N}} + \sum^{N}_{i=1} \mathbb{P}(x_{1} = \zeta \ \vert x_{0} = \zeta^{i}) \cdot \dfrac{1}{2^{N}}, \\
@@ -842,7 +841,7 @@ Para a demonstração desse teorema vamos adotar algumas definição e provar um pro
 \item[5)] $S_{N} = \inf(k \maior 2 : \xi(k) \in V[0,k-1] = \{\xi(0), \ldots, \xi(k-1)\})$.
 \item[6)] $\Gamma_{1} = \inf((k \maior 2, I(k) = I(k-1))$ e $\Gamma_{\ell} = \inf(k \maior 2\ell : (I(k - 2\ell + 1), \ldots, I(k)) \in J_{\ell} )$
 \end{enumerate}
-Uma foma de pensar nos vetores desses J's é ver eles como caminho na forma de laço.
+Uma forma de pensar nos vetores desses $J$'s é ver eles como caminho na forma de laço.
 \begin{Prop}\label{thm:lema_1_teo_2}
 Para $\ell \maior 3$
 $$\mathbb{P}((I_{1}, \ldots, I_{2\ell}) \in J_{\ell}) \menor \dfrac{8}{N^{3}}.$$
@@ -899,7 +898,7 @@ Como consequência podemos utilizar essa limitação superior para provar que \line
 \begin{align*}
 \mathbb{P}\left(\min_{\frac{N^{1+\sigma}}{2} \maior \ell \maior 2 } \Gamma_{l} > N^{1 + \sigma}\right) = 1 - \mathbb{P}\left(\min_{\frac{N^{1+\sigma}}{2} \maior \ell \maior 2 } \Gamma_{l} \menor N^{1 + \sigma}\right).
 \end{align*}
-Para $\ell \maior 3$, podemos utilizar o que provamos anteriormente, porém para $\ell = 2$ é necessário estudar especificamente. A cara do vetor $(I_{1}, \ldots, I_{4}) \in J_{2}$ é $I_{1} = I_{3}$ e $I_{2} = I_{4}$, pois pela definição para $3 \maior k \maior 1 $, $(I_{k}, I_{k+1}) \notin J_{1}$ e os blocos de $i$'s devem ser par, lembrando que $i \in \{1, 2, \ldots, N\}$. Consequantemente, $|J_{2}| = N(N - 1))$. Calculando a probabilidade,
+Para $\ell \maior 3$, podemos utilizar o que provamos anteriormente, porém para $\ell = 2$ é necessário estudar especificamente. A cara do vetor $(I_{1}, \ldots, I_{4}) \in J_{2}$ é $I_{1} = I_{3}$ e $I_{2} = I_{4}$, pois pela definição para $3 \maior k \maior 1 $, $(I_{k}, I_{k+1}) \notin J_{1}$ e os blocos de $i$'s devem ser par, lembrando que $i \in \{1, 2, \ldots, N\}$. Consequentemente, $|J_{2}| = N(N - 1))$. Calculando a probabilidade,
 \begin{align*}
 \mathbb{P}(\Gamma_{2} \menor n) = \Sum_{k=4}^{n}\mathbb{P}(\forall m < k (I_{m - 3}, \ldots, I_{m}) \in J_{2}) =  (n - 4)\mathbb{P}((I_{1}, \ldots, I_{4}) \in J_{2})
 \end{align*} 
@@ -907,7 +906,7 @@ Como sabemos que $|J_{2}| = N(N - 1)$, então $(n - 4)\mathbb{P}((I_{1}, \ldots, 
 \begin{align*}
 1 - \mathbb{P}\left(\min_{\frac{N^{1+\sigma}}{2} \maior \ell \maior 2 } \Gamma_{l} \menor N^{1 + \sigma}\right) = 1 - (N^{1 + \sigma} - 4)\dfrac{N(N - 1)}{N^{4}} - N^{1+\sigma}\dfrac{8}{N^{3}}
 \end{align*}
-Tendendo $N \to \infty$, conluímos que $\displaystyle \lim_{N \to \infty} \mathbb{P}(\Gamma_{2} \menor n) = 1$. Consequentemente, provamos que quanto maior for nosso $N$,  mais provavel o primeiro retorno do $\xi$ ser a mudança em sequência da mesma variável.
+Tendendo $N \to \infty$, concluímos que $\displaystyle \lim_{N \to \infty} \mathbb{P}(\Gamma_{2} \menor n) = 1$. Consequentemente, provamos que quanto maior for nosso $N$,  mais provavel o primeiro retorno do $\xi$ ser a mudança em sequência da mesma variável.
 
 
 \end{proof}
@@ -973,7 +972,7 @@ $$
 H^{N}_{B} = \inf \{ t \maior 0 :\eta_{N}(t) \in B \}.
 $$
 Como a ordem de $H^{N}_{B}$ é maior que a ordem de convergência da cadeia para sua estacionária, então dizemos que ela termaliza ou equilibra antes de chegar nas quinas compartilhadas. Assim podemos intuir que quanto mais perto de $B$ mais nossa partícula esquece do caminho que veio, consequentemente a probabilidade da partícula mudar de estado em $B$ se a próxima de $\tfrac{1}{2}$. Definindo uma sequência especial podemos descrever o que ocorre com a particula ao se aproximar de $\xi$. Seja $(\ell_{N} : N \maior 1)$ de números reais tais que $\ell_{N} \to \infty$ e $ \tfrac{\ell_{N}}{N} \to 0 $, criamos $V_{N}$, o conjunto dos pontos que distam até $\ell_{N}$ de $\xi$. Tomando o momento que a partícula chega a fronteira de $V_{N}$, sabemos que a ordem de tempo de sair de $V_{N}$ é $\ell^{2}_{N}\log(\ell^{2}_{N})$, uma medida muito menor que a ordem da particula alcançar o $\xi$. Assim ao adentrar em $V_{N}$ a particula realiza uma caminhada de tempo irrisório, chegando e retornando em $\xi$, passando em $E_{j,N}$ ou $E_{j \pm 1, N}$. Como o tempo de convergência da distribuição em $V_{N}$ é $\ell_{N}^{2}$, ao dentrar no quadrado, em pouco tempo o processo é termalizado.
-Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time} são insiginificantes em relaçao a escala do tempo de escape, podemos adequadamente ignorar essa passagem por $V_{N}$ e o tempo até a convergência da distribuição, permitindo que a cadeia de Markov cresça na mesma ordem do tempo de escape $\alpha_{N}$:
+Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time} são insignificantes em relaçao a escala do tempo de escape, podemos adequadamente ignorar essa passagem por $V_{N}$ e o tempo até a convergência da distribuição, permitindo que a cadeia de Markov cresça na mesma ordem do tempo de escape $\alpha_{N}$:
 $$ 
 \textbf{Y}_{N}(t) = Y_{N}(t\alpha_{N}) = \Gamma_{N}(\eta_{N}(t\alpha_{N}))
 $$
@@ -1005,7 +1004,7 @@ o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $\textbf{Y}_{N}(t)$
 \end{tikzpicture}
 
 \section{Metaestabilidade como \textit{model reduction}}
-Como demostrado na seção anterior, podemos contornar o calcanhar de arquiles dos sistemas microscópicos formulando um modelo macroscópico resumido (o nosso \textit{coarse-grained} ), que preserva as propriedades fundamentais do processo. O modelo que realizamos um breve estudo não é único, existem inúmeros outros modelos que possuem em um intervalo grande entra em equilibrio e transiociona em um tempo muito. À exemplo, o \textit{Random walks in a potential field} e \textit{Spin dynamics}. Portanto, iremos reformular nosso $\textbf{Y}_{N}(t)$.
+Como demostrado na seção anterior, podemos contornar o calcanhar de arquiles dos sistemas microscópicos formulando um modelo macroscópico resumido (o nosso \textit{coarse-grained} ), que preserva as propriedades fundamentais do processo. O modelo que realizamos um breve estudo não é único, existem inúmeros outros modelos que possuem em um intervalo grande entra em equilibrio e transiociona em um tempo muito. Por exemplo, o \textit{Random walks in a potential field} e \textit{Spin dynamics}. Portanto, iremos reformular nosso $\textbf{Y}_{N}(t)$.
 
 Seja $\eta_N(t)$ um passeio de tempo contínuo, de imagem $E_N$, uma cadeia de Markov irredutível. O gerador da cadeia é representado por $\mathcal{L}_N$ e
 tem seu único estádo estacionário como $\pi_N$. Assim, tomemos $f : E_N \to \mathbb{R}$,
@@ -1014,13 +1013,13 @@ tem seu único estádo estacionário como $\pi_N$. Assim, tomemos $f : E_N \to \mat
 \]
 sendo $R_N(\eta, \xi)$ o peso de pulo para cada estados.
 
-Tomemos $A$ como um subsconjuto não vazio de $E_{N}$, podemos definir $H_{A}$ como o primeiro tempo de chegada em $A$ e $H_{A}^{+}$ o primeiro tempo de retorno a $A$.
+Tomemos $A$ como um subconjuto não vazio de $E_{N}$, podemos definir $H_{A}$ como o primeiro tempo de chegada em $A$ e $H_{A}^{+}$ o primeiro tempo de retorno a $A$.
 \begin{equation*}
     H_A \;:=\; \inf\{t \ge 0 : \eta_N(t) \in A\} \;, \quad H_A^+ \;=\; \inf\{t \ge \tau_1 : \eta_N(t) \in A\}
 \end{equation*}
 tal que $\tau_1$ é o primeiro tempo de chegada em $\eta_N(t)$, $\tau_1 = \inf\{t \ge 0 : \eta_N(t) \neq \eta_N(0)\}$.
 
-Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \\ \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido ao conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{n}\}$, e a projeção dos \textit{valleys} $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
+Analogamente como fizemos na seção anterior, vamos definir $\mathcal{E}_{N}^{1}, \dots, \mathcal{E}_{N}^{\mathfrak{n}}, \\ \Delta_{N} \subset E_{N}$ para $\mathfrak{n} > 1$, conjuntos disjuntos entre si e que formam uma partição de $E_{N}$. Tomando $\Delta_{N}$ tal que a escala de tempo de permanência da particula dentro desse conjunto é muito menor que um certo $\alpha_{N}$, obtemos um conjunto parecido ao conjunto $V_{N}$. Seja $S := \{1, \dots, \mathfrak{n}\}$, e a projeção dos vales $\mathcal{E}_{N}^{j}$, $\Phi_N : E_N \to S \cup \{\mathfrak{d}\}$ onde $\eta \in \Delta_N \to \mathfrak{d}$, temos que:
 \[
 	    \Phi_N(\eta) \;:=\; \sum_{k=1}^{\mathfrak{n}} k \, \chi_{\mathcal{E}_N^k}(\eta) \;+\; \mathfrak{d} \, \chi_{\Delta_N}(\eta) \;.
 \]
@@ -1686,32 +1685,10 @@ if __name__ == "__main__":
 	\addcontentsline{toc}{chapter}{\bibname}       % Adiciona ao sumário a
 	%referência à Bibliografia.
 
-	\begin{thebibliography}{C}
 
-		\bibitem[Kipnis-Landim]{kipnis-landim}{C. Kipnis and C. Landim,\begin{itshape}
-				Scaling Limits of Interacting Particle Systems
-			\end{itshape}, Springer-Verlag Berlin Heidelberg, (1999).}
-
-		\bibitem[Tsallis]{tsallis}{Tsallis, Constantino ,\begin{itshape}  Introduction
-				to Nonextensive Statistical Mechanics\end{itshape}, New York, (2009).}
-
-		\bibitem[Shannon]{Shannon}{Shannon, C. E. ,\begin{itshape}  A Mathematical
-				Theory of Communication \end{itshape}, The Bell System Technical Journal,
-			(1948).}
-
-		\bibitem[Khinchin]{Khinchin}{Khinchin, A. I. ,\begin{itshape}  Mathematical
-				Foundations of Information Theory \end{itshape}, New York, (1957).}
-
-		\bibitem[Durrett]{Durret}{Durrett, Richard. ,\begin{itshape}  Probability, Theory and Examples \end{itshape}, Brooks/Cole, (2005).}
-
-			\bibitem[Boucheron-Lugosi-Massart]{boucheron-lugosi-massart}{S. Boucheron, G. Lugosi and P. Massart,\begin{itshape}
-				Concentration Inequalities
-			\end{itshape}, Oxford, (2013).}
-
-		\bibitem[Norris]{Norris}{Norris, J.R. ,\begin{itshape}  Markov Chains \end{itshape}, Cambridge, (1997).}
-
-	\end{thebibliography}
-
+\nocite{*} 
+\bibliographystyle{plain}
+\bibliography{referencias}
 
 
 	\break

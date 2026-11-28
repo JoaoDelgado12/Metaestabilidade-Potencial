@@ -31,8 +31,7 @@ Implementa duas cadeias no hipercubo $\{-1, +1\}^{\text{TAM}}$ iniciadas em conf
   * **Resultado teórico evidenciado:** Confirma experimentalmente a escala assintótica $\mathbb{E}(t_N^-) \sim N \log N$ estabelecida no **Teorema 2.1**.
 * **Versão animada (Figura 3.2 do TCC):**
   * **O que faz:** Utiliza `FuncAnimation` (`matplotlib`) para ilustrar passo a passo os spins positivos (vermelho), negativos (preto) e as coordenadas já acopladas (verde) para `TAM = 50`.
-  * **Resultado teórico evidenciado:** Ilustra visualmente a propagação irreversível das coordenadas acopladas e o tempo total de encontro comparado à estimativa $N \log N$.
-
+  * **Resultado teórico evidenciado:** Ilustra visualmente a propagação irreversível das coordenadas acopladas e o tempo total de encontro comparado à estimativa $N \log N$.![Metaestabilidade em Malhas](Monografia/IMG/GraphicCouple.png)
 ### 2.2. Metaestabilidade em Malhas Conectadas — 4 Estados (Seção 3.3.2)
 
 Constrói um grafo composto por quatro malhas quadradas $d$-dimensionais ($E_0, E_1, E_2, E_3$), cada uma com $N^d$ vértices, conectadas entre si exclusivamente por pares de vértices de canto.

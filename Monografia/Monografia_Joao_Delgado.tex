@@ -60,7 +60,7 @@
 \usepackage{makeidx}
 \usepackage{dsfont}
 \usepackage{enumerate}
-\usepackage{minted}
+\usepackage{minted2}
 \setminted{fontsize=\small, linenos=false}
 
 \usepackage{newcent}       % selects Times Roman as basic font
@@ -361,7 +361,7 @@ A metaestabilidade é um fenômeno que surge em diversos contextos, especialmente 
 
 De forma geral, a metaestabilidade descreve situações em que um sistema permanece por longos períodos em estados que não são verdadeiramente estáveis, mas que apresentam uma estabilidade aparente antes de ocorrer uma transição para um estado mais estável. Esse comportamento é particularmente relevante em modelos probabilísticos, nos quais a análise do tempo de permanência e das transições entre estados desempenha um papel central. Assim, o estudo da metaestabilidade torna-se essencial para a compreensão de fenômenos complexos, com aplicações que vão desde processos físicos até algoritmos estocásticos.
 
-Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade e cadeias de Markov. Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (\textit{lattice}), com base em um curso ministrada pelos professores Adilson Simonis e Cláudia Peixoto em um colóquio do IMPA, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
+Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessários para o desenvolvimento do tema, com destaque para noções básicas de probabilidade \cite{RollaLima2026} e cadeias de Markov \cite{levin2017markov} . Em seguida, será abordado um modelo específico de sistema em tempo discreto definido em um reticulado (\textit{lattice}), com base em um curso ministrada pelos professores Adilson Simonis e Cláudia Peixoto em um colóquio do IMPA \cite{simonis2005topicos}, que servirá como motivação e exemplo concreto do fenômeno estudado. Por fim, será explorada uma abordagem baseada em potenciais, fundamentada no artigo de Claudio Landim  \cite{landim2019metastable}, permitindo uma análise mais aprofundada das propriedades metaestáveis e de suas implicações teóricas.
 
 
 	\setcounter{page}{1}
@@ -370,7 +370,7 @@ Neste trabalho, serão apresentados inicialmente conceitos fundamentais necessári
 
 
 \chapter{Noções básicas de medida e probabilidade}
-Nesse capítulo vamos falar das noções iniciais de probabilidade para que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir esse objeto com uma medida, assim seguindo para a construção da medida de probabilidade. Em sequência, falamos sobre as propriedades das cadeias de Markov, que são um dos objetos mais importantes quando falamos de metaestabilidade.
+Nesse capítulo vamos falar das noções iniciais de probabilidade de acordo com o livro do Rolla e de Lima \cite{RollaLima2026}, a fim que possamos compreender os processos de metaestabilidade. Inicialmente falaremos da construção da $\sigma$-álgebra e as consequências de imbuir esse objeto com uma medida, assim seguindo para a construção da medida de probabilidade. Em sequência, falamos sobre as propriedades das cadeias de Markov se baseando no livro do Levin e Peres \cite{levin2017markov}, que são um dos objetos mais importantes quando falamos de metaestabilidade.
 \begin{Def} Uma álgebra de um conjunto $\Omega$ é uma classe $\algebra$ de subconjuntos de $\Omega$ tal que:
 	\begin{enumerate}[i.]
 		\item $\Omega \in \algebra$,
@@ -635,7 +635,7 @@ Em caminhadas aleatórias podemos andar tanto e acabar tendendo a algum lugar. As
 	é uma distribuição estacionária.
 \end{Exem}
 
-Aceitaremos sem demonstração o seguinte teorema.
+Aceitaremos sem demonstração o seguinte teorema, mas a prova pode ser encontrada em no livro do Levin e Peres \cite{levin2017markov} na proposição 10.13.
 {\Teo \label{teo:distDoisPoint} Seja $x$ e $y$ dois pontos de distância $k \maior 1$ no toru $\mathbb{Z}^{}_{N}$ e seja $\tau_{y}$ o primeiro tempo de chegada em $y$. Então existe uma constante $0 < c_{d} \menor C_{d} < \infty$ tal que 
 \begin{align*}
 c_{d}N^{d} \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{d}N^{d} \text{\hspace{10pt} uniformimente em $k$ se $d \maior 3$}, e  \\
@@ -646,7 +646,7 @@ c_{2}N^{2}\log(k) \menor \mathbf{E}_{x}(\tau_{y}) \menor C_{2}N^{2}\log(k+1) \te
 
 \chapter{Metaestabilidade para o passeio aleatório no  hipercubo}
 
-Baseando-se nos princípios fundamentais das medidas de probabilidade, $\sigma$-álgebras e propriedades da cadeia de Markov estabelecidas no capítulo inicial, o Capítulo 2 avança esses conceitos teóricos para uma análise de modelos dinâmicos e complexos. Especificamente, o capítulo seguinte investiga o fenômeno da metaestabilidade através da lente de caminhadas aleatórias no hipercubo, avaliando tempos de reunião assintóticos e estruturas de retorno tanto para processos estocásticos \textit{lazy} quanto \textit{no lazy}.
+Baseando-se nos princípios fundamentais das medidas de probabilidade, $\sigma$-álgebras e propriedades da cadeia de Markov estabelecidas no capítulo inicial, o Capítulo 2 avança esses conceitos teóricos para uma análise de um modelo dinâmico estudado nas notas do Peixoto e Simonis \cite{simonis2005topicos}. Especificamente, o capítulo seguinte investiga o fenômeno da metaestabilidade através da lente de caminhadas aleatórias no hipercubo, avaliando tempos de reunião assintóticos e estruturas de retorno tanto para processos estocásticos \textit{lazy} quanto \textit{no lazy}.
 \section{Tipos de passeios aleatórios homogêneos:}
 Chamaremos $H_{N} = \{ -1, +1 \}^{N}$ um conjunto de configurações de $N$ spins (as entradas) com possíveis valores $\{+1, -1 \}$.
 Os elementos do $H_{N}$ são representados por $\nu$ e $\zeta$, ou seja, $\nu = (\nu_{1}, \dotsc , \nu_{N})$ e $\zeta = (\zeta_{1}, \dotsc , \zeta_{N})$ onde $\zeta_{i}$ e $\nu_{i} \in \{+1, - 1\}, \forall i \in \{1, \dotsc , N \}$.
@@ -912,7 +912,7 @@ Tendendo $N \to \infty$, concluímos que $\displaystyle \lim_{N \to \infty} \math
 \end{proof}
 \chapter{Abordagem Potencial para Metaestabilidade}
 
-Na seção anterior, estudamos o processo de metaestibilidade no contexto do hipercubo, onde provamos que a escala de tempo para o acoplamento de dois pontos extremais é $N \log N$, e no caminhar \textit{no lazy} ao extender a dimensão do cubo infinitamente, a partícula somente retornará a alguma posição visitada se for a posição anterior. Nesta seção, iremos estudar o processo de metaestabilidade de uma forma um pouco diferente, mas que transmite naturalidade do que imaginamos ser um processo metaestável.
+Na seção anterior, estudamos o processo de metaestibilidade no contexto do hipercubo, onde provamos que a escala de tempo para o acoplamento de dois pontos extremais é $N \log N$, e no caminhar \textit{no lazy} ao extender a dimensão do cubo infinitamente, a partícula somente retornará a alguma posição visitada se for a posição anterior. Nesta seção, daremos um passo além dos casos particulares para compreender a metaestabilidade sob uma perspectiva mais ampla e unificada. Para isso, adotaremos a abordagem proposta por Landim \cite{landim2019metastable}, que formaliza esse fenômeno a partir da própria intuição física por trás dele: a ideia de um sistema que, mesmo preso por longos períodos em equilíbrios aparentes, guarda a possibilidade de saltar repentinamente para uma nova configuração.
 
 \section{Caminhar aleatório em malhas}
 Para compreender a metaestabilidade, basta lembrar de uma cena clássica de mesa de bar. Em um dia abafado, ao pedir uma cerveja estupidamente gelada para aliviar o calor, o que deveria ser uma solução pode se transformar em uma pequena frustração. Basta o contato da mão quente na garrafa para quebrar o frágil equilíbrio entre o líquido e o sólido, em questão de segundos, a cerveja congela por completo. A física e a química explicam o fenômeno, mas a lógica por trás da metaestabilidade vai muito além do bar. Seja no congelamento do líquido sobrefusão ou na alteração de campos magnéticos, o padrão se repete: o sistema se preserva em um estado provisório até que um leve gatilho o lance, de forma ultrarrápida, a uma nova forma permanente. Para elucidar iremos abordar um exemplo que traz uma descrição sintética desse fenômeno.
@@ -965,7 +965,7 @@ Perceba que não tem problema nas intersecções dos quadrados, pois cada quadrado 
 $$
 Y_{N}(t) = \Gamma_{N}(\eta_{N}(t))
 $$
-é a mesma representação da dinâmica descrita, porém focando somente em qual estado a partícula se encontra. Como $\eta_{N}(t)$ é retrito a $\Lambda_{N}$, dizemos que $z_{N}(t)$ é um caminhar aleatório simétrico com distribuição estacionária $\pi_{\Lambda_{N}}$ também definda pelo grau da configuração, e $z_{N}(t)$ restrito a $\Lambda_{N}$ é congruente a $\eta_{N}(t)$. Sabemos que em um Toro, a ordem de \textit{mixing time} é de $N^{2}$, e a estimativa de um ponto encontrar pela primeira vez outro ponto no Toro distando $k$ está entre $cn^{2}\log(k)$ e $Cn^{2}\log(k)$, portanto a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
+é a mesma representação da dinâmica descrita, porém focando somente em qual estado a partícula se encontra. Como $\eta_{N}(t)$ é retrito a $\Lambda_{N}$, dizemos que $z_{N}(t)$ é um caminhar aleatório simétrico com distribuição estacionária $\pi_{\Lambda_{N}}$ também definda pelo grau da configuração, e $z_{N}(t)$ restrito a $\Lambda_{N}$ é congruente a $\eta_{N}(t)$. Pelo Teorema \ref{teo:distDoisPoint} sabemos que em um Toro, a ordem de \textit{mixing time} é de $N^{2}$, e a estimativa de um ponto encontrar pela primeira vez outro ponto no Toro distando $k$ está entre $cn^{2}\log(k)$ e $Cn^{2}\log(k)$, portanto a ordem com que $z_{N}(t)$ converge para uma transição estacionária é de $N^{2}$, além disso o tempo estimado de um ponto $x$ para outro que dista $N$ é da ordem $\alpha_{N} = N^{2} \log N$ em dimensão $d = 2$ e $\alpha_{N} = N^{d}$ em dimensão $d \maior 3$.
 
 Assumindo que iniciamos no centro de $\bb{Z}^{d}_{N}$, definimos $B$ como o conjunto dos pontos de intersecção $\Est{j}{N} \cap \Est{i}{N}$ para todo $j \neq i$. Ademais, tomemos 
 $$ 
@@ -976,7 +976,7 @@ Pensando nesse processo, como o tempo dentro de $V_{N}$ e o \textit{mixing time}
 $$ 
 \textbf{Y}_{N}(t) = Y_{N}(t\alpha_{N}) = \Gamma_{N}(\eta_{N}(t\alpha_{N}))
 $$
-o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $\textbf{Y}_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$. Mas será que esse $\textbf{Y}_{N}(t)$ converge para uma cadeia de markov? Ao se aproximar, em escala $\alpha_{N}$, das intersecções, a particula pula do estado atual para o próximo estado ou permanecer no mesmo, contudo sabemos que por um instante essa particula certamente saiu de seu estado atual. Consequentemente criando um ponto de descontinuidade como pode ser visto na figura abaixo. Logo, $\textbf{Y}_{N}(t)$ converge na topologia Skorohod.
+o qual tem imagem em $S = \{0,1,2,3\}$, composta pela cadeia $\textbf{Y}_{N}(t)$ de tempo contínuo de \textit{holding time} escritamente positivo e com $p(j, j \pm 1) = \tfrac{1}{2}$. Mas será que esse $\textbf{Y}_{N}(t)$ converge para uma cadeia de markov? Ao se aproximar, em escala $\alpha_{N}$, das intersecções, a particula pula do estado atual para o próximo estado ou permanecer no mesmo, contudo sabemos que por um instante essa particula certamente saiu de seu estado atual. Consequentemente criando um ponto de descontinuidade como pode ser visto na figura abaixo. Logo, $\textbf{Y}_{N}(t)$ converge na topologia Skorohod  \cite{kern2023skorohod}.
 
 \begin{tikzpicture}[scale=1.0, >=stealth]
   % Eixo Y
@@ -1101,7 +1101,8 @@ Os conjuntos $\mathcal{E}_N^j$ são chamados de \emph{vales} e o processo $\mathb
 
 
 \section{Simulações em python}\label{codigo}
-Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \ref{PEIXOTO}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.
+Como base para entendermos o escopo deste trabalho, foi criado algumas simulações usando a linguagem Python, fazendo uso de bibliotecas como \textit{matplotlib}, \textit{Pandas} e \textit{Numpy}. Inicialmente falamos do caminhar aleatório com acoplamento estudado pelos Adilson Simonis e Cláudia Peixoto em \cite{RollaLima2026}{simonis2005topicos}, em seguida foi criado um modelo de metaestabilidade com quatro estados diferentes, descrito por Claudio Ladim 
+\cite{landim2019metastable}. Por último temos a demonstração para onde converge a distribuição da variável que observa o tempo de saída da particula de um estado.
 
 \subsection{Caminhar aleatório com acoplamento}
 

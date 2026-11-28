@@ -71,3 +71,81 @@ Você pode obter os arquivos do repositório utilizando o **Git** (recomendado) 
 ```bash
 git clone https://github.com/JoaoDelgado12/Metaestabilidade-Potencial
 cd Metaestabilidade-Potencial
+
+1. Como Configurar o Ambiente e Rodar as Simulações
+4.1. Pré-requisitos
+- Python 3.8 ou superior instalado no sistema.
+- Bibliotecas necessárias:
+  - numpy
+  - matplotlib
+  - networkx
+  - scipy (opcional, caso utilize a plotagem da CDF teórica da Seção 3.3.3)
+4.2. Criação do Ambiente Virtual e Instalação das Dependências
+Abra o terminal dentro da pasta raiz do projeto e siga as instruções correspondentes ao seu sistema operacional:
+
+No Windows (PowerShell ou CMD)
+PowerShell
+
+# 1. Criar o ambiente virtual
+python -m venv venv# 2. Ativar o ambiente virtual (PowerShell)
+.\venv\Scripts\Activate.ps1# (Se estiver usando o CMD tradicional, utilize: venv\Scripts\activate.bat)# 3. Atualizar o pip e instalar as bibliotecas
+python -m pip install --upgrade pip
+pip install numpy matplotlib networkx scipy
+Nota para Windows (PowerShell): Caso ocorra erro de permissão de execução de scripts ao ativar o venv, execute Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser e tente ativar novamente.
+
+No Linux (Ubuntu/Debian/Fedora/Arch)
+Bash
+
+# 1. Criar o ambiente virtual (caso necessário, instale o pacote python3-venv da sua distro)
+python3 -m venv venv# 2. Ativar o ambiente virtualsource venv/bin/activate# 3. Atualizar o pip e instalar as bibliotecas
+pip install --upgrade pip
+pip install numpy matplotlib networkx scipy
+Nota para Linux: Para que as janelas gráficas e animações do matplotlib abram corretamente, certifique-se de ter o backend Tkinter instalado no sistema (ex.: sudo apt install python3-tk no Ubuntu/Debian).
+
+4.3. Executando Cada Simulação
+Com o ambiente virtual (venv) ativado, execute os comandos abaixo:
+
+1. Acoplamento no Hipercubo (Console)
+- Windows:
+- PowerShell
+- 
+- python walkUmDimConsole.py
+- Linux:
+- Bash
+- 
+- python3 walkUmDimConsole.py
+Informe a quantidade de simulações (ex.: 100) e o tamanho da cadeia (ex.: 50) quando solicitado no terminal.
+
+2. Metaestabilidade em 4 Cubos (Métricas no Console)
+- Windows:
+- PowerShell
+- 
+- python walkDuasDimConsole.py
+- Linux:
+- Bash
+- 
+- python3 walkDuasDimConsole.py
+3. Metaestabilidade em 4 Cubos (Animação Gráfica)
+- Windows:
+- PowerShell
+- 
+- python walkDuasDimGraph.py
+- Linux:
+- Bash
+- 
+- python3 walkDuasDimGraph.py
+4. Distribuição do Tempo de Escape em Malha 2D
+- Windows:
+- PowerShell
+- 
+- python TempoEscape.py
+- Linux:
+- Bash
+- 
+- python3 TempoEscape.py
+Dica de desempenho: O script TempoEscape.py está configurado por padrão com N = 1000 e tentativas = 100, o que exige alto processamento e pode levar alguns minutos. Para uma execução rápida de teste, altere N = 100 e tentativas = 100 no final do arquivo.   
+Referências Bibliográficas do Trabalho
+- KERN, J. The Skorohod Topologies: What They Are and Why We Should Care. Preprint, arXiv:2210.16026 [math.PR], 2023.
+- LANDIM, C. Metastable Markov chains. Probability Surveys, v. 16, p. 143–227, 2019.
+- LEVIN, D. A.; PERES, Y. Markov Chains and Mixing Times. 2. ed. Providence, RI: American Mathematical Society, 2017.
+- SIMONIS, A.; PEIXOTO, C. M. Tópicos em Processos Estocásticos: Eventos Raros, Tempos Exponenciais e Metaestabilidade. 25º Colóquio Brasileiro de Matemática. Rio de Janeiro: IMPA, 2005.
